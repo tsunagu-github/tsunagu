@@ -1,0 +1,56 @@
+
+<ons-page ng-controller="measurementResultCtrl">
+    <ons-toolbar style="background: #69BB7B">
+        <div class="left"><ons-back-button ng-click="backAction()" style="font-size: smaller;">メニューへ</ons-back-button></div>
+        <div class="center" style="color: #fff">測定・全検査結果</div>
+        <div class="right">
+            <ons-toolbar-button ng-click="app.slidingMenu.toggleMenu()"><ons-icon icon="bars" style="color: #fff"></ons-icon></ons-toolbar-button>
+        </div>
+    </ons-toolbar>
+
+        <form name="phrForm" style="width:100%;">
+            <div class="center" style="color: #fff; background: #00008b; height: 30px; text-align: center">
+                {{measurementResult.title}}
+            </div>
+
+        </form>
+
+    <table width="100%" style="margin:0 2px 80px 0px; display: {{isTableView}}; border-collapse: collapse; font-size: 0.85em; border: 1px solid #000000;">
+        <thead>
+            <tr style="background: {{measurementResult.backgroundColor}}; color: white">
+                <th width="180px" style="border: 1px solid #000000;">検査項目</th>
+                <th width="100px" style="border: 1px solid #000000;">基準値</th>
+                <th width="180px" style="border: 1px solid #000000;">値</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="dto in measurementResult.viewList" on-finish-render="ngRepeatFinished" >
+                <td style="border: 1px solid #000000;">{{dto.name}}</td>
+                <td class="center" style="text-align: center; border: 1px solid #000000;">{{dto.referenceValue}}</td>
+                <td class="center" style="background: {{dto.alertColor}}; text-align: center; border: 1px solid #000000;">{{dto.value}}  {{dto.unit}}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div id="obEvId" style="display: none;">{{measurementResult.observationEventId}}</div>
+
+    <div style="height:60px; text-align: center; width:100%;margin-top:100px; display: {{isMsgView}};">{{message}}</div>
+
+    <ons-fab id="before" position="bottom left" ng-click="movePastDate()" ng-disabled="pastDate == null" style="background-color:#0000cd;">
+        <ons-icon
+                icon="fa-caret-left"
+                size="50px"
+                margin="auto"
+                style="color: #fff;">
+        </ons-icon>
+    </ons-fab>
+    <ons-fab id="after" position="bottom right" ng-click="moveFutureDate()" ng-disabled="futureDate == null" style="background-color:#0000cd;">
+        <ons-icon
+                icon="fa-caret-right"
+                size="50px"
+                margin="auto"
+                style="color: #fff;">
+        </ons-icon>
+    </ons-fab>
+
+</ons-page>

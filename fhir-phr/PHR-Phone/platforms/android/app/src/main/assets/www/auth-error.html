@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en" ng-app="phrApp">
+    <head>
+        <meta charset="utf-8">
+        <link rel="shortcut icon" href="favicon.ico" />
+        <link rel="stylesheet" href="components/loader.css">
+        <link rel="stylesheet" href="lib/onsenui/css/onsenui.css"/>
+        <link rel="stylesheet" href="lib/onsenui/css/onsen-css-components.css"/>
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/medicine.css">
+        <script src="components/loader.js"></script>
+        <script src="lib/onsenui/js/angular/angular.js"></script>
+        <script src="lib/onsenui/js/onsenui.js"></script>
+        <script src="lib/onsenui/js/angular-onsenui.js"></script>
+        <!-- your app's js -->
+        <script src="js/logger.js"></script>
+        <script src="js/phrPhone.js"></script>
+
+        <script language="JavaScript">
+            var getUrlVars = function(){
+                var vars = {}; 
+                var param = location.search.substring(1).split('&');
+                for(var i = 0; i < param.length; i++) {
+                    var keySearch = param[i].search(/=/);
+                    var key = '';
+                    if(keySearch != -1) key = param[i].slice(0, keySearch);
+                    var val = param[i].slice(param[i].indexOf('=', 0) + 1);
+                    if(key != '') vars[key] = decodeURI(val);
+                } 
+                return vars; 
+            };            
+            
+            var app = angular.module('phrApp', ['onsen', 'phr.controllers']);
+            var phrCtrl = angular.module('phr.controllers', []);
+
+            app.controller('appCtrl', function ($scope, $window) { });
+            phrCtrl.controller("errorCtrl", function ($scope, $window) {
+                var getMap = getUrlVars();
+                var msg1 = getMap["msg1"];
+                var msg2 = getMap["msg2"];
+                if (msg1 != null) {
+                    $scope.Message1 = msg1;
+                } else {
+                    $scope.Message1 = "アプリケーションでエラーが発生しました";
+                }
+                if (msg2 == null || msg2 == "undefined") {
+                    $scope.Message2 = "";
+                } else {
+                    $scope.Message2 = msg2;
+                }
+                /**
+                 * ヒストリーばｃｋ
+                 * @returns {undefined}
+                 */
+                $scope.backHistory = function () {
+                    window.location = "start.html";
+                };            
+            })
+        </script>
+    </head>
+
+    <body ng-controller="appCtrl">
+    <ons-page ng-controller="errorCtrl">
+        <ons-toolbar style="background: #69BB7B">
+            <div class="left"><ons-back-button ng-click="backHistory()">再発行</ons-back-button></div>
+            <div class="center" style="color: #fff">エラーが発生しました</div>
+        </ons-toolbar>
+        <p style="text-align:center; margin-top:40px;">{{Message1}}</p>
+        <p style="text-align:center; margin-top:40px;">{{Message2}}</p>
+        <br>
+    </ons-page>
+</body>
+</html>

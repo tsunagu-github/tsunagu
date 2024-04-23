@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<ons-page ng-controller="frailSummary" ng-init="init();">  
+    <ons-toolbar style="background: #69BB7B">
+        <div class="left"><ons-back-button style="font-size: smaller;" ng-click="comService.countAnnouncement()">メニューへ</ons-back-button></div>
+        <div class="center" style="color: #fff">フレイルチェック結果</div>
+        <div class="right">
+            <ons-toolbar-button ng-click="app.slidingMenu.toggleMenu()"><ons-icon icon="bars" style="color: #fff"></ons-icon></ons-toolbar-button>
+        </div>
+    </ons-toolbar>
+    
+   <div class="center" style="color: #00f; margin:0px 20px 0px;"><br></div>
+   <div class="center" style="color: #00f; margin:0px 20px 0px;"><b>{{data.patientName}} 様</b></div>
+       <div class="center" style="color: #00f; margin:20px 20px 0px;">
+                  <table class="fmt05">
+                     <thead>
+                      </thead>
+                   <tbody>
+                        <tr>
+                           <td>実施日</td>
+                           <td class="center">{{data.targetDate}}</td>
+                         </tr>
+                        <tr>
+                            <td>実施場所</td>
+                            <td class="center">{{data.targetLocation}}</td>
+                         </tr>
+                    </tbody>
+                  </table>
+       </div>
+  
+  <div align="center">
+      <p style= "font-size: 15px;margin:10px 0px 0px 0px;"><b>～いつまでも、自分らしく活動的でいるためのアドバイス～</b></p>
+  
+    <table class="fmt04" style="margin:0 2px 20px 0px; display: {{isTableView}};">
+        <thead>
+            <tr>
+                <th width="20%">基本項目</th><th width="40%">今回の該当個数</th><th width="40%">前回の該当個数</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td rowspan="2">1.総合</td>
+                <td align="center">{{data.totalResult}}個</td>
+                <td align="center">-</td>
+             </tr>
+            <tr>
+               <td colspan="2"><b>10項目以上該当する方は、注意が必要です。</b><br>メリハリのある生活が、病気や寝たきりの予防につながります。</td>
+            </tr>
+            <tr>
+                <td rowspan="2">2.運動機能</td>
+                <td align="center">{{data.bodyFunctionResulet}}個</td>
+                <td align="center">-</td>
+             </tr>
+            <tr>
+               <td colspan="2"><b>3項目以上該当する方は、注意が必要です。</b><br>筋力や骨など足腰を弱らせないようにすることが、転倒や寝たきり予防につながります。</td>
+            </tr>            <tr>
+                <td rowspan="2">3.栄養</td>
+                <td align="center">{{data.nutritionResult}}個</td>
+                <td align="center">-</td>
+             </tr>
+            <tr>
+               <td colspan="2"><b>2項目すべてに該当する方は、注意が必要です。</b><br>目標となるBMIの範囲は、60歳代は、20～24.9です。バランスの良い食事は、筋力や抵抗力の衰えを防ぎます。
+                生活習慣病などの持病がある方は、主治医とよくご相談ください。</td>
+            </tr>            <tr>
+                <td rowspan="2">4.口腔機能</td>
+                <td align="center">{{data.oralFuncitionResult}}個</td>
+                <td align="center">-</td>
+             </tr>
+            <tr>
+               <td colspan="2"><b>2項目以上該当する方は、注意が必要です。</b><br>お口の健康を保つことで、全身の健康を保つことができます。</td>
+            </tr>
+            <tr>
+                <td rowspan="2">5.閉じこもり予防</td>
+                <td align="center">{{data.notIndoorResult}}個</td>
+                <td align="center">-</td>
+             </tr>
+            <tr>
+               <td colspan="2"><b>2項目以上該当する方は、注意が必要です。</b><br>外出し、いろいろな人と話したり、趣味を楽しむことは、寝たきりの病気の予防につながります。</td>
+            </tr>            
+            <tr>
+                <td rowspan="2">6.もの忘れ</td>
+                <td align="center">{{data.forgetfulResult}}個</td>
+                <td align="center">-</td>
+             </tr>
+            <tr>
+               <td colspan="2"><b>1項目以上該当する方は、注意が必要です。</b><br>もの忘れが多くなってきたと感じたら、はやめに予防に取り組みましょう。</td>
+            </tr>            
+            <tr>
+                <td rowspan="2">7.こころの健康</td>
+                <td align="center">{{data.mentalResult}}個</td>
+                <td align="center">-</td>
+             </tr>
+            <tr>
+               <td colspan="2"><b>該当数が多くなるほど、注意が必要です。</b><br>家族や知人などとの死別・仕事や家庭での役割がなくなることから「うつ」の状態になる人もいます。
+                気持ちの落ち込みや不眠が続いたら、医療機関に相談しましょう。</td>
+            </tr>            
+            
+        </tbody>
+      
+    </table>
+  
+   <table class="fmt04" style="margin:0 1px 25px 0px; display: {{isTableView}};">
+        <thead>
+            <tr><th width="20%">口腔機能</th><th width="20%">今回の結果</th><th  width="50%">前年度の結果</th></tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td rowspan="2">1.自分の歯の本数</td>
+                <td align="center">{{data.numberOfTeeth}}</td>
+                <td align="center">※前年度の自分の歯の本数<br>（ - ）本</td>
+            </tr>
+            <tr>
+               <td colspan="2">一人平均現在歯数は、60代 21.9本、70代 16.6本です。</td>
+            </tr>    
+           
+            <tr>
+                <td rowspan="2">2.25品目の咀嚼点数 </td>
+                <td align="center">{{data.pointOfTeeth}}  点</td>
+                <td align="center">※前年度の25品目咀嚼点数<br>（ - ）点</td>
+            </tr>
+            <tr>
+               <td colspan="2">	<b>点数が13点未満の場合は、咀嚼力が低下している可能性があります。</b>
+                   <br>～おいしく食べるために、「かかりつけ歯科医」をもち、定期的に受診しましょう。～</td>
+            </tr>    
+           
+         </tbody>
+   </table> 
+ </div>
+  
+
+</ons-page>

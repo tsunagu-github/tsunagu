@@ -1,0 +1,140 @@
+[
+    {
+        "medicalAgencyCode": "1111111111",
+        "patientId": "99999901",
+        "isValid" : "true",
+        "message" : "蛎殻病院"
+    }, 
+    {
+        "medicalAgencyCode": "1222222222",
+        "patientId": "99999902",
+        "isValid" : "true",
+        "message" : "テンヤワンヤ病院"
+    },
+    {
+        "medicalAgencyCode": "1333333333",
+        "patientId": "99999903",
+        "isValid" : "true",
+        "message" : "あたふたクリニック"
+    },
+    {
+        "medicalAgencyCode": "1444444444",
+        "patientId": "99999904",
+        "isValid" : "false",
+        "message" : "不明"
+    },
+    {
+        "medicalAgencyCode": "1444444444",
+        "patientId": "99999904",
+        "isValid" : "false",
+        "message" : "不明"
+    },
+    {
+        "medicalAgencyCode": "1444444444",
+        "patientId": "99999904",
+        "isValid" : "false",
+        "message" : "不明"
+    },
+    {
+        "medicalAgencyCode": "1444444444",
+        "patientId": "99999904",
+        "isValid" : "false",
+        "message" : "不明"
+    },
+    {
+        "medicalAgencyCode": "1444444444",
+        "patientId": "99999904",
+        "isValid" : "false",
+        "message" : "不明"
+    },
+    {
+        "medicalAgencyCode": "1444444444",
+        "patientId": "99999904",
+        "isValid" : "false",
+        "message" : "不明"
+    },
+    {
+        "medicalAgencyCode": "1444444444",
+        "patientId": "99999904",
+        "isValid" : "false",
+        "message" : "不明"
+    },
+    {
+        "medicalAgencyCode": "1444444444",
+        "patientId": "99999904",
+        "isValid" : "false",
+        "message" : "不明"
+    },
+    {
+        "medicalAgencyCode": "1444444444",
+        "patientId": "99999904",
+        "isValid" : "false",
+        "message" : "不明"
+    },
+    {
+        "medicalAgencyCode": "1444444444",
+        "patientId": "99999904",
+        "isValid" : "false",
+        "message" : "不明"
+    },
+    {
+        "medicalAgencyCode": "1444444444",
+        "patientId": "99999904",
+        "isValid" : "false",
+        "message" : "不明"
+    },
+    {
+        "medicalAgencyCode": "1444444444",
+        "patientId": "99999904",
+        "isValid" : "false",
+        "message" : "不明"
+    },
+    {
+        "medicalAgencyCode": "1444444444",
+        "patientId": "99999904",
+        "isValid" : "false",
+        "message" : "不明"
+    },
+    {
+        "medicalAgencyCode": "1444444444",
+        "patientId": "99999904",
+        "isValid" : "false",
+        "message" : "不明"
+    },
+    {
+        "medicalAgencyCode": "1444444444",
+        "patientId": "99999904",
+        "isValid" : "false",
+        "message" : "不明"
+    },
+    {
+        "medicalAgencyCode": "1444444444",
+        "patientId": "99999904",
+        "isValid" : "false",
+        "message" : "不明"
+    },
+    {
+        "medicalAgencyCode": "1444444444",
+        "patientId": "99999904",
+        "isValid" : "false",
+        "message" : "不明"
+    },
+    {
+        "medicalAgencyCode": "1444444444",
+        "patientId": "99999904",
+        "isValid" : "false",
+        "message" : "不明"
+    },
+    {
+        "medicalAgencyCode": "1444444444",
+        "patientId": "99999904",
+        "isValid" : "false",
+        "message" : "不明"
+    },
+    {
+        "medicalAgencyCode": "1444444444",
+        "patientId": "99999904",
+        "isValid" : "false",
+        "message" : "不明"
+    }
+  ]

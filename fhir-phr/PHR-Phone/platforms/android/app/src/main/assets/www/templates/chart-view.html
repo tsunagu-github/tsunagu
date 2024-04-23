@@ -1,0 +1,60 @@
+<!--  グラフ管理メインメニュー　ここから各機能へ遷移する　-->
+<ons-page ng-controller="chartCtrl" ng-init="startViewChart();" >       
+    <ons-toolbar style="background: #69BB7B">
+        <div class="left"><ons-back-button style="font-size: smaller;">グラフ管理へ</ons-back-button></div>
+        <div class="center" style="color: #fff">グラフ表示</div>
+        <div class="right">
+            <ons-toolbar-button ng-click="app.slidingMenu.toggleMenu()"><ons-icon icon="bars" style="color: #fff"></ons-icon></ons-toolbar-button>
+        </div>
+    </ons-toolbar>
+
+    <ons-toolbar style="background: #ffffff;height:40px;width:100%;margin-top: 55px;" >
+        <form name="phrForm" style="width:100%;">
+            <div style="float: left;height: 20px;margin-left:5px;">
+                    <ons-input type="date" name="targetDate" float style="border-bottom: 1px solid #ccc;" ng-model="targetDate" max="{{today|date:'yyyy/MM/dd'}}" ng-required="true" ng-change="changeData()"></ons-input>
+                    <span ng-show="phrForm.targetDate.$error.required" style="color:red;font-size:smaller;"><br>入力してください</span>
+                    <span ng-show="phrForm.targetDate.$error.max" style="color:red;font-size:smaller;"><br/>未来日は入力できません</span>
+                    <span ng-show="phrForm.targetDate.$error.date" style="color:red;font-size:smaller;"><br/>日付が不正です</span>
+             </div>
+            <div style="float: right;margin:5px;">
+                <ons-input type="number" name="viewCount" float style="border-bottom: 1px solid #ccc;width:45px;" ng-model="viewCount" ng-required="true" ng-blur="changeData()"></ons-input>
+                <div style="margin-top:5px;float: right;">回表示</div>
+                     <span ng-show="phrForm.viewCount.$error.required" style="color:red;font-size:smaller;"><br>入力してください</span>
+           </div>
+            <br/>
+            <br/>
+        </form>    
+    </ons-toolbar>
+
+    <canvas id="selfChart" style="margin-top:45px;clear:both;" height="240"></canvas>
+        <ons-button id="befor" ng-click="swipeRight()" ng-disabled="offSet >= maxOffSet" icon="arrow-circle-left"  style="background-color:#0000cd;float:left;margin-left:10px;">
+               <ons-icon
+                    icon="fa-caret-left"
+                    size="30px"
+                    style="color:#fff;margin-top:5px;">
+                </ons-icon>
+            </ons-button>
+         <ons-button id="after" ng-click="swipeLeft()" ng-disabled="offSet == 0" style="background-color:#0000cd;float:right;margin-right:10px;">
+                <ons-icon 
+                    icon="fa-caret-right"
+                    size="30px"
+                    style="color: #fff;margin-top:5px;">
+                </ons-icon>
+            </ons-button>
+            
+            
+            <ons-select class="select">
+
+</ons-select>
+    <ons-bottom-toolbar style="height: 3.4rem;">
+      <div style="float: left; width: 50%">
+      </div>
+      <div style="float: right; width: 50%">
+        <ons-toolbar-button ng-click="createDefinition(chartDefinitionId, null, true)" style="color: darkslategrey; display: {{showEditBt}}; flex: 1 1 0; flex-direction: column; justify-content: center; position: relative; text-align: center; text-overflow: ellipsis; white-space: nowrap;height: 2.8rem; line-height: 2.6rem;">
+          <ons-icon icon="ion-compose" size="30px" style="align-self: center; max-width: 100%;"></ons-icon>
+          <span style="align-self: center; max-width: 100%;min-width: 35px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap; font-size: 16px; line-height: 16px">定義修正</span>
+        </ons-toolbar-button>
+      </div>
+    </ons-bottom-toolbar>
+</ons-page>
+

@@ -1,0 +1,50 @@
+@charset "UTF-8";
+@import url("base.css");
+@import url("buttonBase.css");
+
+
+#section-login {
+    margin-left:auto;margin-right:auto;
+	width:480px;
+	min-height:170px;
+    margin-top: 1.5em;
+	padding:1px;
+	background:#F6F6F6;
+	color:black;
+	text-align:center;
+}
+
+.label {
+  float: left;
+  padding-right: 10px;
+  width: 30%;
+  text-align: right;
+}
+
+.input {
+  float: left;
+  width: 60%;
+  text-align: left;
+}
+
+hr.clear {
+  padding-top: 10px;
+  clear: left;
+  border: 0;
+}
+
+.btn_area {
+  padding-top: 5px;
+  margin-left:auto;margin-right:auto;
+  width: 50%;
+}
+
+.btnLayout {
+  float: left;
+}
+
+
+td {
+	border: solid 1px;
+	padding: 0.5em;
+}

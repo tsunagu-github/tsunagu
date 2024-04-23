@@ -1,0 +1,313 @@
+<ons-page ng-controller="dynamicConsentCtrl">
+    <ons-toolbar style="background: #69BB7B">
+        <div class="left" ><ons-back-button style="font-size: smaller;">一覧へ</ons-back-button></div>
+        <div class="center" style="color: #fff">同意一覧</div>
+        <div class="right">
+           <ons-toolbar-button ng-click="app.slidingMenu.toggleMenu()"><ons-icon icon="bars" style="color: #fff"></ons-icon></ons-toolbar-button>
+        </div>
+    </ons-toolbar>
+
+    <div style="text-align: center; font-size: 20px; margin-left: 15px; margin-top: 10px;">
+        健康医療情報の利用に関する同意一覧
+    </div>
+    <div style="text-align: center; font-size: 20px; color: red; display: {{isNoView}};">
+        <br>
+        一覧が存在しません。
+    </div>
+
+    <br>
+    <div class="diabetes-button" style="text-align: center; display: {{isView}};">
+        <input id="idList" type="checkbox" checked ng-click="change(dynamicConsentResult)"/>
+        <label for="idList" style="color: {{dynamicConsentResult.color}};"><b>研究ID順</b></label>&emsp;
+        <input id="notificationList" type="checkbox" ng-click="change2(dynamicConsentResult)"/>
+        <label for="notificationList" style="color: {{dynamicConsentResult.color2}};"><b>通知順</b></label>&emsp;
+        <input id="updateList" type="checkbox" ng-click="change3(dynamicConsentResult)"/>
+        <label for="updateList" style="color: {{dynamicConsentResult.color3}};"><b>更新順</b></label>
+    </div>
+    <div ng-repeat="dto in dynamicConsentResult.view" on-finish-render="ngRepeatFinished" style="display: {{isView}};">
+        <div style="display: none">{{dto.sortNo}}</div>
+        <div class="l-wrapper_01">
+            <article class="card_01">
+                <div class="card__header_01">
+                    <p class="card__title_01">
+                        {{dto.studyName}}
+                        　<img style="display: {{dto.isNewArrivalView}};" height="30" src="./imgs/new_icon.png">
+                    </p>
+                </div>
+                <div class="card__body_01">
+                    <p class="card__text2_01">{{dto.explanation}}</p>
+                    <p class="card__text2_01" style="color: {{dto.fontColor}}; font-weight: bold; font-size: 20px;">
+                        <img style="display: {{dto.isOptInIconView}};" height="32" src="./imgs/dynamicConsent_in.png">
+                        <img style="display: {{dto.isOptOutIconView}};" height="32" src="./imgs/dynamicConsent_out.png">
+                        　{{dto.consentType}}
+                    </p>
+                    <p class="card__text4_01">
+                    <div style="margin: 0px 0px 0px 270px;">
+                        <img style="display: {{dto.isCheckIconView}};" height="50" src="./imgs/checkmark_icon.png">
+                        <img style="display: {{dto.isBanIconView}};" height="50" src="./imgs/ban_icon.png">
+                        <img style="display: {{dto.isHoldIconView}};" height="50" src="./imgs/hold_icon2.png">
+                    </div>
+                    </p>
+                    <p class="card__text3_01" style="font-weight: bold;">
+                        {{dto.responseStatus}}
+                    </p>
+                    <p class="card__text2_01">通知日：{{dto.notificationDate}}</p>
+                    <p class="card__text2_01" style="display: {{dto.isResponseDateView}}">最終更新日：{{dto.responseDate}}</p>
+                </div>
+                <div class="card__footer_01">
+                    <p class="card__text_01"><a href="#" class="button_01 -compact" ng-click="click(dto)">＞詳細</a></p>
+                </div>
+            </article>
+        </div>
+    </div>
+    <!--
+    <ons-tabbar var="tabbar" swipeable position="top">
+        <ons-tab page="idList" active>
+            <div id="0" style="color: #0000cd; background: #ffffff; font-weight: bold;">研究ID順</div>
+        </ons-tab>
+        <ons-tab page="notificationList">
+            <div id="1" style="color: #000000; background: #ffffff; font-weight: bold;">通知順</div>
+        </ons-tab>
+        <ons-tab page="updateList">
+            <div id="2" style="color: #000000; background: #ffffff; font-weight: bold;">更新順</div>
+        </ons-tab>
+    </ons-tabbar>
+
+    <ons-template id="idList">
+        <ons-page id="Tab1">
+            <div style="text-align: center; font-size: 20px; margin-left: 15px; margin-top: 10px;">
+                健康医療情報の利用に関する同意一覧
+            </div>
+            <div style="text-align: center; font-size: 20px; color: red; display: {{isNoView}};">
+                <br>
+                一覧が存在しません。
+            </div>
+            <div ng-repeat="dto in dynamicConsentResult.viewList" on-finish-render="ngRepeatFinished" style="display: {{isView}};">
+                <div style="display: none">{{dto.sortNo}}</div>
+                <div class="l-wrapper_01">
+                    <article class="card_01">
+                        <div class="card__header_01">
+                            <p class="card__title_01">
+                                {{dto.studyName}}
+                                　<img style="display: {{dto.isNewArrivalView}};" height="30" src="./imgs/new_icon.png">
+                            </p>
+                        </div>
+                        <div class="card__body_01">
+                            <p class="card__text2_01">{{dto.explanation}}</p>
+                            <p class="card__text2_01" style="color: {{dto.fontColor}}; font-weight: bold; font-size: 20px;">
+                                <img style="display: {{dto.isOptInIconView}};" height="32" src="./imgs/dynamicConsent_in.png">
+                                <img style="display: {{dto.isOptOutIconView}};" height="32" src="./imgs/dynamicConsent_out.png">
+                                　{{dto.consentType}}
+                            </p>
+                            <p class="card__text4_01">
+                            <div style="margin: 0px 0px 0px 270px;">
+                                <img style="display: {{dto.isCheckIconView}};" height="50" src="./imgs/checkmark_icon.png">
+                                <img style="display: {{dto.isBanIconView}};" height="50" src="./imgs/ban_icon.png">
+                                <img style="display: {{dto.isHoldIconView}};" height="50" src="./imgs/hold_icon2.png">
+                            </div>
+                            </p>
+                            <p class="card__text3_01" style="font-weight: bold;">
+                                {{dto.responseStatus}}
+                            </p>
+                            <p class="card__text2_01">通知日：{{dto.notificationDate}}</p>
+                            <p class="card__text2_01" style="display: {{dto.isResponseDateView}}">最終更新日：{{dto.responseDate}}</p>
+                        </div>
+                        <div class="card__footer_01">
+                            <p class="card__text_01"><a href="#" class="button_01 -compact" ng-click="click(dto)">＞詳細</a></p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </ons-page>
+    </ons-template>
+
+    <ons-template id="notificationList">
+        <ons-page id="Tab2">
+            <div style="text-align: center; font-size: 20px; margin-left: 15px; margin-top: 10px;">
+                健康医療情報の利用に関する同意一覧
+            </div>
+            <div style="text-align: center; font-size: 20px; color: red; display: {{isNoView}};">
+                <br>
+                一覧が存在しません。
+            </div>
+            <div ng-repeat="dto in dynamicConsentResult.viewList2" on-finish-render="ngRepeatFinished" style="display: {{isView}};">
+                <div style="display: none">{{dto.sortNo}}</div>
+                <div class="l-wrapper_01">
+                    <article class="card_01">
+                        <div class="card__header_01">
+                            <p class="card__title_01">
+                                {{dto.studyName}}
+                                　<img style="display: {{dto.isNewArrivalView}};" height="30" src="./imgs/new_icon.png">
+                            </p>
+                        </div>
+                        <div class="card__body_01">
+                            <p class="card__text2_01">{{dto.explanation}}</p>
+                            <p class="card__text2_01" style="color: {{dto.fontColor}}; font-weight: bold; font-size: 20px;">
+                                <img style="display: {{dto.isOptInIconView}};" height="32" src="./imgs/dynamicConsent_in.png">
+                                <img style="display: {{dto.isOptOutIconView}};" height="32" src="./imgs/dynamicConsent_out.png">
+                                　{{dto.consentType}}
+                            </p>
+                            <p class="card__text4_01">
+                            <div style="margin: 0px 0px 0px 270px;">
+                                <img style="display: {{dto.isCheckIconView}};" height="50" src="./imgs/checkmark_icon.png">
+                                <img style="display: {{dto.isBanIconView}};" height="50" src="./imgs/ban_icon.png">
+                                <img style="display: {{dto.isHoldIconView}};" height="50" src="./imgs/hold_icon2.png">
+                            </div>
+                            </p>
+                            <p class="card__text3_01" style="font-weight: bold;">
+                                {{dto.responseStatus}}
+                            </p>
+                            <p class="card__text2_01">通知日：{{dto.notificationDate}}</p>
+                            <p class="card__text2_01" style="display: {{dto.isResponseDateView}}">最終更新日：{{dto.responseDate}}</p>
+                        </div>
+                        <div class="card__footer_01">
+                            <p class="card__text_01"><a href="#" class="button_01 -compact" ng-click="click(dto)">＞詳細</a></p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </ons-page>
+    </ons-template>
+
+    <ons-template id="updateList">
+        <ons-page id="Tab3">
+            <div style="text-align: center; font-size: 20px; margin-left: 15px; margin-top: 10px;">
+                健康医療情報の利用に関する同意一覧
+            </div>
+            <div style="text-align: center; font-size: 20px; color: red; display: {{isNoView}};">
+                <br>
+                一覧が存在しません。
+            </div>
+            <div ng-repeat="dto in dynamicConsentResult.viewList3" on-finish-render="ngRepeatFinished" style="display: {{isView}};">
+                <div class="l-wrapper_01">
+                    <article class="card_01">
+                        <div class="card__header_01">
+                            <p class="card__title_01">
+                                {{dto.studyName}}
+                                　<img style="display: {{dto.isNewArrivalView}};" height="30" src="./imgs/new_icon.png">
+                            </p>
+                        </div>
+                        <div class="card__body_01">
+                            <p class="card__text2_01">{{dto.explanation}}</p>
+                            <p class="card__text2_01" style="color: {{dto.fontColor}}; font-weight: bold; font-size: 20px;">
+                                <img style="display: {{dto.isOptInIconView}};" height="32" src="./imgs/dynamicConsent_in.png">
+                                <img style="display: {{dto.isOptOutIconView}};" height="32" src="./imgs/dynamicConsent_out.png">
+                                　{{dto.consentType}}
+                            </p>
+                            <p class="card__text4_01">
+                            <div style="margin: 0px 0px 0px 270px;">
+                                <img style="display: {{dto.isCheckIconView}};" height="50" src="./imgs/checkmark_icon.png">
+                                <img style="display: {{dto.isBanIconView}};" height="50" src="./imgs/ban_icon.png">
+                                <img style="display: {{dto.isHoldIconView}};" height="50" src="./imgs/hold_icon2.png">
+                            </div>
+                            </p>
+                            <p class="card__text3_01" style="font-weight: bold;">
+                                {{dto.responseStatus}}
+                            </p>
+                            <p class="card__text2_01">通知日：{{dto.notificationDate}}</p>
+                            <p class="card__text2_01" style="display: {{dto.isResponseDateView}}">最終更新日：{{dto.responseDate}}</p>
+                        </div>
+                        <div class="card__footer_01">
+                            <p class="card__text_01"><a href="#" class="button_01 -compact" ng-click="click(dto)">＞詳細</a></p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </ons-page>
+    </ons-template>
+    -->
+
+    <style>
+        .l-wrapper_01 {
+            margin: 1rem auto;
+            width: 95%;
+        }
+        .l-wrapper_01:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 7px 14px rgba(50,50,93,.1), 0 3px 6px rgba(0,0,0,.08);
+            transition: all .5s;
+        }
+        .card_01 {
+            background-color: #fff;
+            box-shadow: 0 0 8px rgba(0, 0, 0, .16);
+            color: #212121;
+            text-decoration: none;
+        }
+        .card__header_01 {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .card__title_01 {
+            padding: 1rem 1.5rem 0;
+            font-size: 1.6rm;
+            order: 1;
+            margin-bottom: 0.6rm;
+            font-weight: bold;
+            text-decoration: none;
+            display: flex;
+        }
+        .card__thumbnail_01 {
+            margin: 0;
+            order: 0;
+        }
+        .card__image_01 {
+            width: 100%;
+        }
+        .card__body_01 {
+            padding: 0 1rem;
+        }
+        .card__text_01 {
+            font-size: .8rem;
+            text-align:center;
+            text-decoration: none;
+	        padding-bottom: 0;
+        }
+        .card__text2_01 {
+            font-size: .8rem;
+            margin-top: 0;
+            margin-bottom: 0.5rem;
+            display: flex;
+        }
+        .card__text3_01 {
+            font-size: .8rem;
+            margin: 0px 0px 0px 277px;
+        }
+        .card__text4_01 {
+            text-align: right;
+        }
+        .card__text_01 + .card__text_01 {
+            margin-top: .5rem;
+        }
+        .card__footer_01 {
+            padding: 0.5rem;
+        }
+        .button_01 {
+            display: inline-block;
+            text-decoration: none;
+            transition: background-color .3s ease-in-out;
+            text-align: center;
+        }
+        .button_01 a {
+            text-decoration: none;
+        }
+        .button_01.-compact {
+            padding: .5rem 1rem;
+            border-radius: .25rem;
+            background-color: #4f96f6;
+            color: #fff;
+            font-weight: bold;
+	        text-decoration: none;
+        }
+        .button_01.-compact:hover,
+        .button_01.-compact:focus {
+            background-color: #6bb6ff;
+        }
+        .diabetes-button {
+            margin-top:5px;
+        }
+        .diabetes-button input {
+            display: none;
+        }
+    </style>
+
+</ons-page>

@@ -1,0 +1,156 @@
+
+<ons-page ng-controller="clinicalTestResultCtrl">
+    <ons-toolbar style="background: #69BB7B">
+        <div class="left"><ons-back-button ng-click="backAction()" style="font-size: smaller;">メニューへ</ons-back-button></div>
+        <div class="center" style="color: #fff">自己管理セット</div>
+        <div class="right">
+            <ons-toolbar-button ng-click="app.slidingMenu.toggleMenu()"><ons-icon icon="bars" style="color: #fff"></ons-icon></ons-toolbar-button>
+        </div>
+    </ons-toolbar>
+
+    <ons-template id="clinicalResult">
+    <ons-toolbar style="background: #ffffff;height:55px;width:100%;" > <!-- 33px;"> -->
+        <form name="phrForm" style="width:100%;">
+            <div style="float: left;height: 20px;">
+                    <ons-input type="date" name="targetDate" float style="border-bottom: 1px solid #ccc;" ng-model="dt.targetDate" max="{{today|date:'yyyy/MM/dd'}}" ng-required="true" ng-change="changeTargetDate()"></ons-input>
+                    <span ng-show="phrForm.targetDate.$error.required" style="color:red;font-size:smaller;"><br>入力してください</span>
+                    <span ng-show="phrForm.targetDate.$error.max" style="color:red;font-size:smaller;"><br/>未来日は入力できません</span>
+                    <span ng-show="phrForm.targetDate.$error.date" style="color:red;font-size:smaller;"><br/>日付が不正です</span>
+             </div>
+            <div style="float: left;margin:5px;">
+                    時点の最新を表示
+             </div>
+<!--        </form>
+        <form name="phrForm">-->
+            <br/>
+            <!--
+            <div style="float: right;height: 20px;">
+                <select ng-model="viewItem" ng-options="viewItem.id as viewItem.name for viewItem in viewItemList" ng-change="changeView(viewItem)">
+
+                </select>    
+             </div>
+            <div style="float: right;margin-right:5px;">
+                    ビューを選択
+             </div>
+             -->
+        </form>        
+    </ons-toolbar>
+        
+        
+        <ons-fab id="befor" position="bottom left" ng-click="moveFutureDate()" ng-disabled="futureDate == null" style="background-color:#0000cd;">
+               <ons-icon
+                    icon="fa-caret-left"
+                    size="50px"
+                    margin="auto"
+                    style="color: #fff;">
+                </ons-icon>
+            </ons-fab>
+         <ons-fab id="after" position="bottom right" ng-click="movePastDate()" ng-disabled="pastDate == null" style="background-color:#0000cd;">
+                <ons-icon 
+                    icon="fa-caret-right"
+                    size="50px"
+                    margin="auto"
+                    style="color: #fff;">
+                </ons-icon>
+            </ons-fab>
+    <table class="fmt03" width="100%" style="margin:0 2px 80px 0px; display: {{isTableView}};">
+        <thead>
+            <tr>
+                <th width="50%">項目</th><th width="30%">値</th><th width="90px">更新日</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="dto in clinicalTestResult.viewList" on-finish-render="ngRepeatFinished" >
+                <td>{{dto.displayName}}</td>
+                <td class="right" style="background: {{vColorMap[dto.valueAlert]}};">{{dto.value}} {{dto.unitValue}}</td>
+                <td class="center" style="color: {{dColorMap[dto.dateAlert]}};">{{dto.examinationDate}}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div style="height:60px; text-align: center; width:100%;margin-top:100px; display: {{isMsgView}};">{{message}}</div>
+
+    </ons-template>
+
+    <ons-tabbar>
+        <ons-tab page="clinicalResult" active="true" style="height:55px;background: #ffffff;">
+
+            <div class="diabetes-button" ng-repeat="dto in clinicalTestResult.diseaseTypeList2">
+                <input id="{{dto.key}}" type="checkbox" ng-model="dto.checked" ng-checked="dto.checked == true" ng-click="checkedAction()"/>
+                <label for="{{dto.key}}">{{dto.value}}</label>
+            </div>
+            <div class="change-button">
+                <input id="button" type="checkbox" ng-checked="true" ng-click="change()" />
+                <label for="button">{{clinicalTestResult.button}}</label>
+            </div>
+　<!--
+                 <div class="diabetes-button" ng-repeat="dto in clinicalTestResult.diseaseTypeList2">
+                            <input id="{{dto.key}}" ng-model="dto.checked" type="checkbox" ng-checked="dto.checked == true" ng-click="checkedAction()"/><label style="margin-top: 0px;" for="{{dto.key}}">{{dto.value}}</label>
+　-->　　　　　　　　
+            </ons-tab>
+    </ons-tabbar>
+
+    <style>
+        .radius {
+            border-radius: 10px;
+            border: 3px solid #ffd700;
+            width: 70px;
+            background-color: #ffd700;
+            color: black;
+            display: inline-block;
+        }
+        .radius_grey{
+            border-radius: 10px;
+            border: 3px solid #808080;
+            width: 70px;
+            background-color: #808080;
+            color: white;
+            display: inline-block;
+        }
+        .diabetes-button {
+            margin-top:5px;
+        }
+        .diabetes-button input {
+            display: none;
+        }
+        .diabetes-button label {
+            border-radius: 10px;
+            font-size: 14px;
+            height:40px;
+            padding: 0px 5px;
+            margin:5px 5px;
+            float: left;
+            color: #ffffff;
+            border: 1px #d3d3d3 solid;
+            background: #C3C3C3;
+        }
+        .diabetes-button input:checked + label {
+            border-radius: 10px;
+            color: #000000;
+            background: #f0e68c;
+        }
+        .change-button {
+            margin-top:5px;
+        }
+        .change-button input {
+            display: none;
+        }
+        .change-button label {
+            border-radius: 10px;
+            font-size: 14px;
+            height:40px;
+            padding: 0px 5px;
+            margin:5px 5px;
+            float: left;
+            color: #000000;
+            border: 1px #d3d3d3 solid;
+            background: #f28377;
+        }
+        .change-button input:checked + label {
+            border-radius: 10px;
+            color: #000000;
+            background: #f28377;
+        }
+    </style>
+
+</ons-page>

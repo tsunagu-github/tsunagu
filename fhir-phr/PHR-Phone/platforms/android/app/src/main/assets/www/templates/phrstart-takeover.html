@@ -1,0 +1,81 @@
+<link rel="stylesheet" href="lib/onsenui/css/onsen-css-components-blue-basic-theme.css">
+<ons-page ng-controller="phrStartCtrl">
+    <ons-modal id="modal" animation="fade" style="background-color:#ff">
+        <ons-progress-circular indeterminate></ons-progress-circular><br>
+        データ通信をしています
+    </ons-modal>    <ons-toolbar style="background: #69BB7B">
+        <div class="left"><ons-back-button ng-click="backAction()" style="font-size: smaller;">戻る</ons-back-button></div>
+        <div class="center" style="color: #fff">初期ログインコード入力</div>
+        <div class="right">
+          
+        </div>
+    </ons-toolbar>
+
+    <form name="takeOverForm">
+        <ons-list>
+            <br>
+            <br>
+            <ons-list-item>
+                <ons-row style="margin-left: 20px">
+                    <ons-col aligh="bottom" width="130px" style="color: #00f;">
+                        PHR ID
+                    </ons-col>
+                    <ons-col>
+                        <ons-input style="margin-left: 20px" type="text" placeholder="PHR ID" name="phrid" maxlength="14"  material float ng-pattern="" ng-model="takeOver.phrId" ng-required="true"></ons-input>
+                        <span ng-show="takeOverForm.phrid.$error.required" style="color:red;font-size:smaller;"><br/>必須です</span>
+                    </ons-col>
+                </ons-row>
+            </ons-list-item>
+            <ons-list-item>
+                <ons-row style="margin-left: 20px">
+                    <ons-col aligh="bottom" width="130px" style="color: #00f;">
+                        初期ログインコード
+                    </ons-col>
+                    <ons-col>
+                        <ons-input style="margin-left: 20px" type="text" placeholder="初期ログインコード" name="takeOverCode" maxlength="12" material float ng-model="takeOver.takeOverCode"  ng-required="true"></ons-input>
+                        <span ng-show="takeOverForm.takeOverCode.$error.required" style="color:red;font-size:smaller;"><br/>必須です</span>
+                    </ons-col>
+                </ons-row>
+            </ons-list-item>
+            <ons-list-item>
+                <ons-row  style="margin-left: 20px">
+                    <ons-col aligh="bottom" width="130px" style="color: #00f;">
+                        パスワード
+                    </ons-col>
+                    <ons-col>
+                        <ons-input style="margin-left: 20px" type="text" placeholder="パスワード" name="takeOverPassword" maxlength="12" material float ng-pattern="/^[0-9a-zA-Z]{4,12}$/" ng-model="takeOver.takeOverPassword" ng-required="true"></ons-input>
+                        <span ng-show="takeOverForm.takeOverPassword.$error.required" style="color:red;font-size:smaller;"><br/>必須です</span>
+                        <span ng-show="takeOverForm.takeOverPassword.$error.pattern" style="color:red;font-size:smaller;"><br/>4～12桁の英数字です</span>
+                    </ons-col>
+                </ons-row>
+            </ons-list-item>
+        </ons-list>
+        <br>
+    </form>
+<!--
+    <ons-bottom-toolbar style="height: 65px">
+        <div style="text-align: center">
+            <ons-row>
+                <ons-col>
+                    <ons-toolbar-button ng-click="goToTakeOverResult()" ng-disabled="takeOverForm.$invalid">
+                        <ons-icon icon="fa-pencil" size="30px" style="align-self: center; max-width: 100%;"></ons-icon>
+                        <br/>
+                        <span style="align-self: center; max-width: 100%;min-width: 35px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap; font-size: 16px; line-height: 16px">　登録</span>
+                    </ons-toolbar-button>
+                </ons-col>
+            </ons-row>
+        </div>
+    </ons-bottom-toolbar>
+-->
+    <ons-bottom-toolbar style="height: 3.4rem;">
+      <div style="float: right; width: 100%">
+        <ons-toolbar-button ng-click="goToTakeOverResult()" ng-disabled="takeOverForm.$invalid" style="color: darkslategrey; display: flex; flex: 1 1 0; flex-direction: column; justify-content: center; position: relative; text-align: center; text-overflow: ellipsis; white-space: nowrap;height: 2.8rem; line-height: 2.6rem;">
+          <ons-icon icon="ion-compose" size="30px" style="align-self: center; max-width: 100%;"></ons-icon>
+          <span style="align-self: center; max-width: 100%;min-width: 35px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap; font-size: 16px; line-height: 16px">登録</span>
+        </ons-toolbar-button>
+      </div>
+    </ons-bottom-toolbar>
+
+
+
+</ons-page>

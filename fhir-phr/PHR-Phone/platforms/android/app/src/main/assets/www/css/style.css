@@ -1,0 +1,81 @@
+.segment-notification {
+  position: absolute;
+  margin-left: -54px;
+  margin-top: -16px;
+  min-width: 16px;
+  font-size: 16px;
+  line-height: 16px;
+  height: 16px;
+}
+
+.unread-notification {
+  position: absolute;
+  margin-left: -4px;
+  margin-top: -16px;
+  min-width: 16px;
+  font-size: 16px;
+  line-height: 16px;
+  height: 16px;
+  background: cornflowerblue;
+  font-size: 14px;
+}
+
+.tabbar .ui-btn .ui-btn-inner {
+    padding-top: 40px !important; 
+}
+
+.tabbar .ui-btn .ui-icon { 
+    width: 32px!important; 
+    height: 32px!important; 
+    margin-left: -16px !important; 
+    box-shadow: none!important; 
+    -moz-box-shadow: none!important; 
+    -webkit-box-shadow: none!important;
+    -webkit-border-radius: none !important;
+    border-radius: none !important; 
+}
+
+#train .ui-icon { 
+    background-image: url(../images/icon.png);
+    background-repeat: no-repeat;
+    background-size : 32px 32px;
+}
+
+#train-image {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+    height: 90%;
+    border: 1px solid #000;
+    box-shadow: 1px 1px 3px #000;
+}
+    
+#credit {
+    text-align: right;
+    font-size: 90%;
+}
+
+/* set padding for iOS7 status bar */
+.ua-ios-7 .ui-page, .ua-ios-8, .ui-page {
+    padding-top: 63px !important;
+}
+
+.ua-ios-7 .ui-header, .ua-ios-8 .ui-header {
+    top: 20px;
+}
+
+.sample3-1::before{
+    left: 4px;
+    box-sizing: border-box;
+    width: 4px;
+    height: 4px;
+    border: 4px solid transparent;
+    border-left: 4px solid #7a0;
+}
+.sample3-1::after{
+    left: 0;
+    width: 6px;
+    height: 4px;
+    border-left: 4px solid #7a0;
+}

@@ -1,0 +1,61 @@
+<link rel="stylesheet" href="lib/onsenui/css/onsen-css-components-blue-basic-theme.css">
+<ons-page ng-controller="takeOverCtrl">
+    <ons-toolbar style="background: #69BB7B">
+        <div class="left"><ons-back-button style="font-size: smaller;">メニューへ</ons-back-button></div>
+        <div class="center" style="color: #fff">
+<!--            引継ぎコード発行-->
+            初期ログインコード発行
+        </div>
+        <div class="right">
+           <ons-toolbar-button ng-click="app.slidingMenu.toggleMenu()"><ons-icon icon="bars" style="color: #fff"></ons-icon></ons-toolbar-button>
+        </div>
+    </ons-toolbar>
+    <form name="takeOverForm">
+        <br>
+        <div class="center" style="color: #00f; margin-left: 20px">データ引継ぎに必要なパスワードを入力してください。</div>
+        <br>
+        <ons-row>
+            <ons-col width="5%"></ons-col>
+            <ons-col width="95%">
+                <ons-input type="text" name="takeOverPassword" maxlength="12" float  placeholder="引継ぎパスワード" ng-pattern="/^[0-9a-zA-Z]{4,12}$/" ng-model="takeOver.takeOverPassword" ng-required="true"></ons-input>
+                <span ng-show="takeOverForm.takeOverPassword.$error.required" style="color:red;font-size:smaller;"><br/>引継ぎパスワードは必須です</span>
+            </ons-col>
+        </ons-row>
+        
+        <hr>
+        <br>
+        <ons-row>
+            <ons-col width="5%"></ons-col>
+            <ons-col width="95%" style="color: #00f;">
+                パスワードは4～12文字の
+                <br>
+                半角英数字を入力してください。
+            </ons-col>
+        </ons-row>
+    </form>
+<!--    
+    <ons-bottom-toolbar style="height: 65px">
+        <div style="text-align: center">
+        <table style="width:100%;">
+            <tr>
+                <ons-toolbar-button ng-disabled="takeOverForm.$invalid" ng-click="goToTakeoverConfirm()" >
+                    <ons-icon icon="ion-compose" size="30px" style="align-self: center; max-width: 100%;"></ons-icon>
+                    <br/>
+                    <span style="align-self: center; max-width: 100%;min-width: 35px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap; font-size: 16px; line-height: 16px">　発行</span>
+                </ons-toolbar-button>
+            </tr>
+        </table>
+        </div>
+    </ons-bottom-toolbar>
+-->    
+    <ons-bottom-toolbar style="height: 3.4rem;">
+      <div style="float: right; width: 50%">
+        <ons-toolbar-button ng-click="goToTakeoverConfirm()" ng-disabled="takeOverForm.$invalid" style="color: darkslategrey; display: flex; flex: 1 1 0; flex-direction: column; justify-content: center; position: relative; text-align: center; text-overflow: ellipsis; white-space: nowrap;height: 2.8rem; line-height: 2.6rem;">
+          <ons-icon icon="ion-compose" size="30px" style="align-self: center; max-width: 100%;"></ons-icon>
+          <span style="align-self: center; max-width: 100%;min-width: 35px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap; font-size: 16px; line-height: 16px">発行</span>
+        </ons-toolbar-button>
+      </div>
+    </ons-bottom-toolbar>
+
+    
+</ons-page>

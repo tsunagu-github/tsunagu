@@ -1,0 +1,139 @@
+<ons-page ng-controller="phrStartCtrl">
+    <ons-toolbar style="background: #69BB7B">
+        <div class="left" style="margin-left: 20px;color: #fff">PHR ID発行</div>
+        <div class="center" style="color: #fff"></div>
+        <div class="right"></div>
+    </ons-toolbar>
+    <form class="form-inline">
+        <ons-list>
+       <ons-list-item>
+            <ons-row>
+                <ons-col width="120px" align="left">管理番号<br></ons-col>
+                <ons-col align="left" >{{patient.insurerNo}}</ons-col>
+            </ons-row>
+        </ons-list-item>
+        <ons-list-item>
+            <ons-row>
+                <ons-col width="120px" align="left">氏名（姓）</ons-col>
+                <ons-col align="left">{{patient.familyName}}</ons-col>
+            </ons-row>
+        </ons-list-item>
+        <ons-list-item>
+            <ons-row>
+                <ons-col width="120px" align="left">氏名（名）</ons-col>
+                <ons-col align="left">{{patient.givenName}}</ons-col>
+            </ons-row>
+        </ons-list-item>
+        <ons-list-item>
+            <ons-row>
+                <ons-col width="120px" align="left">カナ氏名（姓）</ons-col>
+                <ons-col align="left">{{patient.familyKana}}</ons-col>
+            </ons-row>
+        </ons-list-item>
+        <ons-list-item>
+            <ons-row>
+                <ons-col width="120px" align="left">カナ氏名（名）</ons-col>
+                <ons-col align="left">{{patient.givenKana}}</ons-col>
+            </ons-row>
+        </ons-list-item>
+        <ons-list-item>
+            <ons-row>
+                <ons-col width="120px" align="left">性別</ons-col>
+                <ons-col align="left">{{sexCodeMap[patient.sexCd]}}</ons-col>
+            </ons-row>
+        </ons-list-item>
+        <ons-list-item>
+            <ons-row>
+                <ons-col width="120px" align="left">生年月日</ons-col>
+                <ons-col align="left">{{patient.birthDate}}</ons-col>
+            </ons-row>
+        </ons-list-item>
+        <ons-list-item>
+            <ons-row>
+                <ons-col width="120px" align="left">郵便番号</ons-col>
+                <ons-col align="left">{{patient.zipCode}}</ons-col>
+            </ons-row>
+        </ons-list-item>        
+        <ons-list-item>
+            <ons-row>
+                <ons-col width="120px" align="left">都道府県</ons-col>
+                <ons-col align="left">{{patient.prefectureName}}</ons-col>
+            </ons-row>
+        </ons-list-item>         
+        <ons-list-item>
+            <ons-row>
+                <ons-col width="120px" align="left">住所</ons-col>
+                <ons-col align="left">{{patient.addressLine}}</ons-col>
+            </ons-row>
+        </ons-list-item>           
+        <ons-list-item>
+            <ons-row>
+                <ons-col width="120px" align="left">建物名等</ons-col>
+                <ons-col align="left">{{patient.buildingName}}</ons-col>
+            </ons-row>
+        </ons-list-item>         
+        <ons-list-item>
+            <ons-row>
+                <ons-col width="120px" align="left">主たる連絡先</ons-col>
+                <ons-col align="left">{{patient.telNo}}</ons-col>
+            </ons-row>
+        </ons-list-item>         
+        <ons-list-item>
+            <ons-row>
+                <ons-col width="120px" align="left">その他連絡先</ons-col>
+                <ons-col align="left">{{patient.otherContactNo}}</ons-col>
+            </ons-row>
+        </ons-list-item>       
+        <ons-list-item>
+            <ons-row>
+                <ons-col width="120px" align="left">メールアドレス</ons-col>
+                <ons-col align="left">{{patient.emailAddress}}</ons-col>
+            </ons-row>
+        </ons-list-item>    
+        <ons-list-item>
+            <ons-row>
+                <ons-col width="200px" align="left">疾病管理（アラート・リマインダ）</ons-col>
+                <ons-col align="left">{{patient.diseaseManagement == "true" || patient.diseaseManagement == true ? 'する' : 'しない'}}</ons-col>
+            </ons-row>
+        </ons-list-item>
+        </ons-list>
+        <br>
+    </form>
+<!--
+    <ons-bottom-toolbar style="height: 65px">
+        <ons-row>
+            <ons-col style="text-align: center">
+                <ons-toolbar-button ng-click="backToRulesView()">
+                    <ons-icon icon="angle-left" size="30px" style="align-self: center; max-width: 100%;"></ons-icon>
+                    <br/>
+                    <span style="align-self: center; max-width: 100%;min-width: 35px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap; font-size: 16px; line-height: 16px">　修正</span>
+                    </ons-toolbar-button>
+                </ons-col>
+            <ons-col style="text-align: center">
+                <ons-toolbar-button ng-click="goToPhrStartPhridView()">
+                    <ons-icon icon="angle-right" size="30px" style="align-self: center; max-width: 100%;"></ons-icon>
+                    <br/>
+                    <span style="align-self: center; max-width: 100%;min-width: 35px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap; font-size: 16px; line-height: 16px">新規PHR ID発行</span>
+                </ons-toolbar-button>
+            </ons-col>
+        </ons-row>
+    </ons-bottom-toolbar>
+-->
+    <ons-bottom-toolbar style="height: 3.4rem;">
+      <div style="float: left; width: 50%">
+        <ons-toolbar-button ng-click="backToRulesView()" style="color: darkslategrey; display: flex; flex: 1 1 0; flex-direction: column; justify-content: center; position: relative; text-align: center; text-overflow: ellipsis; white-space: nowrap;height: 2.8rem; line-height: 2.6rem;">
+          <ons-icon icon="angle-left" size="30px" style="align-self: center; max-width: 100%;"></ons-icon>
+          <span style="align-self: center; max-width: 100%;min-width: 35px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap; font-size: 16px; line-height: 16px">修正
+          </span>
+        </ons-toolbar-button>
+      </div>
+      <div style="float: right; width: 50%">
+        <ons-toolbar-button ng-click="goToPhrStartPhridView()" style="color: darkslategrey; display: flex; flex: 1 1 0; flex-direction: column; justify-content: center; position: relative; text-align: center; text-overflow: ellipsis; white-space: nowrap;height: 2.8rem; line-height: 2.6rem;">
+          <ons-icon icon="angle-right" size="30px" style="align-self: center; max-width: 100%;"></ons-icon>
+          <span style="align-self: center; max-width: 100%;min-width: 35px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap; font-size: 16px; line-height: 16px">新規PHR ID発行</span>
+        </ons-toolbar-button>
+      </div>
+    </ons-bottom-toolbar>
+
+
+</ons-page>

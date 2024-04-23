@@ -1,0 +1,157 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+                           http://www.springframework.org/schema/aop
+                           http://www.springframework.org/schema/aop/spring-aop-4.0.xsd
+                           http://www.springframework.org/schema/context
+                           http://www.springframework.org/schema/context/spring-context-3.2.xsd
+                           http://www.springframework.org/schema/mvc
+                           http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd
+                           http://www.springframework.org/schema/tx 
+                           http://www.springframework.org/schema/tx/spring-tx-4.0.xsd">
+
+  <mvc:interceptors>
+    <mvc:interceptor>
+        <mvc:mapping path="/**"/>
+        <bean class="phr.web.RequestInterceptor" />
+    </mvc:interceptor>
+  </mvc:interceptors>
+  
+	<!-- アノテーションインジェクションの設定 -->
+	<context:annotation-config/>
+	<context:component-scan base-package="phr.web." />
+        
+	<!-- セッションユーティリティー -->
+	<bean id="SessionUtility" class="phr.web.SessionUtility" />
+        
+	<!-- ユーザ認証サービス -->
+	<bean id="UserAuthenticationService" class="phr.service.impl.UserAuthenticationService" />
+        
+	<!-- ユーザマネージメントサービス -->
+	<bean id="UserAccountManagementService" class="phr.service.impl.UserAccountManagementService" />
+        
+        <!-- アラート一覧サービス -->
+	<bean id="AlertSearchService" class="phr.service.impl.AlertSearchService" />
+        
+        <!-- メッセージ一覧サービス(保険者view) -->
+	<bean id="MessageListService" class="phr.service.impl.MessageListService" />
+        
+        <!-- メッセージ詳細サービス(保険者view) -->
+	<bean id="MessageSelectService" class="phr.service.impl.MessageSelectService" />
+        
+        <!-- メッセージ返信サービス(保険者view) -->
+	<bean id="MessageReplyService" class="phr.service.impl.MessageReplyService" />
+        
+	<!-- ワンタイムパスワードサービス -->
+	<bean id="OnetimePasswordService" class="phr.service.impl.OnetimePasswordService" />
+
+	<!-- 患者マネジメントサービス -->
+	<bean id="PatientManagementService" class="phr.service.impl.PatientManagementService" />
+        
+        <!-- おしらせ一覧サービス -->
+	<bean id="NoticeService" class="phr.service.impl.NoticeService" />
+        
+        <!-- おしらせ詳細サービス -->
+	<bean id="NoticeDetailService" class="phr.service.impl.NoticeDetailService" />
+        
+        <!-- おしらせ新規登録サービス -->
+	<bean id="NoticeNewCreateService" class="phr.service.impl.NoticeNewCreateService" />
+
+        <!-- ユーザマネージメントサービス -->
+        <bean id="TargetingPatientInfoService" class="phr.service.impl.TargetingPatientInfoService" />
+
+        <!-- 患者検査結果項目サービス -->
+        <bean id="ObservationEventService" class="phr.service.impl.ObservationEventService" />
+        
+        <!-- 検査結果登録サービス -->
+        <bean id="ObservationEntryService" class="phr.service.impl.ObservationEntryService" />
+        
+        <!-- 調剤情報サービス -->
+        <bean id="DosageService" class="phr.service.impl.DosageService"/>
+        
+        <!-- コミニケーションサービス -->
+        <bean id="CommunicationService" class="phr.service.impl.CommunicationService"/>
+
+        <!-- 医療機関認証 -->
+        <bean id="MedicalUserAuthenticationService" class="phr.service.impl.MedicalUserAuthenticationService" />
+
+        <!-- メッセージ一覧サービス -->
+	<bean id="MedicalMessageListService" class="phr.service.impl.MedicalMessageListService" />
+
+        <!-- メッセージ一覧サービス -->
+	<bean id="MedicalMessageSelectService" class="phr.service.impl.MedicalMessageSelectService" />
+
+        <!-- メッセージ返信サービス -->
+	<bean id="MedicalMessageReplayService" class="phr.service.impl.MedicalMessageReplayService" />
+
+        <!-- アラート設定サービス -->
+	<bean id="AlertSetService" class="phr.service.impl.AlertSetService" />
+
+        <!-- アラート設定サービス -->
+	<bean id="AlertSpecificService" class="phr.service.impl.AlertSpecificService" />
+
+        <!-- 自動計算実施サービス -->
+	<bean id="AutoCalcService" class="phr.service.impl.AutoCalcService" />
+
+        <!-- メッセージ返信サービス -->
+	<bean id="TargetingPatientMessageService" class="phr.service.impl.TargetingPatientMessageService" />
+
+        <!-- 特定健診登録 -->
+	<bean id="SpecificMedicalCheakUpFormService" class="phr.service.impl.SpecificMedicalCheakUpFormService" />
+        
+        <!-- 検査結果登録 -->
+	<bean id="MInCSResultImportService" class="phr.service.impl.MInCSResultImportService" />
+
+        <!-- アクセスログ -->
+	<bean id="AccessLogsService" class="phr.service.impl.AccessLogsService" />
+        
+        <!-- ユーザ管理 -->
+	<bean id="UserManageService" class="phr.service.impl.UserManageService" />
+        
+        <!-- ユーザ編集 -->
+	<bean id="UserManageEditService" class="phr.service.impl.UserManageEditService" />
+        
+        <!-- 医療機関管理画面  -->
+	<bean id="MedicalSearchService" class="phr.service.impl.MedicalSearchService" />
+        
+        <!-- 医療機関登録画面  -->
+	<bean id="MedicalCreateEditService" class="phr.service.impl.MedicalCreateEditService" />
+        
+        <!-- 検査結果登録 -->
+	<bean id="MedicalKensaEntryService" class="phr.service.impl.MedicalKensaEntryService" />
+
+        <!-- 検査結果登録 -->
+	<bean id="MedicalKensaPatientService" class="phr.service.impl.MedicalKensaPatientService" />
+        
+        <!-- 検査結果登録 -->
+	<bean id="MedicalKensaEntryInputService" class="phr.service.impl.MedicalKensaEntryInputService" />
+
+        <!-- 検査結果登録確認画面 -->
+	<bean id="MedicalKensaEntryConfirmService" class="phr.service.impl.MedicalKensaEntryConfirmService" />
+        
+        <!-- 管理項目画面  -->
+	<bean id="ManagementItemService" class="phr.service.impl.ManagementItemService" />
+        
+        <!-- リマインダプッシュ画面  -->
+	<bean id="ReminderPushService" class="phr.service.impl.ReminderPushService" />
+    
+        <!-- 施設患者（閲覧同意確認）  -->
+    <bean id="MedicalOrganizationPatientService" class="phr.service.impl.MedicalOrganizationPatientService" />
+    
+        <!-- 管理項目JLAC10  -->
+    <bean id="ObservationDefinitionJlac10Service" class="phr.service.impl.ObservationDefinitionJlac10Service" />
+    
+        <!-- JLAC10分析物情報  -->
+    <bean id="JLAC10AnalyteCodeService" class="phr.service.impl.JLAC10AnalyteCodeService" />
+    
+        <!-- JLAC11測定物情報  -->
+    <bean id="JLAC11AnalyteCodeService" class="phr.service.impl.JLAC11AnalyteCodeService" />
+    
+        <!-- 検査結果情報  -->
+    <bean id="ObservationService" class="phr.service.impl.ObservationService" />
+</beans>

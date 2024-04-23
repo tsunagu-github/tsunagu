@@ -1,0 +1,133 @@
+<ons-page ng-controller="selfCheckDetailCtrl">
+    <ons-toolbar style="background: #69BB7B">
+        <div class="left" ><ons-back-button style="font-size: smaller;">一覧へ</ons-back-button></div>
+        <div class="center" style="color: #fff">自己測定</div>
+        <div class="right">
+           <ons-toolbar-button ng-click="app.slidingMenu.toggleMenu()"><ons-icon icon="bars" style="color: #fff"></ons-icon></ons-toolbar-button>
+        </div>
+    </ons-toolbar>
+    <ons-row style="height: 30px;">
+        <ons-col width="4%" align="bottom">
+        </ons-col>
+        <ons-col align="bottom" style="color:blue">
+            自己測定結果入力
+        </ons-col>
+    </ons-row>
+
+    <form class="form-inline" name="inputForm2">
+        <ons-list>
+            <ons-list-item>
+                <ons-row>
+                    <ons-col width="10%" align="bottom">
+                        <ons-icon
+                            icon="calendar"
+                            size="25px"
+                            fixed-width="false"
+                            style="color: #FFA713; padding-right: 10px;">
+                        </ons-icon>
+                    </ons-col>
+                    <ons-col align="bottom" width="35%" style="color: #00f;text-align: left">
+                        測定日時
+                    </ons-col>
+                    <ons-col width="55%" align="bottom" style="color: #000;text-align: left">
+                        <ons-input type="datetime-local" name="checkDate"  ng-step="60"  style="border-bottom: 1px solid #ccc;" ng-model="oneSelfCheckData.checkDate"  ng-required="true"></ons-input>
+                        <span ng-show="phrForm.checkDate.$error.required" style="color:red;font-size:smaller;"><br>入力してください</span>
+
+                    </ons-col>
+                </ons-row>
+            </ons-list-item>
+            <ons-list-item>
+                <ons-row>
+                    <ons-col width="10%" align="bottom">
+                        <ons-icon
+                            icon="arrow-circle-o-up"
+                            size="25px"
+                            fixed-width="false"
+                            style="color: #FFA713; padding-right: 10px;">
+                        </ons-icon>
+                    </ons-col>
+                    <ons-col align="bottom" width="35%" style="color: #00f;text-align: left">
+                        収縮期血圧
+                    </ons-col>
+                    <ons-col align="bottom" width="20%" style="color: #000">
+                        <ons-input style="width: 85%;border-bottom: 1px solid #ccc;" name="diastolicBP" placeholder="" float ng-model="oneSelfCheckData.systolicBP" ></ons-input>
+                    </ons-col>
+                    <ons-col align="bottom" width="35%" style="color: #000;text-align: left">
+                        mmHg
+                    </ons-col>
+                </ons-row>
+            </ons-list-item>
+            <ons-list-item>
+                <ons-row>
+                    <ons-col width="10%" align="bottom">
+                        <ons-icon
+                            icon="arrow-circle-o-down"
+                            size="25px"
+                            fixed-width="false"
+                            style="color: #FFA713; padding-right: 10px;">
+                        </ons-icon>
+                    </ons-col>
+                    <ons-col align="bottom" width="35%" style="color: #00f;text-align: left">
+                        拡張期血圧
+                    </ons-col>
+                    <ons-col align="bottom" width="20%" style="color: #000">
+                        <ons-input style="width: 85%;border-bottom: 1px solid #ccc;" name="systolicBP" placeholder="" float ng-model="oneSelfCheckData.diastolicBP" ></ons-input>
+                    </ons-col>
+                    <ons-col align="bottom" width="35%" style="color: #000;text-align: left">
+                        mmHg
+                    </ons-col>
+                </ons-row>
+            </ons-list-item>
+            <ons-list-item>
+                <ons-row>
+                    <ons-col width="10%" align="bottom">
+                        <ons-icon
+                            icon="ion-speedometer"
+                            size="25px"
+                            fixed-width="false"
+                            style="color: #FFA713; padding-right: 10px;">
+                        </ons-icon>
+                    </ons-col>
+                    <ons-col align="bottom" width="35%" style="color: #00f;text-align: left">
+                        体重
+                    </ons-col>
+                    <ons-col align="bottom" width="20%" style="color: #000">
+                        <ons-input style="width: 85%;border-bottom: 1px solid #ccc;" name="weight" placeholder="" float ng-model="oneSelfCheckData.weight" ></ons-input>
+                    </ons-col>
+                    <ons-col align="bottom" width="35%" style="color: #000;text-align: left">
+                        kg
+                    </ons-col>
+                </ons-row>
+            </ons-list-item>
+            <ons-list-item>
+                <ons-row>
+                    <ons-col width="10%" align="bottom">
+                        <ons-icon
+                            icon="ion-ios-heart"
+                            size="25px"
+                            fixed-width="false"
+                            style="color: #FFA713; padding-right: 10px;">
+                        </ons-icon>
+                    </ons-col>
+                    <ons-col align="bottom" width="35%" style="color: #00f;text-align: left">
+                        血糖
+                    </ons-col>
+                    <ons-col align="bottom" width="20%" style="color: #000">
+                        <ons-input style="width: 85%;border-bottom: 1px solid #ccc;" name="bloodGlucose" placeholder="" float ng-model="oneSelfCheckData.bloodGlucose" ></ons-input>
+                    </ons-col>
+                    <ons-col align="bottom" width="35%" style="color: #000;text-align: left">
+                        mg/dL
+                    </ons-col>
+                </ons-row>
+            </ons-list-item>
+        </ons-list>
+    </form>
+    <ons-bottom-toolbar style="height: 3.4rem;">
+      <div style="float: right; width: 50%">
+        <ons-toolbar-button ng-click="entryConfirm(oneCooperationData )" ng-disabled="inputForm2.$invalid" style="color: darkslategrey; display: flex; flex: 1 1 0; flex-direction: column; justify-content: center; position: relative; text-align: center; text-overflow: ellipsis; white-space: nowrap;height: 2.8rem; line-height: 2.6rem;">
+          <ons-icon icon="fa-pencil" size="30px" style="align-self: center; max-width: 100%;"></ons-icon>
+          <span style="align-self: center; max-width: 100%;min-width: 35px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap; font-size: 16px; line-height: 16px">登 録</span>
+        </ons-toolbar-button>
+      </div>
+    </ons-bottom-toolbar>
+</ons-page>

@@ -1,0 +1,63 @@
+{
+  "targetChartDefinition": {
+    "chartDefinitionId": 0,
+    "viewCount": 0,
+    "commonFlg": 0,
+    "dataInputType": 2,
+    "chartObservationList": [
+      {
+        "chartDefinitionId": 0,
+        "observationDefinitionId": "0000000032",
+        "observationDefinitionName": "収縮期血圧",
+        "selected": false
+      },
+      {
+        "chartDefinitionId": 0,
+        "observationDefinitionId": "0000000033",
+        "observationDefinitionName": "拡張期血圧",
+        "selected": false
+      },
+      {
+        "chartDefinitionId": 0,
+        "observationDefinitionId": "0000000101",
+        "observationDefinitionName": "体重",
+        "selected": false
+      },
+      {
+        "chartDefinitionId": 0,
+        "observationDefinitionId": "0000000102",
+        "observationDefinitionName": "血糖",
+        "selected": false
+      }
+    ]
+  },
+  "colorList": [
+    {
+      "cd": "red",
+      "val": "赤"
+    },
+    {
+      "cd": "blue",
+      "val": "青"
+    },
+    {
+      "cd": "green",
+      "val": "緑"
+    },
+    {
+      "cd": "yellow",
+      "val": "黄"
+    },
+    {
+      "cd": "purple",
+      "val": "紫"
+    },
+    {
+      "cd": "gray",
+      "val": "灰"
+    }
+  ],
+  "status": "0",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36",
+  "browserType": "Windows"
+}

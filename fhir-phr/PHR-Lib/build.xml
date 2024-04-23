@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="PHR-Lib" default="create_jar" basedir=".">
+	<property name="root" value="./target/"/>
+	<property name="class_dir" value="${root}classes/"/>
+	<property name="assemble" value="${root}assemble/"/>
+	<property name="pom_dir" value="${assemble}META-INF/maven/AMED-PHR/PHR-Lib/"/>
+
+	<!-- =================================================================-->
+	<!-- ビルドディレクトリ削除                                           -->
+	<!-- =================================================================-->
+	<target name="clean_files">
+		<delete dir="${assemble}"/>
+		<delete dir="${dist}"/>
+	</target>
+
+	<!-- ======================================================= -->
+	<!-- JAR ファイル作成                                    -->
+	<!-- ======================================================= -->
+	<target name="create_jar" depends="clean_files">
+		<echo message="------------------------------------------------------" />
+		<echo message="- Create JAR File" />
+		<echo message="------------------------------------------------------" />
+		
+		<mkdir dir="${assemble}"/>
+		<mkdir dir="${pom_dir}"/>
+		
+		<copy todir="${assemble}">
+			<fileset dir="${class_dir}" includes="**/*.class" />
+		</copy>
+		<copy file="${root}maven-archiver/pom.properties" tofile="${pom_dir}pom.properties"/>
+		<copy file="./pom.xml" tofile="${pom_dir}pom.xml"/>
+		<copy file="${class_dir}phr-system.config-war" tofile="${assemble}phr-system.config"/>
+
+		<jar jarfile="${root}PHR-Lib.jar" basedir="${assemble}" />
+
+	</target>
+
+
+  <target name="full">
+    <echo message="あああああああ" />
+  </target>
+</project>

@@ -1,0 +1,26 @@
+<ons-page ng-controller="parientCtrl">
+    <ons-toolbar style="background: #69BB7B">
+        <div class="left" ><ons-back-button style="font-size: smaller;">一覧へ</ons-back-button></div>
+        <div class="center" style="color: #fff">利用停止手続き</div>
+        <div class="right">
+           <ons-toolbar-button ng-click="app.slidingMenu.toggleMenu()"><ons-icon icon="bars" style="color: #fff"></ons-icon></ons-toolbar-button>
+        </div>
+    </ons-toolbar>
+
+    <br><br>
+    <div style="text-align: center; font-size: 20px;">
+        ダイナミックコンセント機能の利用を<br>
+        停止してもよろしいですか？
+    </div>
+
+    <br><br>
+    <div style="text-align: center; margin: 10px;">
+        <ons-button style="background: #f0e68c; color: #000000; font-size: 20px; width: 150px; padding: 10px;" ng-click="deleteCancel()">
+            キャンセル
+        </ons-button>
+        <ons-button style="background: #f08b8b; color: #000000; font-size: 20px; width: 150px; padding: 10px;" ng-click="deleteAction()">
+            実行
+        </ons-button>
+    </div>
+
+</ons-page>

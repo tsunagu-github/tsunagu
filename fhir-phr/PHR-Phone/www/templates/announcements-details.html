@@ -1,0 +1,52 @@
+<ons-page ng-controller="announceDetailCtrl">
+    <ons-toolbar style="background: #69BB7B;">
+        <div class="left"><ons-back-button>一覧へ</ons-back-button></div>
+        <div class="center" style="color: #fff">
+            <div ng-if="announce.type===2">メッセージ</div><div ng-if="announce.type!==2">お知らせ</div>
+        </div>
+        <div class="right">　</div>
+    </ons-toolbar>
+
+  <div style="background-color: #f9f9f9;">
+    <ul class="list">
+      <li class="list__item">
+            <ons-icon ng-if="announce.type===2" icon="ion-email" size="28px" fixed-width="false" style="color: #F0E68C; padding:2px 5px 0 0;"></ons-icon>
+            <ons-icon ng-if="announce.type!==2" icon="ion-ios-bell" size="28px" fixed-width="false" style="color: #F0E68C; padding:2px 5px 0 0;"></ons-icon>
+        <div class="list__item__left">
+            <div class="list__item__title" style="font-weight: 500;color: #708090">{{announce.senderName}}</div>
+        </div>
+        <div class="list__item__right" style="border-bottom: none;">
+            <img ng-if="announce.type===2 && !announce.self" class="list__item__thumbnail" ng-src="mock-data/img/imgcheckups.bmp"/>
+            <img ng-if="announce.type!==2" class="list__item__thumbnail" ng-src="mock-data/img/Xsds_off.jpg"/>
+        </div>
+      </li>
+
+      <hr style="margin-top: 0">
+      <li class="list__item">
+        <div class="list__item__left">
+            <div class="list__item__subtitle" style="margin-top: 10px;margin-left: 6px;font-weight: 500;color: navy">{{announce.subject}}</div>
+        </div>
+        <div class="list__item__right" style="border-bottom: none;">
+          <div class="list__item__label">{{announce.date}}</div>
+        </div>
+      </li>
+      
+      <hr style="margin: 0">
+      <li class="list__item" style="border-bottom:1px #708090 solid; padding: 15px">
+        <div class="list__item__left">
+            <p style="white-space: pre-wrap; margin-top: 6px; margin-bottom: 50px">{{announce.bodyText}}</p>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+    <ons-bottom-toolbar style="height: 3.4rem;">
+      <div style="float: right; width: 50%">
+        <ons-toolbar-button ng-if="announce.type===2 && !announce.self" ng-click="replyTo(announce)" style="color: darkslategrey; display: flex; flex: 1 1 0; flex-direction: column; justify-content: center; position: relative; text-align: center; text-overflow: ellipsis; white-space: nowrap;height: 2.8rem; line-height: 2.6rem;">
+          <ons-icon icon="ion-compose" size="30px" style="align-self: center; max-width: 100%;"></ons-icon>
+          <span style="align-self: center; max-width: 100%;min-width: 35px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap; font-size: 16px; line-height: 16px">
+              返 信</span>
+        </ons-toolbar-button>
+      </div>
+    </ons-bottom-toolbar>
+</ons-page>

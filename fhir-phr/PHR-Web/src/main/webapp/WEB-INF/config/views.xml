@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+  "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN" 
+  "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+
+<tiles-definitions>
+  <definition name="passwordChange" extends="default">
+    <put-attribute name="body" value="/WEB-INF/jsp/passwordChange.jsp" />
+  </definition>
+  <definition name="passwordChangeConfirm" extends="default">
+    <put-attribute name="body" value="/WEB-INF/jsp/passwordChangeConfirm.jsp" />
+  </definition>
+  <definition name="targetingPatient" extends="default">
+    <put-attribute name="body" value="/WEB-INF/jsp/targetingPatient.jsp" />
+  </definition>
+  <definition name="insurerAccountManagement" extends="default">
+    <put-attribute name="body" value="/WEB-INF/jsp/insurerAccountManagement.jsp" />
+  </definition>
+  <definition name="messageList" extends="default">
+    <put-attribute name="body" value="/WEB-INF/jsp/messageList.jsp" />
+  </definition>
+  <definition name="alertSearch" extends="default">
+    <put-attribute name="body" value="/WEB-INF/jsp/alertSearch.jsp" />
+  </definition>
+  <definition name="notice" extends="default">
+    <put-attribute name="body" value="/WEB-INF/jsp/notice.jsp" />
+  </definition>
+  <definition name="specificMedicalCheakUpForm" extends="default">
+    <put-attribute name="body" value="/WEB-INF/jsp/specificMedicalCheakUpForm.jsp" />
+  </definition>
+  <definition name="laboratoryResultUpload" extends="default">
+    <put-attribute name="body" value="/WEB-INF/jsp/laboratoryResultUpload.jsp" />
+  </definition>
+  <definition name="medicalMessageList" extends="default">
+    <put-attribute name="body" value="/WEB-INF/jsp/medicalMessageList.jsp" />
+  </definition>
+  <definition name="userManage" extends="default">
+    <put-attribute name="body" value="/WEB-INF/jsp/userManage.jsp" />
+  </definition>
+  <definition name="userManageEdit" extends="default">
+    <put-attribute name="body" value="/WEB-INF/jsp/userManageEdit.jsp" />
+  </definition>
+  <definition name="userManageConfirm" extends="default">
+    <put-attribute name="body" value="/WEB-INF/jsp/userManageConfirm.jsp" />
+  </definition>
+  <definition name="medicalSearch" extends="default">
+    <put-attribute name="body" value="/WEB-INF/jsp/medicalSearch.jsp" />
+  </definition>
+  <definition name="medicalCreateEdit" extends="default">
+    <put-attribute name="body" value="/WEB-INF/jsp/medicalCreateEdit.jsp" />
+  </definition>
+  <definition name="medicalCreateConfirm" extends="default">
+    <put-attribute name="body" value="/WEB-INF/jsp/medicalCreateConfirm.jsp" />
+  </definition>
+  <definition name="medicalKensaEntry" extends="default">
+    <put-attribute name="body" value="/WEB-INF/jsp/medicalKensaEntry.jsp" />
+  </definition>
+  <definition name="medicalKensaPatient" extends="default">
+    <put-attribute name="body" value="/WEB-INF/jsp/medicalKensaPatient.jsp" />
+  </definition>
+  <definition name="medicalKensaEntryInput" extends="default">
+    <put-attribute name="body" value="/WEB-INF/jsp/medicalKensaEntryInput.jsp" />
+  </definition>
+  <definition name="medicalKensaEntryConfirm" extends="default">
+    <put-attribute name="body" value="/WEB-INF/jsp/medicalKensaEntryConfirm.jsp" />
+  </definition>
+  <definition name="managementItemView" extends="default">
+    <put-attribute name="body" value="/WEB-INF/jsp/managementItemView.jsp" />
+  </definition>
+  <definition name="managementItemSetting" extends="default">
+    <put-attribute name="body" value="/WEB-INF/jsp/managementItemSetting.jsp" />
+  </definition>
+  <definition name="managementItemReminder" extends="default">
+    <put-attribute name="body" value="/WEB-INF/jsp/managementItemReminder.jsp" />
+  </definition>
+  <definition name="managementItemReminderDetail" extends="default">
+    <put-attribute name="body" value="/WEB-INF/jsp/managementItemReminderDetail.jsp" />
+  </definition>
+  <definition name="oneTimePass" extends="default">
+    <put-attribute name="body" value="/WEB-INF/jsp/oneTimePass.jsp" />
+  </definition>
+  <definition name="targetingPatientList" extends="default">
+    <put-attribute name="body" value="/WEB-INF/jsp/targetingPatientList.jsp" />
+  </definition>
+  <definition name="studyItemInformation" extends="default">
+    <put-attribute name="body" value="/WEB-INF/jsp/studyItemInformation.jsp" />
+  </definition>
+  <definition name="studyItemInformationEdit" extends="default">
+    <put-attribute name="body" value="/WEB-INF/jsp/studyItemInformationEdit.jsp" />
+  </definition>
+  <definition name="consentNotification" extends="default">
+    <put-attribute name="body" value="/WEB-INF/jsp/consentNotification.jsp" />
+  </definition>
+</tiles-definitions>

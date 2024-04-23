@@ -1,0 +1,194 @@
+ table.medmetaInfo{
+    border: 2px solid #4fc3f7;
+    background: #fff;
+    overflow: auto;
+    width:90%;
+    margin: 0 auto 5px;
+    color: #999;           
+}
+ table.medpatMessage{
+    border: 2px solid #8b0000;
+    background: #fff;
+    overflow: auto;
+    width:90%;
+    margin: 0 auto 5px;
+    color: #999;           
+}
+
+table.medBody{
+    overflow: auto;
+    width:90%;
+    margin: 0 auto 0;
+}
+.medBody thead{
+    background:#4fc3f7;
+    color: #fff;
+    border-width: 1px 0px;
+}
+.medBody tbody{
+    background: #fff;
+    color: #999;
+    border-width: 1px 0px;
+}
+
+table.blue-table{
+    border: 1px solid #000;
+    font-size: 0.85em;
+}
+.blue-table thead{
+    border: 1px solid #000;
+    background:#1284ff;
+    color:#fff;
+}
+.blue-table tbody{
+    border: 1px solid #000;
+    color:#1284ff;
+}
+.blue-table tbody tr:nth-child(even){
+    background: #eee;
+}
+
+.medcineMetaEntry{
+overflow: auto;
+width:95%;
+margin: 10px auto 5px;
+color: #999;            
+}
+.medicineEntry{
+background: #e3f2fd;
+overflow: auto;
+width:95%;
+margin: 5px auto 0px;
+color: #999;        
+}
+table.medEntryForm{
+     border: 1px solid #4fc3f7;
+     background: #fff;/*#fce4ec;*/
+     width:95%;
+     margin: 0 auto 0;
+}
+table.medEntryForm td.itemname{
+     width:40%;
+}
+table.medEntryForm td.itemmain{
+     width:60%;
+}
+
+.button--medDelete{
+    background-color: red;
+    width:60px;
+    height:30px;
+    margin-top:1px;
+    margin-bottom:1px ;
+    margin-right:10px;
+}
+
+.button--medEntry{
+    background-color: green;     
+}
+.medEntrybutton{
+    margin:10px auto 10px;
+    width:90%;
+}
+
+.button--patinfoEdit{
+    background-color: #8b0000;
+    width:60px;
+    height:30px;
+    padding-top:0px;
+    padding-bottom:0px;
+    text-align: center;
+    font-size:small;
+}
+
+.button--qrReader{
+    background-color: #FFDDFF;
+    color:#000080;
+    width:200px;
+    height:200px;
+    left: 0;
+    right: 0;
+    margin:5em auto 0;
+    border-radius: 50%;  
+    text-align: center;
+    line-height: 40px;
+    position: absolute;
+}
+
+/*
+#standardDate{
+    margin:10px auto 10px;
+}
+#showInspectionResult{
+    margin:10px auto 10px ;
+}
+ table.selfInspection{
+    margin:10px auto 5px;
+    width:80%;
+}
+table.selfInspection td{
+    border-bottom:1px solid #000;
+}*/
+/*スクロール用*/
+thead.scrollHead,tbody.scrollBody{
+  display:block;
+}
+tbody.scrollBody{
+  overflow-y:scroll;
+  height:590px;
+}
+
+幅調整
+td,th{
+  table-layout:fixed;
+}
+.titlename{
+  width:70px;
+}
+.contentValue{
+  width:110px;
+}
+
+/*カレンダー*/
+.today-today {
+    background: skyblue;
+}
+.carousel  {
+    height: 380px;
+    /*margin: 20px 0;*/
+}
+
+ table.calendarTable{
+    width: 80%;
+    height:80%;
+    margin: 1em auto 5px;
+    table-layout: fixed;
+   /* border: 2px #ff0000 solid;*/
+}
+ table.calendarTable tr{
+   /* border: 2px #ff0000 solid;*/
+    padding:0 0 0 0;
+    margin: 0 0 0 0;
+    height:40px;
+}
+ table.calendarTable td{
+    text-align: center;
+    border: 1px #008080 solid;
+    padding:0 0 0 0;
+    margin: 0 0 0 0;
+}
+
+.calendarList{
+    margin: 0 0 0 0;
+    padding:0 0 0 0;
+    height: 150px;
+    overflow-y:scroll;
+    background:#F0F8FF;
+}
+
+
+.scanbutton{
+    text-align: center;
+    margin: 0 0 0 0;
+    padding:1em 0 0 0;
+}

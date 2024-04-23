@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+<meta http-equiv="Content-Language" content="ja" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>ＨＰＫＩ認証エラー</title>
+<style type="text/css">
+    #container {	
+        width: 100%;    
+        position: relative;
+        height: auto !important;
+        height: 100%;
+        min-height: 100%;
+    }
+    #header {
+	height:95px;
+	min-width:960px;
+	background-color: #20b2aa;
+    }
+    #header .inner {
+	width:985px;
+	padding-top:8px;
+	position:relative;
+	height:87px;
+    }
+    #footer {
+        position: absolute;    
+        bottom: 0;    
+        width: 100%;    
+        height: 100px;
+	background-color: #20b2aa;
+	color:#223322;
+	overflow: hidden;
+    }
+    #contents {
+	margin:15px 0 30px 30px;
+	clear:both;
+	min-width: 980px;
+	padding-bottom: 100px;
+    }
+    .section-login {
+	clear: both;
+	position:relative;
+	margin:1em auto;
+	padding:0;
+	width:670px;
+	height:300px;
+	background-color:#fff;
+	border:solid #ADE 1px;
+	border-radius:10px;
+    }
+    .section-title {
+	clear: both;
+	position:relative;
+	margin: 1em auto;
+	padding:0;
+	width:670px;
+	height:50px;
+	background-color:#fff;
+	border:solid #ADE 1px;
+	border-radius:10px;
+    }
+    h1.titlehead {
+	width:520px;
+	margin:0.5em;
+	padding:0 0 0 15px;
+	font-size:128%;
+	color:#000;
+	background-color:#FFF;
+    }
+    /* table */
+    .tablestyle {
+	margin:0;
+	padding:10px 20px 5px;
+    }
+    .headerinfo{
+	height:auto;
+	border-bottom: 5px solid blue;
+    }
+</style>
+<!--<link href="css/import.css" rel="stylesheet" type="text/css" />-->
+<!--[if lt IE 8]><link rel="stylesheet" type="text/css" href="css/common/iefix.css" media="all" /><![endif]-->
+<script src="js/common.js" type="text/javascript"></script>
+<script type="text/javascript">
+</script>
+</head>
+
+<body>
+<div>
+    <div class="headerinfo">
+        <div id="logo">
+            <div style="margin:18px 0 0 20px;font-size:24px;font-weight:bold;color:#002182;">AMED-PHR</div>
+        </div>
+    </div><!-- /:header -->
+    <div id="contents">
+        <div class="section-title"><h1 class="titlehead" style="text-align:left; font-size:150%;">ＨＰＫＩ認証エラー</h1></div>
+        <div class="section-login">
+            <div class="tablestyle" style="text-align:left; font-size:115%;">
+            ＨＰＫＩが認証できませんでした。再度最初からＨＰＫＩカードの認証を行ってください。
+            <!--<div class="red_120_40" style="margin:1em 0.5em 0 1em; float:right"><a href="javascript:goLoginForm();"><span>ログイン画面へ</span></a></div>-->
+            </div>
+        </div>
+    </div><!-- /:contents -->
+    <div>	
+    </div><!-- /:footer -->
+</div><!-- /:container -->
+</body>
+</html>

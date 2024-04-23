@@ -1,0 +1,283 @@
+<ons-page ng-controller="checkUpResultsCtrl">    
+    <ons-toolbar style="background: #69BB7B">
+        <div class="left"><ons-back-button style="font-size: smaller;">メニューへ</ons-back-button></div>
+        <div class="center" style="color: #fff">健診結果</div>
+        <div class="right">
+           <ons-toolbar-button ng-click="app.slidingMenu.toggleMenu()"><ons-icon icon="bars" style="color: #fff"></ons-icon></ons-toolbar-button>
+        </div>
+    </ons-toolbar>
+    
+    <div id="targetDate" style="display: none;">{{checkUpResult.date}}</div>
+    <div id="medicalCheckupId" style="display: none;">{{checkUpResult.medicalCheckupId}}</div>
+    <div id="inquiryId" style="display: none;">{{checkUpResult.inquiryId}}</div>
+    <div id="examinationId" style="display: none;">{{checkUpResult.examinationId}}</div>
+
+   <!-- 健診 -->
+   <ons-template id="medicalCheckup">
+       <div ng-show="isNullVlist" style="margin-top:5em;margin-left:30%;">登録がありません
+           <ons-fab id="befor" position="bottom left" ng-click="countDown('v')" ng-disabled="beforeFlg == false" style="background-color:#0000cd;">
+               <ons-icon
+                       icon="fa-caret-left"
+                       size="30px"
+                       margin="auto"
+                       style="color: #fff;">
+               </ons-icon>
+           </ons-fab>
+
+           <ons-fab id="after" position="bottom right" ng-click="countUp('v')" ng-disabled="futureFlg == false" style="background-color:#0000cd;">
+               <ons-icon
+                       icon="fa-caret-right"
+                       size="30px"
+                       margin="auto"
+                       style="color: #fff;">
+               </ons-icon>
+           </ons-fab>
+       </div>
+       
+       <div ng-hide="isNullVlist">
+
+       <form name="phrForm" style="width:100%;">
+           <div class="center" style="color: white; background: #4169e1; height: 30px; text-align: center">
+               {{checkUpResult.title}}
+           </div>
+       </form>
+
+        <table border="1" style="border-collapse: collapse" width="100%" style="margin:0px 0px 80px 0px; display: {{isTableView}}; border-collapse: collapse; font-size: 0.85em; border: 1px solid #000000;">
+            <thead>
+                <tr style="background: #add8e6; color: black">
+                    <th width="180px" style="border: 1px solid #000000;">検査項目</th>
+                    <th width="100px" style="border: 1px solid #000000;">基準値</th>
+                    <th width="180px" style="border: 1px solid #000000;">値</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="valueInfo in valuelist.dataList">
+                    <td class="titlename" style="text-align: left;">{{valueInfo.title}}</td>
+                    <td class="standardValue" style="text-align: center;" ng-repeat="valuedata in valueInfo.results">{{valuedata.referenceValue}}</td>
+                    <td class="contentValue" style="text-align: center; font-weight: bold; color: {{valuedata.fontColor}}; background: {{valuedata.backgroundColor}};" ng-repeat="valuedata in valueInfo.results">{{valuedata.data}}   {{valueInfo.unit}}</td>
+                </tr>
+            </tbody>
+        </table>
+        <br><br><br><br><br>
+
+        <!--
+        <table class="blue-table" style="margin:10px auto 5em;">
+            <thead class="scrollHead">
+                <tr>
+                    <td class="titlename">特定健診（テスト病院）</td>
+                    <td class="contentValue" ng-repeat="valueyear in valuelist.yearList" ng-show="$index>=valueCounter && $index<=valueCounter +2;">{{valueyear}}</td>
+                </tr>    
+            </thead>
+            <tbody class="scrollBody">
+                <tr ng-repeat="valueInfo in valuelist.dataList">
+                    <td class="titlename">{{valueInfo.title}}<br/>({{valueInfo.unit}})</td>
+                    <td class="contentValue" ng-repeat="valuedata in valueInfo.results" ng-show="$index>=valueCounter && $index<=valueCounter +2;">{{valuedata.data}}</td>
+                </tr>
+            </tbody>
+        </table>
+        -->
+
+       <ons-fab id="befor" position="bottom left" ng-click="countDown('v')" ng-disabled="beforeFlg == false" style="background-color:#0000cd;">
+            <ons-icon
+              icon="fa-caret-left"
+              size="30px"
+              margin="auto"
+              style="color: #fff;">
+            </ons-icon>           
+       </ons-fab>
+
+       <ons-fab id="after" position="bottom right" ng-click="countUp('v')" ng-disabled="futureFlg == false" style="background-color:#0000cd;">
+            <ons-icon
+              icon="fa-caret-right"
+              size="30px"
+              margin="auto"
+              style="color: #fff;">
+            </ons-icon>
+       </ons-fab>
+       </div>
+    </ons-template>
+    <!-- 健診 -->
+
+    <!-- 問診 -->
+    <ons-template id="inquiry">
+       <div ng-show="isNullIlist" style="margin-top:5em;margin-left:30%;">登録がありません
+           <ons-fab id="befor" position="bottom left" ng-click="countDown('i')" ng-disabled="beforeFlg == false" style="background-color:#0000cd;">
+               <ons-icon
+                       icon="fa-caret-left"
+                       size="30px"
+                       margin="auto"
+                       style="color: #fff;">
+               </ons-icon>
+           </ons-fab>
+
+           <ons-fab id="after" position="bottom right" ng-click="countUp('i')" ng-disabled="futureFlg == false" style="background-color:#0000cd;">
+               <ons-icon
+                       icon="fa-caret-right"
+                       size="30px"
+                       margin="auto"
+                       style="color: #fff;">
+               </ons-icon>
+           </ons-fab>
+       </div>
+       
+       <div ng-hide="isNullIlist">
+
+           <form name="phrForm" style="width:100%;">
+               <div class="center" style="color: white; background: #4169e1; height: 30px; text-align: center">
+                   {{checkUpResult.title}}
+               </div>
+           </form>
+
+           <table border="1" style="border-collapse: collapse" width="100%" style="margin:0px 0px 80px 0px; display: {{isTableView}}; border-collapse: collapse; font-size: 0.85em; border: 1px solid #000000;">
+               <thead>
+               <tr style="background: #add8e6; color: black">
+                   <th width="180px" style="border: 1px solid #000000;">問診項目</th>
+                   <th width="100px" style="border: 1px solid #000000;">結果</th>
+               </tr>
+               </thead>
+               <tbody>
+               <tr ng-repeat="inqInfo in inquirylist.dataList">
+                   <td class="titlename" style="text-align: left;">{{inqInfo.title}}</td>
+                   <td class="contentValue" style="text-align: center; font-weight: bold;" ng-repeat="inqdata in inqInfo.results">{{inqdata.data}}   {{inqInfo.unit}}</td>
+               </tr>
+               </tbody>
+           </table>
+           <br><br><br><br><br>
+
+        <!--
+        <table class="blue-table" style="margin:10px auto 5em;">
+            <thead class="scrollHead">
+                <tr>
+                    <td class="titlename">項目</td>
+                    <td class="contentValue" ng-repeat="inqyear in inquirylist.yearList" ng-show="$index>=inqCounter && $index<=inqCounter +2;">{{inqyear}}</td>
+                </tr>    
+            </thead>
+            <tbody class="scrollBody">
+                <tr ng-repeat="inqInfo in inquirylist.dataList">
+                    <td class="titlename">{{inqInfo.title}}</td>
+                    <td class="contentValue" ng-repeat="inqdata in inqInfo.results" ng-show="$index>=inqCounter && $index<=inqCounter +2;">{{inqdata.data}}</td>
+                </tr>
+            </tbody>
+        </table>
+        -->
+
+       <ons-fab id="befor" position="bottom left" ng-click="countDown('i')" ng-disabled="beforeFlg == false" style="background-color:#0000cd;">
+            <ons-icon
+              icon="fa-caret-left"
+              size="30px"
+              margin="auto"
+              style="color: #fff;">
+            </ons-icon>           
+       </ons-fab>
+
+       <ons-fab id="after" position="bottom right" ng-click="countUp('i')" ng-disabled="futureFlg == false" style="background-color:#0000cd;">
+            <ons-icon
+              icon="fa-caret-right"
+              size="30px"
+              margin="auto"
+              style="color: #fff;">
+            </ons-icon>
+       </ons-fab>
+       </div>
+    </ons-template>
+    <!-- 問診 -->
+
+    <!-- 診察 -->
+   <ons-template id="examination">
+       <div ng-show="isNullElist" style="margin-top:5em;margin-left:30%;">登録がありません
+           <ons-fab id="befor" position="bottom left" ng-click="countDown('e')" ng-disabled="beforeFlg == false" style="background-color:#0000cd;">
+               <ons-icon
+                       icon="fa-caret-left"
+                       size="30px"
+                       margin="auto"
+                       style="color: #fff;">
+               </ons-icon>
+           </ons-fab>
+
+           <ons-fab id="after" position="bottom right" ng-click="countUp('e')" ng-disabled="futureFlg == false" style="background-color:#0000cd;">
+               <ons-icon
+                       icon="fa-caret-right"
+                       size="30px"
+                       margin="auto"
+                       style="color: #fff;">
+               </ons-icon>
+           </ons-fab>
+       </div>
+       
+       <div ng-hide="isNullElist">
+
+           <form name="phrForm" style="width:100%;">
+               <div class="center" style="color: white; background: #4169e1; height: 30px; text-align: center">
+                   {{checkUpResult.title}}
+               </div>
+           </form>
+
+           <table border="1" style="border-collapse: collapse" width="100%" style="margin:0px 0px 80px 0px; display: {{isTableView}}; border-collapse: collapse; font-size: 0.85em; border: 1px solid #000000;">
+               <thead>
+               <tr style="background: #add8e6; color: black">
+                   <th width="180px" style="border: 1px solid #000000;">問診項目</th>
+                   <th width="100px" style="border: 1px solid #000000;">結果</th>
+               </tr>
+               </thead>
+               <tbody>
+               <tr ng-repeat="examInfo in examlist.dataList">
+                   <td class="titlename" style="text-align: left;">{{examInfo.title}}</td>
+                   <td class="contentValue" style="text-align: center; font-weight: bold;" ng-repeat="examdata in examInfo.results">{{examdata.data}}   {{examInfo.unit}}</td>
+               </tr>
+               </tbody>
+           </table>
+
+       <!--
+        <table class="blue-table" style="margin:10px auto 5em;">
+            <thead>
+                <tr>
+                    <td style="width:10px;">項目</td>
+                    <td ng-repeat="examyear in examlist.yearList" ng-show="$index>=examCounter && $index<=examCounter +2;">{{examyear}}</td>
+                </tr>
+            </thead>
+            <tbody> 
+                <tr ng-repeat="examInfo in examlist.dataList">
+                    <td>{{examInfo.title}}</td>
+                    <td ng-repeat="examdata in examInfo.results" ng-show="$index>=examCounter && $index<=examCounter +2;">{{examdata.data}}</td>
+                </tr> 
+            </tbody>
+        </table>
+        -->
+
+       <ons-fab id="befor" position="bottom left" ng-click="countDown('e')" ng-disabled="beforeFlg == false" style="background-color:#0000cd;">
+            <ons-icon
+              icon="fa-caret-left"
+              size="30px"
+              margin="auto"
+              style="color: #fff;">
+            </ons-icon>           
+       </ons-fab>
+
+       <ons-fab id="after" position="bottom right" ng-click="countUp('e')" ng-disabled="futureFlg == false" style="background-color:#0000cd;">
+            <ons-icon
+              icon="fa-caret-right"
+              size="30px"
+              margin="auto"
+              style="color: #fff;">
+            </ons-icon>
+       </ons-fab>
+       </div>
+   </ons-template>
+   <!-- 診察 -->
+
+
+    
+<ons-tabbar>
+    <ons-tab page="medicalCheckup" active="true" style="background-color: #c0c0c0;">
+        <span style="font-size: 25px;font-weight:900;">健診</span>
+    </ons-tab>
+    <ons-tab page="inquiry" style="background-color: #c0c0c0;">
+        <span style="font-size: 25px;font-weight:900;">問診</span>
+    </ons-tab>
+    <ons-tab page="examination" style="background-color: #c0c0c0;">
+        <span style="font-size: 25px;font-weight:900;">診察</span>
+    </ons-tab>    
+</ons-tabbar>
+
+   
+</ons-page>

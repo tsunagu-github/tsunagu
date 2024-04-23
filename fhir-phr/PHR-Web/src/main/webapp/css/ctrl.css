@@ -1,0 +1,148 @@
+@charset "UTF-8";
+@import url("base.css");
+@import url("buttonBase.css");
+@import url("parts.css");
+
+.confirm-msg {
+	font-weight: bold;
+	color:#0000cd
+}
+
+#section-settings {
+    margin-left:auto;margin-right:auto;
+	width:750px;
+	min-height:170px;
+    margin-top: 1.5em;
+	padding:1px;
+	background:#F6F6F6;
+	color:black;
+	text-align:center;
+}
+#section-settings2 {
+    margin-left:auto;margin-right:auto;
+	width:750px;
+	min-height:170px;
+    margin-top: 1.5em;
+	padding:1px;
+	color:black;
+	text-align:center;
+}
+
+.blue_bg {
+	background-color:#0000CD;
+}
+.blue_line {
+	border-color:#0000CD;
+}
+.lightblue_bg {
+	background-color:#1E90FF;
+}
+.white_bg {
+	background-color:#FFFFFF;
+}
+.green_bg {
+	background-color:#20b2aa;
+}
+.green_line {
+	border-color:#20b2aa;
+}
+.green_bg {
+	background-color:#20b2aa;
+}
+.green_line {
+	border-color:#20b2aa;
+}
+.purple_bg {
+	background-color:#ee82ee;
+}
+.purple_line {
+	border-color:#ee82ee;
+}
+.in-group-title {
+	border-style:double;
+	border-width:3px;
+	margin-left:5px;
+	padding:3px 10px;
+	font-size:15px;
+	color:#FFFFFF;
+	text-align:left;
+}
+.in-group {
+	border-style:double;
+	border-width:3px;
+	margin-left:5px;
+	padding:3px 3px;
+	background-color:#FFFFFF;
+}
+.in-table {
+    border-collapse: collapse;
+    width:100%;
+	text-align:left;
+}
+.td-label {
+	border-bottom: 1px solid #c0c0c0;
+	color:#FFFFFF;
+	min-width: 200px;
+	height:30px;
+	padding-left:5px;
+}
+.td-input {
+	border-bottom: 1px solid #c0c0c0;
+	width: 100%;
+	height:30px;
+	padding-left:5px;
+}
+
+.txt-300 {
+	vertical-align:middle;
+	margin-bottom:1px;
+	margin-left:1px;
+	line-height:20px;
+	padding-left:5px;
+	width:300px;
+	height:20px;
+}
+.txt-200 {
+	vertical-align:middle;
+	margin-bottom:1px;
+	margin-left:1px;
+	line-height:20px;
+	padding-left:5px;
+	width:200px;
+	height:20px;
+}
+.txt-100 {
+	vertical-align:middle;
+	margin-bottom:1px;
+	margin-left:1px;
+	line-height:20px;
+	padding-left:5px;
+	width:100px;
+	height:20px;
+}
+.txt-150 {
+	vertical-align:middle;
+	margin-bottom:1px;
+	margin-left:1px;
+	line-height:20px;
+	padding-left:5px;
+	width:150px;
+	height:20px;
+}
+.txt-20 {
+	vertical-align:middle;
+	margin-bottom:1px;
+	margin-left:1px;
+	line-height:20px;
+	padding-left:5px;
+	width:20px;
+	height:20px;
+}
+.radio {
+	padding-left:15px;
+	margin:3px 0px 3px 0px;
+}
+.checkbox {
+	margin:3px 0px 3px 0px;
+	padding-left:15px;
+}

@@ -1,0 +1,70 @@
+
+
+
+
+<ons-page ng-controller="medicineCalendarCtrl" >
+    <ons-toolbar style="background: #69BB7B">
+        <div class="left" ><ons-back-button style="font-size: smaller;"><div style="font-size: smaller;line-height:11px;margin-top: 12px;">おくすり<br>&nbsp;メニューへ</div></ons-back-button></div>
+        <div class="center" style="color: #fff">おくすり一覧</div>
+        <div class="right">
+           <ons-toolbar-button ng-click="app.slidingMenu.toggleMenu()"><ons-icon icon="bars" style="color: #fff"></ons-icon></ons-toolbar-button>
+        </div>
+    </ons-toolbar>
+    <div>
+    <div ng-show="isNullmlist" style="color: red;;margin-top:10px;margin-left:30%;">*薬剤の登録はありません</div>
+
+ <!--<div ng-hide="isNullmlist">-->
+    <ons-carousel swipeable overscrollable auto-scroll direction="horizontal,vertical" var="carousel" class="carousel">
+    <ons-carousel-item>
+    <div>  <!--ng-Init="calendar = calendar()">-->
+        
+            <table class="calendarTable">
+                <tr>
+                    <td>
+                        <a href="#" ng-click="prevMonth(showYear,showMonth)">
+                            <ons-icon icon="fa-angle-left" size="50px" style="color: #000080"> </ons-icon> 
+                        </a>
+                    </td>
+                    <td colspan="5">
+                         {{showYear}} 年{{showMonth}} 月
+                    </td>
+                    <td >
+                        <a ng-hide="isNewestMonth" href="#" ng-click="nextMonth(showYear,showMonth)">
+                            <ons-icon icon="fa-angle-right" size="50px" style="color: #000080"> </ons-icon>
+                        </a>                        
+                    </td>
+                </tr>
+                <tr>
+                <th ng-repeat="head in header">
+                    {{head}}
+                </th>
+                </tr>                          
+                <tr ng-repeat="week in calendar">
+                    <td ng-repeat="day in week track by $index">
+                        {{day.dd}}<br/> 
+                        <ons-icon ng-show="{{day.dosageMedicineicon}}"  ng-click="showList(day.dosageMedicines,day.dd)" icon="fa-plus-square" style="color:#FFA713"> </ons-icon>
+                    </td>
+                </tr>
+           </table>
+         </div>
+        </ons-carousel-item>
+        </ons-carousel>
+         <div class="calendarList">
+             <ons-list>
+<!--              <ons-list-item  ng-show="{{showListItem}}">
+                  {{showYear}} 年{{showMonth}} 月 {{showDD}} 日
+              </ons-list-item>-->
+              <ons-list-item ng-repeat="dosageMedicine in Daymlist" ng-click="showDetail(dosageMedicine)">
+                            <ons-icon
+                              icon="fa-plus-square"
+                              size="25px"
+                              fixed-width="false"
+                              style="color: #FFA713; padding-right: 10px;">
+                            </ons-icon>
+                  <div class="center">{{showDD}} 日 &nbsp; {{dosageMedicine.pharmacy}} &nbsp; {{dosageMedicine.medicineList[0].medicines[0].medicineName}}</div>
+               </ons-list-item>
+          </ons-list>     
+         </div>    
+ 
+  </div>   
+</ons-page>

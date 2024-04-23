@@ -1,0 +1,52 @@
+<!--  おくすりメインメニュー　ここから各機能へ遷移する　-->
+
+<ons-page ng-controller="medicineMenuCtrl">       
+    <ons-toolbar style="background: #69BB7B">
+        <div class="left"><ons-back-button style="font-size: smaller;">メニューへ</ons-back-button></div>
+        <div class="center" style="color: #fff">おくすり情報</div>
+        <div class="right">
+           <ons-toolbar-button ng-click="app.slidingMenu.toggleMenu()"><ons-icon icon="bars" style="color: #fff"></ons-icon></ons-toolbar-button>
+        </div>
+    </ons-toolbar>
+
+  <ons-list>
+    <ons-list-header style="background: #F5F5F5"></ons-list-header>
+    
+		<ons-list-item>
+                    <ons-icon
+                      icon="fa-qrcode"
+                      size="28px"
+                      fixed-width="false"
+                      style="color: #00FF00; padding-right: 10px">
+                    </ons-icon>
+			<div class="center" ng-click="myNavigator.pushPage('templates/medicine-QRreader.html');">おくすり登録（QRコード読込み）</div>
+    </ons-list-item>          
+      <ons-list-item>
+                    <ons-icon
+                      icon="fa-pencil"
+                      size="28px"
+                      fixed-width="false"
+                      style="color: #F0E68C; padding-right: 10px;">
+                    </ons-icon><div class="center" ng-click="myNavigator.pushPage('templates/medicine-entry-nonpre.html',{item: 'new'});">おくすり登録（手入力）</div>
+		</ons-list-item>
+
+		<ons-list-item>
+                    <ons-icon
+                      icon="fa-list"
+                      size="28px"
+                      fixed-width="false"
+                      style="color: #00008B; padding-right: 10px">
+                    </ons-icon>
+			<div class="center" ng-click="myNavigator.pushPage('templates/medicine-list.html');">おくすり一覧（リスト）</div>
+    </ons-list-item>
+		<ons-list-item>
+                    <ons-icon
+                      icon="fa-calendar"
+                      size="28px"
+                      fixed-width="false"
+                      style="color: #DDA0DD; padding-right: 10px">
+                    </ons-icon>
+			<div class="center" ng-click="myNavigator.pushPage('templates/medicine-calendar.html');">おくすり一覧（カレンダー）</div>
+    </ons-list-item>
+  </ons-list>
+</ons-page>

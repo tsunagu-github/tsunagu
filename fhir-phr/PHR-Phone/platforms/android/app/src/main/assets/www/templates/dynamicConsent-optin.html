@@ -1,0 +1,178 @@
+<ons-page ng-controller="dynamicConsentDetailCtrl">
+    <ons-toolbar style="background: #69BB7B">
+        <div class="left" ><ons-back-button style="font-size: smaller;">一覧へ</ons-back-button></div>
+        <div class="center" style="color: #fff">同意一覧</div>
+        <div class="right">
+           <ons-toolbar-button ng-click="app.slidingMenu.toggleMenu()"><ons-icon icon="bars" style="color: #fff"></ons-icon></ons-toolbar-button>
+        </div>
+    </ons-toolbar>
+
+    <div style="font-size: 20px; font-weight: bold; margin: 10px;">
+        {{dynamicConsentDetailResult.studyName}}
+    </div>
+    <div style="font-size: 15px; margin: 5px 5px 0px 20px;">
+        {{dynamicConsentDetailResult.explanation}}
+    </div>
+    <br>
+    <div style="color: {{dynamicConsentDetailResult.fontColor}}; font-weight: bold; font-size: 20px; display: flex;">
+        <div style="margin: 10px;"></div>
+        <img height="32" src="./imgs/dynamicConsent_in.png">
+        　{{dynamicConsentDetailResult.consentType}}　　
+    </div>
+    <div style="margin: 0px 0px 0px 230px; display: flex;">
+        <a class="button_01 -compact" ng-click="openExpla(dynamicConsentDetailResult.url)">
+            <img height="18" src="./imgs/dynamicConsent_explanation_icon.png">　詳細説明
+        </a>
+    </div>
+    <div style="font-size: 15px; margin: 5px 5px 0px 20px;">
+        通知日： {{dynamicConsentDetailResult.notificationDate}}
+    </div>
+    <div style="display: {{dynamicConsentDetailResult.isResponseDateView}}; font-size: 15px; margin: 5px 5px 0px 20px;">
+        最終更新日： {{dynamicConsentDetailResult.responseDate}}
+    </div>
+    <br>
+    <div style="font-size: 15px; margin: 5px 5px 0px 20px;">
+        同意する場合は、全ての項目のチェックが必要です。
+    </div>
+    <hr>
+    <div style="font-size: 17px; margin: 5px 5px 0px 20px; font-weight: bold;">
+        <label>私は以下の説明を確認しました。<br>　全部確認 <input id="check" type="checkbox" ng-click="allCheck()"></label>
+    </div>
+    <br>
+    <form name="form1">
+    <div style="display: flex;" ng-repeat="dto in dynamicConsentDetailResult.checkList" on-finish-render="ngRepeatFinished">
+        <div class="toggle_button" style="margin: 5px 5px 5px 40px;">
+            <input id="toggle" name="check" class="toggle_input" type='checkbox' ng-model="dto.checked" ng-checked="dto.selectStatus == 1"/>
+            <label for="toggle" class="toggle_label"></label>
+        </div>
+        <div style="margin: 8px 0px 0px 15px; font-size: 15px">
+            {{dto.checkItem}}
+        </div>
+    </div>
+    </form>
+    <br>
+    <hr>
+    <br>
+    <div id="button_1" align="center" style="margin: 0px 5px; display: ">
+        <a href="#" ng-click="click1()">
+            <img height="70" hspace="10px" src="./imgs/ban_icon_gray.png">
+        </a>
+        <a href="#" ng-click="click2()">
+            <img height="70" hspace="10px" src="./imgs/hold_icon_gray.png">
+        </a>
+        <a href="#" ng-click="click3()">
+            <img height="70" hspace="10px" src="./imgs/checkmark_icon_gray.png">
+        </a>
+    </div>
+    <div id="button_2" align="center" style="margin: 0px 5px; display: ">
+        <img height="70" hspace="10px" src="./imgs/ban_icon_detail.png">
+        <a href="#" ng-click="click2()">
+            <img height="70" hspace="10px" src="./imgs/hold_icon_gray.png">
+        </a>
+        <a href="#" ng-click="click3()">
+            <img height="70" hspace="10px" src="./imgs/checkmark_icon_gray.png">
+        </a>
+    </div>
+    <div id="button_3" align="center" style="margin: 0px 5px; display: ">
+        <a href="#" ng-click="click1()">
+            <img height="70" hspace="10px" src="./imgs/ban_icon_gray.png">
+        </a>
+        <img height="70" hspace="10px" src="./imgs/hold_icon.png">
+        <a href="#" ng-click="click3()">
+            <img height="70" hspace="10px" src="./imgs/checkmark_icon_gray.png">
+        </a>
+    </div>
+    <div id="button_4" align="center" style="margin: 0px 5px; display: ">
+        <a href="#" ng-click="click1()">
+            <img height="70" hspace="10px" src="./imgs/ban_icon_gray.png">
+        </a>
+        <a href="#" ng-click="click2()">
+            <img height="70" hspace="10px" src="./imgs/hold_icon_gray.png">
+        </a>
+        <img height="70" hspace="10px" src="./imgs/checkmark_icon_detail.png">
+    </div>
+    <br>
+    <div style="margin: 0px 0px 0px 310px;">
+        <a href="#" ng-click="updateOptIn(dynamicConsentDetailResult)">
+            <img height="50" src="./imgs/dynamicConsent_update_icon.png">
+        </a>
+    </div>
+    <div style="margin: 0px 150px 10px 10px; display: flex;">
+        <a class="button_01 -compact" ng-click="openMail()">
+            <img height="18" src="./imgs/question_mark_icon.png">　保留時の問い合わせ
+        </a>
+    </div>
+
+    <style>
+        .hr {
+            border: none;
+            border-top-style: solid;
+            border-top-width: 1px;
+            border-top-color: #4f96f6;
+        }
+        .button_01 {
+            display: inline-block;
+            text-decoration: none;
+            transition: background-color .3s ease-in-out;
+            text-align: center;
+        }
+        .button_01 a {
+            text-decoration: none;
+        }
+        .button_01.-compact {
+            padding: .5rem 1rem;
+            border-radius: .25rem;
+            background-color: #4f96f6;
+            color: #fff;
+            font-weight: bold;
+	        text-decoration: none;
+        }
+        .toggle_input {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 5;
+            opacity: 0;
+            cursor: pointer;
+            margin: 0;
+        }
+        .toggle_label {
+            width: 50px;
+            height: 30px;
+            background: #ccc;
+            position: relative;
+            display: inline-block;
+            border-radius: 40px;
+            transition: 0.4s;
+            box-sizing: border-box;
+        }
+        .toggle_label:after {
+            content: "";
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            border-radius: 100%;
+            left: 0;
+            top: 0;
+            z-index: 2;
+            background: #fff;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+            transition: 0.4s;
+        }
+        .toggle_input:checked + .toggle_label {
+            background-color: #4BD865;
+        }
+        .toggle_input:checked + .toggle_label:after {
+            left: 25px;
+        }
+        .toggle_button {
+            position: relative;
+            width: 50px;
+            height: 30px;
+            margin: auto;
+        }
+    </style>
+
+</ons-page>

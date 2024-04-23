@@ -1,0 +1,63 @@
+# ■ビルドバージョン
+# 【1.0-20160901】
+buildVersion=1.0-20180725_1
+
+# ■設定ファイルのパス(ブランクの場合はclasses直下)
+# 【/opt/phr/】
+config.path=/phr/phr_root/
+
+# ■設定ファイル名
+# 【phr.config】
+config.filename=phr.config
+
+# ■開発環境（development） or 本番環境（production）
+# 【development】
+system.env=production
+
+# ■JNDI DataSource Factory
+# 【org.apache.naming.java.javaURLContextFactory】
+jndi.datasource.factory=org.apache.naming.java.javaURLContextFactory
+
+# ■JNDI DataSource URLPkgPrefixes
+# 【org.apache.naming】
+url.pkg.prefixes=org.apache.naming
+
+# ■JDBC接続のURL
+# 【jdbc:mysql://{0}:{1}/{2}?characterEncoding=UTF-8&noAccessToProcedureBodies=true】
+jdbc.url.base=jdbc:mysql://{0}:{1}/{2}?characterEncoding=UTF-8&noAccessToProcedureBodies=true&autoReconnect=true&useSSL=false
+
+# ■データソース名
+# 【jdbc/PHR】
+datasource.name=jdbc/PHR
+
+# ■データベース最大接続数
+# 【10】
+database.max.connection=10
+
+# ■データベースドライバー
+# 【com.mysql.jdbc.Driver】
+database.driver=com.mysql.jdbc.Driver
+
+# ■パスワード暗号化の共通鍵
+#   PHR-PWD-Key
+# 【PHR-PWD-Key】
+password.encript.key=PHR-PWD-Key
+
+# ■FCMトークン（サーバーキー）
+# 【AAAAVN0v_sU:APA91bEmQdZKzDAf9_Il3aOhmlnm6O7H-PvowL5cLM-GZzNyb8LoHldzXyKlhLWa4xVits8XZYueIwGiOmqwtFk6rVsVWAgBTprvlFktbJXtWyta2nD3KVcd6ztPvvwsuLVjMBMfrtFA】
+fcm.token=AAAAVN0v_sU:APA91bEmQdZKzDAf9_Il3aOhmlnm6O7H-PvowL5cLM-GZzNyb8LoHldzXyKlhLWa4xVits8XZYueIwGiOmqwtFk6rVsVWAgBTprvlFktbJXtWyta2nD3KVcd6ztPvvwsuLVjMBMfrtFA
+
+
+# ■スマフォI/Fバージョン
+# 【1.1】
+phone.if.version=1.1
+
+# ■Version1.0用URL
+# 【http://localhost:8080/PHR-Web-1.0/phoneWebInterface】
+phone.if.version1.0.URL=
+
+# ■ワンタイムID暗号化の共通鍵
+#   PHR-ONETIME-Key
+# 【PHR-ONETIME-Key】
+ontime.id.encript.key=PHR-ONETIME-Key
+

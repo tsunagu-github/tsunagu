@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en" ng-app="phrApp">
+    <head>
+        <meta charset="utf-8">
+        <link rel="shortcut icon" href="favicon.ico" />
+        <link rel="stylesheet" href="components/loader.css">
+        <link rel="stylesheet" href="lib/onsenui/css/onsenui.css"/>
+        <link rel="stylesheet" href="lib/onsenui/css/onsen-css-components.css"/>
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/medicine.css">
+        <script src="components/loader.js"></script>
+        <script src="lib/onsenui/js/angular/angular.js"></script>
+        <script src="lib/onsenui/js/onsenui.js"></script>
+        <script src="lib/onsenui/js/angular-onsenui.js"></script>
+        <!-- your app's js -->
+        <script src="js/logger.js"></script>
+        <script src="js/phrPhone.js"></script>
+
+        <script language="JavaScript">
+            var app = angular.module('phrApp', ['onsen', 'phr.controllers']);
+            var phrCtrl = angular.module('phr.controllers', []);
+
+            app.controller('appCtrl', function ($scope, $window) { });
+            phrCtrl.controller("errorCtrl", function ($scope, $window) {
+                /**
+                 * スタートページにリダイレクトします
+                 * @returns {undefined}
+                 */
+                $scope.redirectStartPage = function () {
+                    $window.location.href = "index.html";
+                };
+                /**
+                 * ヒストリーばｃｋ
+                 * @returns {undefined}
+                 */
+                $scope.backHistory = function () {
+                    window.history.back();
+                };            
+            })
+        </script>
+    </head>
+
+    <body ng-controller="appCtrl">
+    <ons-page ng-controller="errorCtrl">
+        <ons-toolbar style="background: #69BB7B">
+            <div class="center" style="color: #fff">エラーが発生しました</div>
+        </ons-toolbar>
+        <p style="text-align:center; margin-top:40px;">アプリケーション起動時にエラーが発生しました</p>
+        <br>
+        <ons-row>
+            <ons-col></ons-col>
+            <ons-col>
+                <ons-button style="width: 230px; color: #00f;background: #ffa0a7; text-align: center" ng-click="redirectStartPage()">再実行する</ons-button>
+            </ons-col>
+            <ons-col></ons-col>
+        </ons-row>
+    </ons-page>
+</body>
+</html>

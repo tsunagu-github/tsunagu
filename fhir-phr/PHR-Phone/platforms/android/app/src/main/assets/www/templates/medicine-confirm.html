@@ -1,0 +1,152 @@
+<!--<link rel="stylesheet" href="css/medicine.css">-->
+<ons-page ng-controller="medicineEntryCtrl">    
+    <ons-toolbar style="background: #69BB7B">
+        <div class="left"><ons-back-button style="font-size: smaller;">編集画面へ</ons-back-button></div>
+        <div class="center" style="color: #fff">おくすり情報</div>
+        <div class="right">
+           <ons-toolbar-button ng-click="app.slidingMenu.toggleMenu()"><ons-icon icon="bars" style="color: #fff"></ons-icon></ons-toolbar-button>
+        </div>
+    </ons-toolbar>
+    
+       <div class="medcineMetaEntry"><!--medcineMetaEntry-->
+       <table class="medEntryForm">
+        <tr>
+            <td class="itemname">調剤日(購入日)</td>
+            <td class="itemmain">{{entryMedicine.dosageDate|date:'yyyy/MM/dd'}}</td><!--<input type="text" ng-model="user.name" />-->
+        </tr>
+        <tr>
+            <td>薬局名</td>
+            <td>{{entryMedicine.pharmacy}}</td>
+        </tr>
+        <tr ng-hide="entryMedicine.medType=='nonpre'">
+            <td >薬剤師名</td>
+            <td>{{entryMedicine.pharmacistName}}</td>
+        </tr>        
+        <tr ng-hide="entryMedicine.medType=='nonpre'">
+            <td>処方病院名</td>
+            <td>{{entryMedicine.medicalOrganization}}</td>
+        </tr>
+        <tr ng-hide="entryMedicine.medType=='nonpre'">
+            <td>診療科名</td>
+            <td>{{entryMedicine.departmentName}}</td>
+        </tr>
+        <tr ng-hide="entryMedicine.medType=='nonpre'">
+            <td>処方医師名</td>
+            <td>{{entryMedicine.doctorName}}</td>
+        </tr>
+        <tr ng-hide="entryMedicine.medType=='nonpre'">
+            <td>備考</td>
+            <td>{{entryMedicine.dosageRemark}}</td>
+        </tr>
+       </table>
+       </div>
+       
+       <div class="medcineMetaEntry" ng-repeat="childnonpre in entryMedicine.nonpre" ng-hide="childnonpre.isdelete">
+            <table  class="medEntryForm">
+                <tr>
+                    <td class="itemname">お薬名</td>
+                    <td class="itemmain">{{childnonpre.medicineName}}</td>
+                </tr>
+                <tr>
+                    <td>服用開始日</td>
+                    <td ng-show="{{childnonpre.startDate}} == null">&nbsp</td>
+                    <td ng-hide="{{childnonpre.startDate}} == null">{{childnonpre.startDate|date:'yyyy/MM/dd'}}</td>
+                </tr>
+                <tr >
+                    <td>服用終了日</td>
+                    <td ng-show="{{childnonpre.endDate}} == null">&nbsp</td>
+                    <td ng-hide="{{childnonpre.endDate}} == null">{{childnonpre.endDate|date:'yyyy/MM/dd'}}</td>
+                </tr>
+
+            </table>
+       </div>
+       <div class="medcineMetaEntry" ng-repeat="childmedicine in entryMedicine.medicines" ng-hide="childmedicine.isdelete">
+            <table  class="medEntryForm">
+                <tr>
+                    <td class="itemname">お薬名</td>
+                    <td class="itemmain">{{childmedicine.medicineName}}</td>
+                </tr>
+                <tr ng-repeat="dosageFormCd in dosageFormCDList|filter:{ cd: childmedicine.dosageForm}:true">
+                    <td>剤型</td>                    
+                    <td style="width:80%">
+                        {{dosageFormCd.name}}
+                    </td>
+                </tr>
+                <tr>
+                    <td>用法</td>
+                    <td>{{childmedicine.usageName}}</td>
+                </tr>  
+                <tr ng-show="childmedicine.dosageForm_v">
+                    <td>{{childmedicine.quantityTitle}}</td>
+                    <td>{{childmedicine.dosageQuantity}}{{childmedicine.dosageUnit}}</td>
+                </tr>
+                <tr>
+                    <td>{{childmedicine.amountTitle}}</td>
+                    <td>{{childmedicine.amount}}</td>
+                </tr>
+                <tr>
+                    <td>単位</td>
+                    <td>{{childmedicine.unitName}}</td>
+                </tr>
+                <tr>
+                    <td>補足</td>
+                    <td>{{childmedicine.additional}}</td>
+                </tr>
+        </table>
+       </div>
+<!--        <div class="medEntrybutton">
+            <ons-button ng-click="entryItem(entryMedicine)" modifier="large medEntry">登録</ons-button>
+        </div> -->
+       
+    <ons-bottom-toolbar>
+    <table style="width:100%;">
+        <tr><td style="text-align: center;width:50%;">
+            
+        <ons-toolbar-button ng-click="myNavigator.popPage()" 
+                style="color: royalblue;
+                       flex: 1 1 0; 
+                       flex-direction: column; 
+                       justify-content: center; 
+                       position: relative; 
+                       text-align: center; 
+                       text-overflow: ellipsis; 
+                       white-space: nowrap;
+                       height: 2.8rem; 
+                       line-height: 2.6rem;"            
+                            >
+                    <ons-icon
+                      icon="fa-pencil"
+                      size="18px">
+                        <br/>修正
+                      </ons-icon>                    
+            </ons-toolbar-button>
+        
+            </td>
+   
+        <td style="text-align: center;width:50%;">
+            <ons-toolbar-button ng-click="entryItem(entryMedicine)"
+                style="color: royalblue;
+                       flex: 1 1 0; 
+                       flex-direction: column; 
+                       justify-content: center; 
+                       position: relative; 
+                       text-align: center; 
+                       text-overflow: ellipsis; 
+                       white-space: nowrap;
+                       height: 2.8rem; 
+                       line-height: 2.6rem;">                
+                    <ons-icon
+                      icon="fa-inbox"
+                      size="18px">
+                        <br/>登録
+                      </ons-icon>
+            </ons-toolbar-button>            
+            
+
+        </td>
+    </tr>
+    </table>
+    </ons-bottom-toolbar>
+
+</ons-template>
+</ons-page>

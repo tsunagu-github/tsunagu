@@ -1,0 +1,59 @@
+{  "cooperationList": [
+    {
+      "medicalAgencyCode": "1111111111",
+      "patientId": "987654321",
+      "isValid": "true",
+      "message": "はちゃめちゃクリニック"
+    },
+    {
+      "medicalAgencyCode": "1234567890",
+      "patientId": "eeeeeeeeeeeeeeeeeeee",
+      "isValid": "false",
+      "message": "不明な医療機関"
+    },
+    {
+      "medicalAgencyCode": "2222222222",
+      "patientId": "11111111111111111111",
+      "isValid": "true",
+      "message": "ペリカ病院"
+    },
+    {
+      "medicalAgencyCode": "3333333333",
+      "patientId": "444444",
+      "isValid": "false",
+      "message": "不明な医療機関"
+    },
+    {
+      "medicalAgencyCode": "4444444444",
+      "patientId": "55555555555555555555",
+      "isValid": "false",
+      "message": "不明な医療機関"
+    },
+    {
+      "medicalAgencyCode": "7777777777",
+      "patientId": "44444444444444444444",
+      "isValid": "true",
+      "message": "テンヤワンヤ病院"
+    },
+    {
+      "medicalAgencyCode": "8888888888",
+      "patientId": "11111111111111111111",
+      "isValid": "false",
+      "message": "不明な医療機関"
+    },
+    {
+      "medicalAgencyCode": "9876543210",
+      "patientId": "99999999999999999999",
+      "isValid": "false",
+      "message": "不明な医療機関"
+    },
+    {
+      "medicalAgencyCode": "9999999999",
+      "patientId": "222222222222222221A5",
+      "isValid": "false",
+      "message": "不明な医療機関"
+    }
+  ],
+  "status": "0",
+  "message": "成功しました。"
+}

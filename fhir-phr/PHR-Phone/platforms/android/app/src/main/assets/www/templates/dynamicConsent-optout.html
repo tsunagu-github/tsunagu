@@ -1,0 +1,78 @@
+<ons-page ng-controller="dynamicConsentDetailCtrl">
+    <ons-toolbar style="background: #69BB7B">
+        <div class="left" ><ons-back-button style="font-size: smaller;">一覧へ</ons-back-button></div>
+        <div class="center" style="color: #fff">同意一覧</div>
+        <div class="right">
+           <ons-toolbar-button ng-click="app.slidingMenu.toggleMenu()"><ons-icon icon="bars" style="color: #fff"></ons-icon></ons-toolbar-button>
+        </div>
+    </ons-toolbar>
+
+    <div style="font-size: 20px; font-weight: bold; margin: 10px;">
+        {{dynamicConsentDetailResult.studyName}}
+    </div>
+    <div style="font-size: 15px; margin: 5px 5px 0px 20px;">
+        {{dynamicConsentDetailResult.explanation}}
+    </div>
+    <br>
+    <div style="color: {{dynamicConsentDetailResult.fontColor}}; font-weight: bold; font-size: 20px; display: flex;">
+        <div style="margin: 10px;"></div>
+        <img height="32" src="./imgs/dynamicConsent_out.png">
+        　{{dynamicConsentDetailResult.consentType}}　　
+    </div>
+    <div style="margin: 0px 0px 0px 230px; display: flex;">
+        <a class="button_01 -compact" ng-click="openExpla(dynamicConsentDetailResult.url)">
+            <img height="18" src="./imgs/dynamicConsent_explanation_icon.png">　詳細説明
+        </a>
+    </div>
+    <div style="font-size: 15px; margin: 5px 5px 0px 20px;">
+        通知日： {{dynamicConsentDetailResult.notificationDate}}
+    </div>
+    <div style="display: {{dynamicConsentDetailResult.isResponseDateView}}; font-size: 15px; margin: 5px 5px 0px 20px;">
+        最終更新日： {{dynamicConsentDetailResult.responseDate}}
+    </div>
+    <br>
+    <div style="font-size: 15px; margin: 5px 5px 0px 20px;">
+        通知後30日を過ぎて撤回した場合、<br>
+        撤回時のデータは研究に利用される場合があります。
+    </div>
+    <br>
+    <div id="button_1" align="center" style="display: ">
+        <img height="70" hspace="10px" src="./imgs/ban_icon_detail.png">
+        <a href="#" ng-click="clickO()">
+            <img height="70" hspace="10px" src="./imgs/checkmark_icon_gray.png">
+        </a>
+    </div>
+    <div id="button_2" align="center" style="display: ">
+        <a href="#" ng-click="clickN()">
+            <img height="70" hspace="10px" src="./imgs/ban_icon_gray.png">
+        </a>
+        <img height="70" hspace="10px" src="./imgs/checkmark_icon_detail.png">
+    </div>
+    <br>
+    <div style="margin: 0px 0px 0px 310px;">
+        <a href="#" ng-click="update(dynamicConsentDetailResult)">
+            <img height="50" src="./imgs/dynamicConsent_update_icon.png">
+        </a>
+    </div>
+
+    <style>
+        .button_01 {
+            display: inline-block;
+            text-decoration: none;
+            transition: background-color .3s ease-in-out;
+            text-align: center;
+        }
+        .button_01 a {
+            text-decoration: none;
+        }
+        .button_01.-compact {
+            padding: .5rem 1rem;
+            border-radius: .25rem;
+            background-color: #4f96f6;
+            color: #fff;
+            font-weight: bold;
+	        text-decoration: none;
+        }
+    </style>
+
+</ons-page>

@@ -1,0 +1,113 @@
+<!--<link rel="stylesheet" href="css/medicine.css">-->
+<ons-page ng-controller="medicineEditCtrl">    
+    <ons-toolbar style="background: #69BB7B">
+        <div class="left"><ons-back-button><div style="font-size: smaller;line-height:11px;margin-top: 12px;">おくすり<br>&nbsp;メニューへ</div></ons-back-button></div>
+        <div class="center" style="color: #fff">おくすり情報</div>
+        <div class="right">
+           <ons-toolbar-button ng-click="app.slidingMenu.toggleMenu()"><ons-icon icon="bars" style="color: #fff"></ons-icon></ons-toolbar-button>
+        </div>
+    </ons-toolbar>
+<ons-tabbar id="mEditTabbar" position="top" style="background-color: white;">
+    <ons-tab page="nonpre" active="true" style="background-color: #c0c0c0;">
+        <span style="font-size: 25px;font-weight:900;">市販薬</span>
+    </ons-tab>
+    <ons-tab page="templates/medicine-entry-presc.html" style="background-color: #c0c0c0;">
+        <span style="font-size: 25px;font-weight:900;">調剤薬</span>
+    </ons-tab>
+</ons-tabbar>    
+
+   <ons-template id="nonpre">
+       <form name="nonpreForm" novalidate>
+       <div class="medcineMetaEntry">
+       <table class="medEntryForm">
+        <tr>
+            <td class="itemname"><span style="color:red;">*</span>購入日</td>
+            <td style="itemmain">
+        <ons-input name="nonpreDay" type="date"  ng-model="editMedicine.dosageDate" ng-required="true" max="{{today|date:'yyyy-MM-dd'}}" style="border-bottom: 1px solid #ccc;"></ons-input>
+                <span ng-show="nonpreForm.nonpreDay.$error.required" style="color:red;font-size:smaller;"><br/>購入日は必須です。</span>
+                <span ng-show="nonpreForm.nonpreDay.$error.max" style="color:red;font-size:smaller;"><br/>購入日が未来日になっています。</span>
+                <span ng-show="nonpreForm.nonpreDay.$error.date" style="color:red;font-size:smaller;"><br/>購入日が存在しない日付になっています。</span>
+            </td>
+        </tr>
+        <tr>
+            <td><span style="color:red;">*</span>薬局名</td>
+            <td><ons-input type="text" name="pharmacyName" ng-model="editMedicine.pharmacy" ng-required="true"　style="border-bottom: 1px solid #ccc;"></ons-input>
+                <span ng-show="nonpreForm.pharmacyName.$error.required" style="color:red;font-size:smaller;"><br/>薬局名は必須です。</span>
+            </td>
+        </tr>
+       </table>           
+           
+       </div>
+       <div class="medicineEntry" ng-repeat="childmedicine in editMedicine.nonpre" ng-hide="childmedicine.isdelete">
+                <div style="text-align: right;"><ons-button modifier="medDelete" ng-click="deleteConfirm($index,'nonpre')">削除</ons-button></div>
+                <ng-form name="innerForm">
+                <table  class="medEntryForm" id="nonpremedicines">
+                    <tr>
+                        <td class="itemname"><span style="color:red;">*</span>お薬名</td>
+                        <td class="itemmain">
+                            <ons-input name="nonpreName" type="text" ng-model="childmedicine.medicineName" ng-required="true" style="border-bottom: 1px solid #ccc;" ng-model-option='{timeZone: "+0900"}'></ons-input>
+                            <span ng-show="innerForm.nonpreName.$error.required" style="color:red;font-size:smaller;"><br/>お薬名は必須です。</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>服用開始日</td>
+                        <td>
+                            <ons-input name="sdate" type="date" ng-model="childmedicine.startDate" style="border-bottom: 1px solid #ccc;"></ons-input>
+                            <span ng-show="innerForm.sdate.$error.date" style="color:red;font-size:smaller;"><br/>服用開始日が存在しない日付になっています。</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>服用終了日</td>
+                        <td>
+                            <ons-input name="edate" type="date" ng-model="childmedicine.endDate" style="border-bottom: 1px solid #ccc;"></ons-input>
+                            <span ng-show="innerForm.edate.$error.date" style="color:red;font-size:smaller;"><br/>服用終了日が存在しない日付になっています。</span>
+                        </td>
+                    </tr>
+                </table>
+                </ng-form>
+                <table class="medEntryForm">
+                    <tr>
+                        <td colspan="2" align="center"><div style="width: 80%;"><ons-button ng-click="addMedicine('nonpre')" modifier="large">おくすり入力枠　追加</ons-button></div></td>
+                    </tr>
+                </table>
+       </div>       
+
+        <div class="medEntrybutton">
+            <span ng-show="nonpreForm.$invalid" style="color:red;font-size:smaller;"><br/>[*]マークの項目は必須です。</br>必須項目がすべて入力されると確認ボタンが有効になります。</span>
+            <!--<ons-button ng-disabled="nonpreForm.$invalid"  ng-click="confirmMedicine('nonpre',editMedicine)" modifier="large medEntry">確認</ons-button>-->
+        </div>
+       </form>
+       
+    <ons-bottom-toolbar>
+    <table style="width:100%;">
+    <tr><td style="text-align: center;width:50%;"></td>
+        <td style="text-align: center;width:50%;">
+            <ons-toolbar-button ng-disabled="nonpreForm.$invalid"  ng-click="confirmMedicine('nonpre',editMedicine)"
+                style="color: royalblue;
+                       flex: 1 1 0; 
+                       flex-direction: column; 
+                       justify-content: center; 
+                       position: relative; 
+                       text-align: center; 
+                       text-overflow: ellipsis; 
+                       white-space: nowrap;
+                       height: 2.8rem; 
+                       line-height: 2.6rem;">
+                    <ons-icon
+                      icon="angle-right"
+                      size="18px">
+                        <br/>確認
+                      </ons-icon>                    
+            </ons-toolbar-button>
+        </td>
+    </tr>
+    </table>
+    </ons-bottom-toolbar>        
+       
+       
+   </ons-template>
+
+   
+    
+
+</ons-page>

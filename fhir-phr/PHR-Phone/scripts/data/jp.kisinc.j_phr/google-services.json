@@ -1,0 +1,73 @@
+{
+  "project_info": {
+    "project_number": "364488163013",
+    "firebase_url": "https://phr-phone.firebaseio.com",
+    "project_id": "phr-phone",
+    "storage_bucket": "phr-phone.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:364488163013:android:80812461817fd226",
+        "android_client_info": {
+          "package_name": "jp.kisinc.phr"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "364488163013-j06780meqf14qpgums94fd6qjee3tro4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAW-fBuRiTjTqvKqeMNCAiALWIdsRLRHho"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:364488163013:android:84629e9e5184b2a1",
+        "android_client_info": {
+          "package_name": "jp.kisinc.j_phr"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "364488163013-j06780meqf14qpgums94fd6qjee3tro4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAW-fBuRiTjTqvKqeMNCAiALWIdsRLRHho"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

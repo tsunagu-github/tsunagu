@@ -1,0 +1,14 @@
+<?xml version="1.0"  encoding="UTF-8" ?>
+<ErrorList>
+
+<Error name="No_SearchType" id="E001" status="-1">SearchType指定が対応した数値ではありません。[{0}]</Error>
+<Error name="No_PatientId" id="E002" status="-1">患者IDの指定がありません。[{0}]</Error>
+<Error name="No_DataType" id="E003" status="-1">指定されたデータ種別に対応していません。[{0}]</Error>
+<Error name="No_STDPath" id="E004" status="-1">標準化ストレージのルートパスが指定されていません。[{0}]</Error>
+<Error name="No_EXTPath" id="E005" status="-1">拡張ストレージのルートパスが指定されていません。[{0}]</Error>
+<Error name="No_BaseDate" id="E006" status="-1">基準日が指定されていません。[{0}]</Error>
+<Error name="BaseDateFormat" id="E007" status="-1">基準日はYYYYMMDD形式で指定して下さい。[{0}]</Error>
+<Error name="No_SearchDirection" id="E008" status="-1">検索方向が指定されていません。[{0}]</Error>
+<Error name="No_Count" id="E009" status="-1">遡及回数が指定されていません。[{0}]</Error>
+
+</ErrorList>

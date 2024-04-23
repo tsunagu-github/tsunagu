@@ -1,0 +1,16 @@
+{
+  "status": "0",
+  "message":"",
+  "addressList": [
+    {
+      "name": "□□けんぽ" ,
+      "insurerNo" : "1234567"
+    }, {
+      "name": "○○診療所" ,
+      "organizationCd" : "1111111111"
+    }, {
+      "name": "△△クリニック" ,
+      "organizationCd" : "2222222222"
+    }
+  ]
+}

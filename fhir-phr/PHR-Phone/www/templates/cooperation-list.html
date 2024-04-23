@@ -1,0 +1,52 @@
+<ons-page ng-controller="cooperationListCtrl">
+    <ons-toolbar style="background: #69BB7B">
+        <div class="left"><ons-back-button style="font-size: smaller;">メニューへ</ons-back-button></div>
+        <div class="center" style="color: #fff;">医療機関登録</div>
+        <div class="right">
+            <ons-toolbar-button ng-click="app.slidingMenu.toggleMenu()"><ons-icon icon="bars" style="color: #fff"></ons-icon></ons-toolbar-button>
+        </div>
+    </ons-toolbar>
+
+    <ons-list style="padding-bottom: 20px; display: {{isTableView}};">
+        <ons-list-item ng-repeat="oneCooperationData in cooperationList | orderBy:'medicalAgencyCode'" ng-click="goToShowDetail(oneCooperationData)">
+            <ons-row>
+                <ons-col width="10%" align="bottom">
+                    <ons-icon
+                        icon="hospital-o"
+                        size="25px"
+                        fixed-width="false"
+                        style="color: #FFA713; padding-right: 10px;">
+                    </ons-icon>
+                </ons-col>
+                <ons-col width="35%" align="bottom" style="text-align: left">
+                    {{oneCooperationData.medicalAgencyCode}}
+                </ons-col>
+                <ons-col width="35%" align="bottom" style="text-align: left">
+                    {{oneCooperationData.patientId}}
+                </ons-col>
+                <ons-col width="15%" align="bottom">
+                </ons-col>
+                <ons-col width="5%" align="bottom">
+                    <ons-icon
+                        icon="chevron-right"
+                        size="13px"
+                        fixed-width="false"
+                        style="color: #f3b927; padding-right: 10px;">
+                    </ons-icon>
+                </ons-col>
+            </ons-row>
+        </ons-list-item>
+    </ons-list>
+    <div style="height:60px; text-align: center; width:100%;margin-top:100px; display: {{isMsgView}};">登録された連携設定はありません</div>
+    
+    <ons-bottom-toolbar style="height: 3.4rem;">
+      <div style="float: right; width: 50%">
+        <ons-toolbar-button ng-click="goToEntryDetail()" ng-disabled="phrForm.$invalid" style="color: darkslategrey; display: flex; flex: 1 1 0; flex-direction: column; justify-content: center; position: relative; text-align: center; text-overflow: ellipsis; white-space: nowrap;height: 2.8rem; line-height: 2.6rem;">
+          <ons-icon icon="ion-compose" size="30px" style="align-self: center; max-width: 100%;"></ons-icon>
+          <span style="align-self: center; max-width: 100%;min-width: 35px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap; font-size: 16px; line-height: 16px">新規作成</span>
+        </ons-toolbar-button>
+      </div>
+    </ons-bottom-toolbar>
+    
+    
+</ons-page>

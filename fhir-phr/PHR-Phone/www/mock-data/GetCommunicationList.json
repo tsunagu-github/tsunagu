@@ -1,0 +1,193 @@
+{
+  "status": "0",
+  "message":"情報の取得に失敗しました",
+  "allUnreadCount": 2,
+  "infoUnreadCount": 1,
+  "msgUnreadCount": 1,
+  "msgInfoList": [
+    {
+      "id": "000000000000101",
+      "seq": 0,
+      "senderName": "サービスセンター",
+      "subject": "1:4月の定期健診を受診してください",
+      "type": 1,
+      "date": "2016/04/03",
+      "readFlg": 0
+    }, {
+      "senderName": "患者 太郎",
+      "subject": "2:Re:3月の検査結果がでました。次回診療の際に説明します",
+      "type": 2,
+      "date": "2016/03/27",
+      "readFlg": 0,
+      "self": 1
+    }, {
+      "senderName": "サービスセンター",
+      "subject": "3:サービスをご利用頂きましてありがとうございます",
+      "type": 1,
+      "date": "2016/03/12",
+      "readFlg": 1
+    },{
+      "senderName": "サービスセンター",
+      "subject": "4:4月の定期健診を受診してください",
+      "type": 1,
+      "date": "2016/04/03",
+      "readFlg": 0
+    }, {
+      "senderName": "XXXクリニック 医師 太郎",
+      "subject": "5:3月の検査結果がでました。次回診療の際に説明します",
+      "type": 2,
+      "date": "2016/03/27",
+      "readFlg": 0
+    }, {
+      "senderName": "サービスセンター",
+      "subject": "6:サービスをご利用頂きましてありがとうございます",
+      "type": 1,
+      "date": "2016/03/12",
+      "readFlg": 1
+    },{
+      "senderName": "サービスセンター",
+      "subject": "7:4月の定期健診を受診してください",
+      "type": 1,
+      "date": "2016/04/03",
+      "readFlg": 0
+    }, {
+      "senderName": "XXXクリニック 医師 太郎",
+      "subject": "8:3月の検査結果がでました。次回診療の際に説明します",
+      "type": 2,
+      "date": "2016/03/27",
+      "readFlg": 0
+    }, {
+      "senderName": "サービスセンター",
+      "subject": "9:サービスをご利用頂きましてありがとうございます",
+      "type": 1,
+      "date": "2016/03/12",
+      "readFlg": 1
+    },{
+      "senderName": "サービスセンター",
+      "subject": "10:4月の定期健診を受診してください",
+      "type": 1,
+      "date": "2016/04/03",
+      "readFlg": 0
+    }, {
+      "senderName": "XXXクリニック 医師 太郎",
+      "subject": "11:3月の検査結果がでました。次回診療の際に説明します",
+      "type": 2,
+      "date": "2016/03/27",
+      "readFlg": 0
+    }, {
+      "senderName": "サービスセンター",
+      "subject": "12:サービスをご利用頂きましてありがとうございます",
+      "type": 1,
+      "date": "2016/03/12",
+      "readFlg": 1
+    },{
+      "senderName": "サービスセンター",
+      "subject": "13:4月の定期健診を受診してください",
+      "type": 1,
+      "date": "2016/04/03",
+      "readFlg": 0
+    }, {
+      "senderName": "XXXクリニック 医師 太郎",
+      "subject": "14:3月の検査結果がでました。次回診療の際に説明します",
+      "type": 2,
+      "date": "2016/03/27",
+      "readFlg": 0
+    }, {
+      "senderName": "サービスセンター",
+      "subject": "15:サービスをご利用頂きましてありがとうございます",
+      "type": 1,
+      "date": "2016/03/12",
+      "readFlg": 1
+    },{
+      "senderName": "サービスセンター",
+      "subject": "16:4月の定期健診を受診してください",
+      "type": 1,
+      "date": "2016/04/03",
+      "readFlg": 0
+    }, {
+      "senderName": "XXXクリニック 医師 太郎",
+      "subject": "17:3月の検査結果がでました。次回診療の際に説明します",
+      "type": 2,
+      "date": "2016/03/27",
+      "readFlg": 0
+    }, {
+      "senderName": "サービスセンター",
+      "subject": "18:サービスをご利用頂きましてありがとうございます",
+      "type": 1,
+      "date": "2016/03/12",
+      "readFlg": 1
+    },{
+      "senderName": "サービスセンター",
+      "subject": "19:4月の定期健診を受診してください",
+      "type": 1,
+      "date": "2016/04/03",
+      "readFlg": 0
+    }, {
+      "senderName": "XXXクリニック 医師 太郎",
+      "subject": "20:3月の検査結果がでました。次回診療の際に説明します",
+      "type": 2,
+      "date": "2016/03/27",
+      "readFlg": 0
+    }, {
+      "senderName": "サービスセンター",
+      "subject": "21:サービスをご利用頂きましてありがとうございます",
+      "type": 1,
+      "date": "2016/03/12",
+      "readFlg": 1
+    },{
+      "senderName": "サービスセンター",
+      "subject": "22:4月の定期健診を受診してください",
+      "type": 1,
+      "date": "2016/04/03",
+      "readFlg": 0
+    }, {
+      "senderName": "XXXクリニック 医師 太郎",
+      "subject": "23:3月の検査結果がでました。次回診療の際に説明します",
+      "type": 2,
+      "date": "2016/03/27",
+      "readFlg": 0
+    }, {
+      "senderName": "サービスセンター",
+      "subject": "24:サービスをご利用頂きましてありがとうございます",
+      "type": 1,
+      "date": "2016/03/12",
+      "readFlg": 1
+    },{
+      "senderName": "サービスセンター",
+      "subject": "25:4月の定期健診を受診してください",
+      "type": 1,
+      "date": "2016/04/03",
+      "readFlg": 0
+    }, {
+      "senderName": "XXXクリニック 医師 太郎",
+      "subject": "26:3月の検査結果がでました。次回診療の際に説明します",
+      "type": 2,
+      "date": "2016/03/27",
+      "readFlg": 0
+    }, {
+      "senderName": "サービスセンター",
+      "subject": "27:サービスをご利用頂きましてありがとうございます",
+      "type": 1,
+      "date": "2016/03/12",
+      "readFlg": 1
+    },{
+      "senderName": "サービスセンター",
+      "subject": "28:4月の定期健診を受診してください",
+      "type": 1,
+      "date": "2016/04/03",
+      "readFlg": 0
+    }, {
+      "senderName": "XXXクリニック 医師 太郎",
+      "subject": "29:3月の検査結果がでました。次回診療の際に説明します",
+      "type": 2,
+      "date": "2016/03/27",
+      "readFlg": 0
+    }, {
+      "senderName": "サービスセンター",
+      "subject": "30:サービスをご利用頂きましてありがとうございます",
+      "type": 1,
+      "date": "2016/03/12",
+      "readFlg": 1
+    }
+  ]
+}

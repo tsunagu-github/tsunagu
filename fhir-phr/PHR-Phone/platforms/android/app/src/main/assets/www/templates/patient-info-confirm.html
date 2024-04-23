@@ -1,0 +1,125 @@
+<link rel="stylesheet" href="lib/onsenui/css/onsen-css-components-blue-basic-theme.css">
+<ons-page ng-controller="parientCtrl">
+    <ons-toolbar style="background: #69BB7B">
+        <div class="left"><ons-back-button style="font-size: smaller;">戻る</ons-back-button></div>
+        <div class="center" style="color: #fff">基本情報確認</div>
+        <div class="right">
+           <ons-toolbar-button ng-click="app.slidingMenu.toggleMenu()"><ons-icon icon="bars" style="color: #fff"></ons-icon></ons-toolbar-button>
+        </div>
+    </ons-toolbar>
+    <ons-list>
+        <ons-list-item>
+            <ons-row>
+                <ons-col width="120px" align="left">PHR ID</ons-col>
+                <ons-col align="left">{{patient.phrId}}</ons-col>
+            </ons-row>
+        </ons-list-item>
+        <ons-list-item>
+            <ons-row>
+                <ons-col width="120px" align="left">管理番号<br></ons-col>
+                <ons-col align="left" >{{patient.insurerNo}}</ons-col>
+            </ons-row>
+        </ons-list-item>
+        <ons-list-item>
+            <ons-row>
+                <ons-col width="120px" align="left">氏名（姓）</ons-col>
+                <ons-col align="left">{{patient.familyName}}</ons-col>
+            </ons-row>
+        </ons-list-item>
+        <ons-list-item>
+            <ons-row>
+                <ons-col width="120px" align="left">氏名（名）</ons-col>
+                <ons-col align="left">{{patient.givenName}}</ons-col>
+            </ons-row>
+        </ons-list-item>
+        <ons-list-item>
+            <ons-row>
+                <ons-col width="120px" align="left">カナ氏名（姓）</ons-col>
+                <ons-col align="left">{{patient.familyKana}}</ons-col>
+            </ons-row>
+        </ons-list-item>
+        <ons-list-item>
+            <ons-row>
+                <ons-col width="120px" align="left">カナ氏名（名）</ons-col>
+                <ons-col align="left">{{patient.givenKana}}</ons-col>
+            </ons-row>
+        </ons-list-item>
+        <ons-list-item>
+            <ons-row>
+                <ons-col width="120px" align="left">性別</ons-col>
+                <ons-col align="left">{{sexCodeMap[patient.sexCd]}}</ons-col>
+            </ons-row>
+        </ons-list-item>
+        <ons-list-item>
+            <ons-row>
+                <ons-col width="120px" align="left">生年月日</ons-col>
+                <ons-col align="left">{{patient.birthDate}}</ons-col>
+            </ons-row>
+        </ons-list-item>
+        <ons-list-item>
+            <ons-row>
+                <ons-col width="120px" align="left">郵便番号</ons-col>
+                <ons-col align="left">{{patient.zipCode}}</ons-col>
+            </ons-row>
+        </ons-list-item>        
+        <ons-list-item>
+            <ons-row>
+                <ons-col width="120px" align="left">都道府県</ons-col>
+                <ons-col align="left">{{patient.prefectureName}}</ons-col>
+            </ons-row>
+        </ons-list-item>         
+        <ons-list-item>
+            <ons-row>
+                <ons-col width="120px" align="left">住所</ons-col>
+                <ons-col align="left">{{patient.addressLine}}</ons-col>
+            </ons-row>
+        </ons-list-item>           
+        <ons-list-item>
+            <ons-row>
+                <ons-col width="120px" align="left">建物名等</ons-col>
+                <ons-col align="left">{{patient.buildingName}}</ons-col>
+            </ons-row>
+        </ons-list-item>         
+        <ons-list-item>
+            <ons-row>
+                <ons-col width="120px" align="left">主たる連絡先</ons-col>
+                <ons-col align="left">{{patient.telNo}}</ons-col>
+            </ons-row>
+        </ons-list-item>         
+        <ons-list-item>
+            <ons-row>
+                <ons-col width="120px" align="left">その他連絡先</ons-col>
+                <ons-col align="left">{{patient.otherContactNo}}</ons-col>
+            </ons-row>
+        </ons-list-item>       
+        <ons-list-item>
+            <ons-row>
+                <ons-col width="120px" align="left">メールアドレス</ons-col>
+                <ons-col align="left">{{patient.emailAddress}}</ons-col>
+            </ons-row>
+        </ons-list-item>    
+        <ons-list-item>
+            <ons-row>
+                <ons-col width="200px" align="left">疾病管理（アラート・リマインダ）</ons-col>
+                <ons-col align="left">{{patient.diseaseManagement == "true" || patient.diseaseManagement == true ? 'する' : 'しない'}}</ons-col>
+            </ons-row>
+        </ons-list-item>    
+    </ons-list>
+        <br>
+    <ons-bottom-toolbar style="height: 3.4rem;">
+      <div style="float: left; width: 50%">
+        <ons-toolbar-button ng-click="backMenuAction()" style="color: darkslategrey; display: flex; flex: 1 1 0; flex-direction: column; justify-content: center; position: relative; text-align: center; text-overflow: ellipsis; white-space: nowrap;height: 2.8rem; line-height: 2.6rem;">
+          <ons-icon icon="angle-left" size="30px" style="align-self: center; max-width: 100%;"></ons-icon>
+          <span style="align-self: center; max-width: 100%;min-width: 35px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap; font-size: 16px; line-height: 16px">入力画面へ
+          </span>
+        </ons-toolbar-button>
+      </div>
+      <div style="float: right; width: 50%">
+        <ons-toolbar-button ng-click="updateAction()" ng-disabled="phrForm.$invalid" style="color: darkslategrey; display: flex; flex: 1 1 0; flex-direction: column; justify-content: center; position: relative; text-align: center; text-overflow: ellipsis; white-space: nowrap;height: 2.8rem; line-height: 2.6rem;">
+          <ons-icon icon="fa-pencil" size="30px" style="align-self: center; max-width: 100%;"></ons-icon>
+          <span style="align-self: center; max-width: 100%;min-width: 35px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap; font-size: 16px; line-height: 16px">登 録</span>
+        </ons-toolbar-button>
+      </div>
+    </ons-bottom-toolbar>
+
+</ons-page>

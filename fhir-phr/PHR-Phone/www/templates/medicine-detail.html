@@ -1,0 +1,266 @@
+<link rel="stylesheet" href="css/medicine.css">
+<ons-page ng-controller="medicineDetailCtrl">    
+    <ons-toolbar style="background: #69BB7B">
+        <div class="left"><ons-back-button style="font-size: smaller;">一覧へ</ons-back-button></div>
+        <div class="center" style="color: #fff">おくすり情報</div>
+        <div class="right">
+           <ons-toolbar-button ng-click="app.slidingMenu.toggleMenu()"><ons-icon icon="bars" style="color: #fff"></ons-icon></ons-toolbar-button>
+        </div>
+    </ons-toolbar>
+   <div>
+       <table class="medmetaInfo">
+        <tr>
+            <td>調剤日</td>
+            <td>{{dosageMedicine.dosageDate| date:'yyyy/MM/dd'}}</td>
+        </tr>
+        <tr>
+            <td>調剤薬局</td>
+            <td>{{dosageMedicine.pharmacy}}</td>
+        </tr>
+        <tr>
+            <td>薬剤師</td>
+            <td>{{dosageMedicine.pharmacistName}}</td>
+        </tr>        
+       </table>
+   </div>    
+        
+    <div>
+        <table class="medpatMessage">
+            <tr>
+                <td>服用メモ（患者記入情報）</td>
+                <td><ons-button modifier="patinfoEdit"  ng-click="entryMessage(dosageMedicine.dosageId)" value="編集">登録</ons-button></td>
+            </tr>
+            <tr ng-repeat="patientInputText in dosageMedicine.patientInput">
+                <td colspan="2"><ons-input type="text" ng-model="patientInputText.inputText" style="border-bottom: 1px solid #ccc;width: 100%"></ons-input></td>
+            </tr>
+            <tr>
+                <td colspan="2"><ons-input type="text" ng-model="patientInputTextNew" style="border-bottom: 1px solid #ccc;width: 100%"></ons-input></td>
+            </tr>
+        </table>
+    </div>
+    <div ng-repeat="dosageData in dosageMedicine.dosageDataList">
+        <br/>
+       <table class="medmetaInfo" ng-if="!!dosageData.medicalOrganization || !!dosageData.departmentName || !!dosageData.doctorName">
+        <tr ng-if="!!dosageData.medicalOrganization"><!--医療機関-->
+            <td colspan="2">{{dosageData.medicalOrganization}}</td>
+        </tr>
+        <tr ng-if="!!dosageData.departmentName || !!dosageData.doctorName"><!--診療科　医師名-->
+            <td>{{dosageData.departmentName}}</td><td>{{dosageData.doctorName}}</td>
+        </tr>
+        </table>
+        
+        <table class="medBody" ng-repeat="medicineInfo in dosageData.recipeList">
+            <thead ng-show="dosageData.medicineType=='2'">
+                <tr ng-repeat="dosageFormCd in dosageFormCDList|filter:{ cd: medicineInfo.dosageForm}:true">
+                    <td style="width:80%"><!--剤型：用法--><!--全量：単位-->
+                        {{dosageFormCd.name}}：{{medicineInfo.usageName}}
+                    </td>
+                    <td style="width:20%">{{medicineInfo.dosageQuantity}}{{medicineInfo.dosageUnit}}</td>
+                </tr>
+                <tr ng-if="!!medicineInfo.recipeAttention[0]" ng-repeat="recipeAttent in medicineInfo.recipeAttention track by $index" style="color: #8b0000"><!--処方服用注意情報-->
+                    <td colspan="2">{{recipeAttent}}</td>
+                </tr>
+                <tr ng-if="!!medicineInfo.recipeAddition[0]" ng-repeat="recipeAdd in medicineInfo.recipeAddition track by $index"><!--用法補足-->
+                    <td colspan="2">{{recipeAdd}}</td>
+                </tr>
+            </thead>
+            <tbody ng-show="dosageData.medicineType=='2'" ng-repeat="medicineData in medicineInfo.medicines track by $index">
+                <tr><!--薬品名称--><!--数量　単位-->
+                    <td style="width:80%"><a href="" ng-click="getSearch(medicineData.medicineName)">{{medicineData.medicineName}}</a></td>
+                    <td style="width:20%">{{medicineData.amount}} {{medicineData.unitName}}</td>  
+                </tr><!--薬品服用注意-->
+                <tr ng-repeat="medAddition in medicineData.additionalList track by $index">
+                    <td colspan="2">{{medAddition}}</td>
+                </tr><!--薬品補足-->
+                <tr ng-repeat="medAttention in medicineData.attention track by $index">
+                    <td colspan="2">{{medAttention}}</td>
+                </tr>
+            </tbody>
+            <thead ng-show="dosageData.medicineType=='1'"><!--市販薬-->
+                <tr>
+                    <td style="width:60%">{{medicineInfo.usageName}}&nbsp;</td>
+                    <td style="width:20%">服用開始日&nbsp;</td>
+                    <td style="width:20%">服用終了日&nbsp;</td>
+                </tr>
+            </thead>
+            <tbody ng-show="dosageData.medicineType=='1'" ng-repeat="medicineData in medicineInfo.medicines track by $index">
+                <tr>
+                    <td style="width:60%"><a href="" ng-click="getSearch(medicineData.medicineName)">{{medicineData.medicineName}}</a></td>
+                    <td style="width:20%">{{medicineData.startDate| date:'yyyy/MM/dd'}}</td>
+                    <td style="width:20%">{{medicineData.endDate| date:'yyyy/MM/dd'}}</td>                    
+                </tr>
+            </tbody>            
+        </table>
+    </div>
+    
+    <br/>
+    
+    <div>
+        <table class="medmetaInfo" ng-if="!!dosageMedicine.dosageAttention[0] ||!!dosageMedicine.dosageRemark[0]">
+            <tr ng-if="!!dosageMedicine.dosageAttention[0]" ng-repeat="attention in dosageMedicine.dosageAttention">
+                <td style="width: 35px">注意</td>
+                <td>{{attention}}</td>
+            </tr>
+            <tr ng-if="!!dosageMedicine.dosageRemark[0]" ng-repeat="remark in dosageMedicine.dosageRemark" >
+                <td style="width: 35px">備考</td>
+                <td>{{remark}}</td>
+            </tr>
+        </table>        
+    </div>
+    
+<ons-bottom-toolbar>
+    <table style="width:100%;">
+        <tr><td style="text-align: center;">
+        <ons-toolbar-button ng-click="deleteConfirm(dosageMedicine.dosageId)"
+                style="color: royalblue;
+                       flex: 1 1 0; 
+                       flex-direction: column; 
+                       justify-content: center; 
+                       position: relative; 
+                       text-align: center; 
+                       text-overflow: ellipsis; 
+                       white-space: nowrap;
+                       height: 2.8rem; 
+                       line-height: 2.6rem;">                            
+                <ons-icon
+                  icon="fa-trash"
+                  size="18px">
+                    <br/>削除
+                  </ons-icon>           
+        </ons-toolbar-button>
+    </td>
+    <td style="text-align: center;">
+        <ons-toolbar-button ng-click="openEditor(dosageMedicine)" ng-disabled="dosageMedicine.recordCreatorType!=='2'"
+                style="color: royalblue;
+                       flex: 1 1 0; 
+                       flex-direction: column; 
+                       justify-content: center; 
+                       position: relative; 
+                       text-align: center; 
+                       text-overflow: ellipsis; 
+                       white-space: nowrap;
+                       height: 2.8rem; 
+                       line-height: 2.6rem;">
+                <ons-icon
+                  icon="fa-pencil"
+                  size="18px">
+                    <br/>編集
+                  </ons-icon>                    
+        </ons-toolbar-button>
+    </td></tr>
+    </table>
+</ons-bottom-toolbar>
+
+</ons-page>
+
+<!--   <div>
+       <table class="medmetaInfo">
+        <tr>
+            <td>調剤日</td>
+            <td>{{dosageMedicine.dosageDate| date:'yyyy/MM/dd'}}</td>
+        </tr>
+        <tr>
+            <td>調剤薬局</td>
+            <td>{{dosageMedicine.pharmacy}}</td>
+        </tr>
+        <tr>
+            <td>薬剤師</td>
+            <td>{{dosageMedicine.pharmacistName}}</td>
+        </tr>
+        <tr>
+            <td>処方機関</td>
+            <td>{{dosageMedicine.medicalOrganization}}</td>
+        </tr>
+        <tr>
+            <td>医師</td>
+            <td>{{dosageMedicine.doctorName}}</td>
+        </tr>
+        <tr>
+            <td>備考</td>
+            <td>{{dosageMedicine.dosageRemark}}</td>
+        </tr>
+        
+       </table>
+   </div>
+    <div>
+        <table class="medBody" ng-repeat="medicineInfo in dosageMedicine.medicineList">
+            <thead ng-show="medicineInfo.medicineType=='2'">
+                <tr ng-repeat="dosageFormCd in dosageFormCDList|filter:{ cd: medicineInfo.dosageForm}:true">
+                    <td style="width:80%">
+                        {{dosageFormCd.name}}：{{medicineInfo.usageName}}
+                    </td>
+                    <td style="width:20%">{{medicineInfo.dosageQuantity}}{{medicineInfo.dosageUnit}}</td>
+                </tr>
+            </thead>
+            <tbody ng-show="medicineInfo.medicineType=='2'" ng-repeat="medicineData in medicineInfo.medicines track by $index">
+                <tr>
+                    <td style="width:80%"><a href="" ng-click="getSearch(medicineData.medicineName)">{{medicineData.medicineName}}</a></td>
+                    <td style="width:20%">{{medicineData.amount}} {{medicineData.unitName}}</td>  
+                </tr>
+                <tr ng-if="!!medicineData.additional">
+                    <td colspan="2">
+                        補足情報：{{medicineData.additional}}
+                    </td>
+                </tr>
+            </tbody>
+            <thead ng-show="medicineInfo.medicineType=='1'">
+                <tr>
+                    <td style="width:60%">{{medicineInfo.usageName}}&nbsp;</td>
+                    <td style="width:20%">服用開始日&nbsp;</td>
+                    <td style="width:20%">服用終了日&nbsp;</td>
+                </tr>
+            </thead>
+            <tbody ng-show="medicineInfo.medicineType=='1'" ng-repeat="medicineData in medicineInfo.medicines track by $index">
+                <tr>
+                    <td style="width:60%"><a href="" ng-click="getSearch(medicineData.medicineName)">{{medicineData.medicineName}}</a></td>
+                    <td style="width:20%">{{medicineData.startDate| date:'yyyy/MM/dd'}}</td>
+                    <td style="width:20%">{{medicineData.endDate| date:'yyyy/MM/dd'}}</td>                    
+                </tr>
+            </tbody>            
+        </table>
+    </div>
+
+<ons-bottom-toolbar>
+    <table style="width:100%;">
+        <tr><td style="text-align: center;">
+        <ons-toolbar-button ng-click="deleteConfirm(dosageMedicine.dosageId,dosageMedicine.seq)"
+                style="color: royalblue;
+                       flex: 1 1 0; 
+                       flex-direction: column; 
+                       justify-content: center; 
+                       position: relative; 
+                       text-align: center; 
+                       text-overflow: ellipsis; 
+                       white-space: nowrap;
+                       height: 2.8rem; 
+                       line-height: 2.6rem;">                            
+                <ons-icon
+                  icon="fa-trash"
+                  size="18px">
+                    <br/>削除
+                  </ons-icon>           
+        </ons-toolbar-button>
+    </td>
+    <td style="text-align: center;">
+        <ons-toolbar-button ng-click="openEditor(dosageMedicine)" ng-disabled="dosageMedicine.recordCreatorType!=='2'"
+                style="color: royalblue;
+                       flex: 1 1 0; 
+                       flex-direction: column; 
+                       justify-content: center; 
+                       position: relative; 
+                       text-align: center; 
+                       text-overflow: ellipsis; 
+                       white-space: nowrap;
+                       height: 2.8rem; 
+                       line-height: 2.6rem;">
+                <ons-icon
+                  icon="fa-pencil"
+                  size="18px">
+                    <br/>編集
+                  </ons-icon>                    
+        </ons-toolbar-button>
+    </td></tr>
+    </table>
+</ons-bottom-toolbar>-->
+
+     

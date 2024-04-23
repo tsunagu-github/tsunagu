@@ -1,0 +1,99 @@
+<ons-page ng-controller="takeOverCtrl">
+    <ons-toolbar style="background: #69BB7B">
+        <div class="left"></div>
+        <div class="center" style="color: #fff">
+<!--            引継ぎコード-->
+            初期ログインコード
+        </div>
+        <div class="right">
+           <ons-toolbar-button ng-click="app.slidingMenu.toggleMenu()"><ons-icon icon="bars" style="color: #fff"></ons-icon></ons-toolbar-button>
+        </div>
+    </ons-toolbar>
+
+    <form class="form-inline">
+    <ons-list>
+        <ons-list-item>
+            <ons-row>
+                <ons-col width="5%"></ons-col>
+                <ons-col align="bottom" width="30%" style="color: #00f;text-align: left">
+                    PHR ID
+                </ons-col>
+                <ons-col align="bottom" width="65%" style="color: #000;text-align: left">
+                    {{takeOver.phrId}}
+                </ons-col>
+            </ons-row>
+        </ons-list-item>
+        <ons-list-item>
+            <ons-row>
+                <ons-col width="5%"></ons-col>
+                <ons-col align="bottom" width="30%" style="color: #00f;text-align: left">
+<!--                    引継ぎコード-->
+                    初期ログインコード
+                </ons-col>
+                <ons-col align="bottom" width="65%" style="color: #000;text-align: left">
+                    {{takeOver.takeOverCode}}
+                </ons-col>
+            </ons-row>
+        </ons-list-item>
+        <ons-list-item>
+            <ons-row>
+                <ons-col width="5%"></ons-col>
+                <ons-col align="bottom" width="30%" style="color: #00f;text-align: left">
+                    パスワード
+                </ons-col>
+                <ons-col align="bottom" width="65%" style="color: #000;text-align: left">
+                   {{takeOver.takeOverPassword}}
+                </ons-col>
+            </ons-row>
+        </ons-list-item>
+        <ons-list-item>
+            <ons-row>
+                <ons-col width="5%"></ons-col>
+                <ons-col align="bottom" width="30%" style="color: #00f;text-align: left">
+                    有効期限
+                </ons-col>
+                <ons-col align="bottom" width="65%" style="color: #000;text-align: left">
+                    {{takeOver.expirationDate}}
+                </ons-col>
+            </ons-row>
+        </ons-list-item>
+    </ons-list>
+    <br>
+        <ons-row>
+            <ons-col width="5%"></ons-col>
+            <ons-col width="95%" style="color: #00f;">
+                機種変更時等のデータ引継ぎに必要な情報です。
+                <br>
+                忘れないように控えておいてください。
+            </ons-col>
+        </ons-row>
+
+    <br>
+    </form>
+<!--
+    <ons-bottom-toolbar style="height: 65px">
+        <div style="text-align: right">
+            <ons-row>
+                <ons-col>
+                    <ons-toolbar-button ng-click="goToMainMenu()" style="text-align: center" >
+                        <ons-icon icon="angle-right" size="30px" style="align-self: center; max-width: 100%;"></ons-icon>
+                        　　<br/>
+                        <span style="align-self: center; max-width: 100%;min-width: 35px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap; font-size: 16px; line-height: 16px">メニューへ</span>
+                </ons-toolbar-button>
+                </ons-col>
+            </ons-row>
+        </div>
+    </ons-bottom-toolbar>
+-->
+    <ons-bottom-toolbar style="height: 3.4rem;">
+      <div style="float: right; width: 50%">
+        <ons-toolbar-button ng-click="goToMainMenu()" style="color: darkslategrey; display: flex; flex: 1 1 0; flex-direction: column; justify-content: center; position: relative; text-align: center; text-overflow: ellipsis; white-space: nowrap;height: 2.8rem; line-height: 2.6rem;">
+          <ons-icon icon="angle-right" size="30px" style="align-self: center; max-width: 100%;"></ons-icon>
+          <span style="align-self: center; max-width: 100%;min-width: 35px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap; font-size: 16px; line-height: 16px">メニューへ</span>
+        </ons-toolbar-button>
+      </div>
+    </ons-bottom-toolbar>
+
+
+
+</ons-page>

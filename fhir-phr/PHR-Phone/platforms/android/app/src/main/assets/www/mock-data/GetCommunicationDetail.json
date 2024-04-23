@@ -1,0 +1,12 @@
+{
+  "message":"取得に失敗しました",
+  "status": "0",
+  "msgInfoList": [
+    {
+      "id": "000000000000101",
+      "bodyText":"テスト本文",
+      "insurerNo" : "1234567",
+      "organizationCd" : ""
+    }
+  ]
+}

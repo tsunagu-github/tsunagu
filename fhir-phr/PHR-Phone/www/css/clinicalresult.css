@@ -1,0 +1,340 @@
+/* format03 */
+table.fmt03 {
+    border-collapse: collapse;
+        font-size: 0.85em;
+	width: 100%;
+	clear:both;
+}
+table.fmt03 th {
+	padding: 3px;
+	border: 1px solid #c4c4c4;
+}
+table.fmt03 td {
+	padding: 3px;
+	border: 1px solid #c4c4c4;
+}
+table.fmt03 thead th {
+	background-color: #006699;
+	text-align:center;
+	color: #FFF;
+	font-weight:bold;
+}
+table.fmt03 thead td {}
+table.fmt03 tbody th {
+	background:#f3f7fc;
+	vertical-align: center;
+	text-align:center;
+	color: #333;
+	font-weight:bold;
+}
+table.fmt03 tbody td {}
+table.fmt03 tbody tr {background-color:#ffffff;}
+/* format04 */
+table.fmt04 {
+    border-collapse: collapse;
+        font-size: 1.1em;
+	width: 90%;
+	clear:both;
+}
+table.fmt04 th {
+	padding: 3px;
+	border: 1px solid #c4c4c4;
+}
+table.fmt04 td {
+	padding: 3px;
+	border: 1px solid #c4c4c4;
+}
+table.fmt04 thead th {
+	background-color: #006699;
+	text-align:center;
+	color: #FFF;
+	font-weight:bold;
+}
+table.fmt04 thead td {}
+table.fmt04 tbody th {
+	background:#f3f7fc;
+	vertical-align: center;
+	text-align:center;
+	color: #333;
+	font-weight:bold;
+}
+table.fmt04 tbody td {}
+table.fmt04 tbody tr {background-color:#ffffff;}
+
+/* format05 */
+table.fmt05 {
+    border-collapse: collapse;
+}
+table.fmt05 th, table.fmt05 td {
+  border: solid 1px black;
+
+  .margin-auto
+{
+	margin:0 auto;
+}
+.margin-auto1
+{
+	margin:1em auto;
+}
+.margin-auto2
+{
+	margin:2em auto;
+}
+.center
+{
+	text-align:center;
+}
+.left
+{
+	text-align:left;
+}
+.right
+{
+	text-align:right;
+}
+.clear
+{
+	clear:both;
+}
+.r10
+{
+	width:10px;
+}
+.r20
+{
+	width:20px;
+}
+.r30
+{
+	width:30px;
+}
+.r40
+{
+	width:40px;
+}
+.r50
+{
+	width:50px;
+}
+.r50
+{
+	width:60px;
+}
+.r70
+{
+	width:70px;
+}
+.r80
+{
+	width:80px;
+}
+.r90
+{
+	width:90px;
+}
+.r100
+{
+	width:100px;
+}
+.r110
+{
+	width:110px;
+}
+.r120
+{
+	width:120px;
+}
+.r130
+{
+	width:130px;
+}
+.r140
+{
+	width:140px;
+}
+.r150
+{
+	width:150px;
+}
+.r160
+{
+	width:160px;
+}
+.r170
+{
+	width:170px;
+}
+.r180
+{
+	width:180px;
+}
+.r190
+{
+	width:190px;
+}
+.r200
+{
+	width:200px;
+}
+.r210
+{
+	width:210px;
+}
+.r220
+{
+	width:220px;
+}
+.r230
+{
+	width:230px;
+}
+.r240
+{
+	width:240px;
+}
+.r250
+{
+	width:250px;
+}
+.r260
+{
+	width:260px;
+}
+.r270
+{
+	width:270px;
+}
+.r280
+{
+	width:280px;
+}
+.r290
+{
+	width:290px;
+}
+.r300
+{
+	width:300px;
+}
+.r310
+{
+	width:310px;
+}
+.r320
+{
+	width:320px;
+}
+.r330
+{
+	width:330px;
+}
+.r340
+{
+	width:340px;
+}
+.r350
+{
+	width:350px;
+}
+.r360
+{
+	width:360px;
+}
+.r370
+{
+	width:370px;
+}
+.r380
+{
+	width:380px;
+}
+.r390
+{
+	width:390px;
+}
+.r400
+{
+	width:400px;
+}
+.r410
+{
+	width:410px;
+}
+.r420
+{
+	width:420px;
+}
+.r430
+{
+	width:430px;
+}
+.r440
+{
+	width:440px;
+}
+.r450
+{
+	width:450px;
+}
+.r460
+{
+	width:460px;
+}
+.r470
+{
+	width:470px;
+}
+.r480
+{
+	width:480px;
+}
+.r490
+{
+	width:490px;
+}
+.r500
+{
+	width:500px;
+}
+.r510
+{
+	width:510px;
+}
+.r520
+{
+	width:520px;
+}
+.r530
+{
+	width:530px;
+}
+.r540
+{
+	width:540px;
+}
+.r550
+{
+	width:550px;
+}
+.diabetes-button {
+    margin-top:5px;
+}
+.diabetes-button input {
+    display: none;
+}
+.diabetes-button label {
+    font-size: 14px;
+    height:40px;
+    padding: 0px 5px;
+    margin:5px 5px;
+    float: left;
+    color: #ffffff;
+    border: 1px #d3d3d3 solid;
+    background: #C3C3C3;
+    border-radius: 5px;
+}
+.diabetes-button input:checked + label {
+    color: #000000;
+    background: #f0e68c;
+}
+}

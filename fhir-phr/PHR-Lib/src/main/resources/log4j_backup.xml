@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/" >
+    <!-- ==================================================================== -->
+    <!-- Appender 定義                                                        -->
+    <!-- ==================================================================== -->
+    <appender name="Console" class="org.apache.log4j.ConsoleAppender">
+        <layout class="org.apache.log4j.PatternLayout">
+            <!-- <param name="ConversionPattern" value="%d{ISO8601}:%t %-5p %c{2} - %m%n"/> -->
+            <param name="ConversionPattern" value="%d [%-5p] %c.%M(%L) - %m\r\n"/>
+        </layout>
+    </appender>
+
+    <!-- ｱﾌﾟﾘｹｰｼｮﾝ-ﾄﾚｰｽﾛｸﾞ -->
+    <appender name="TraceLog" class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="File" value="./logs/PHR-Backup.log" />
+        <param name="Append"      value="true" />
+        <param name="DatePattern" value="yyyy-MM-dd" />
+        <param name="BufferedIO"  value="false" />
+        <param name="Threshold"   value="debug" />
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d [%-5p] %c.%M(%L) - %m\r\n"/>
+        </layout>
+    </appender>
+
+    <!-- ｱﾌﾟﾘｹｰｼｮﾝ-ﾄﾚｰｽﾛｸﾞ非同期化ｱﾍﾟﾝﾀﾞ -->
+    <appender name="TraceLogAsync" class="org.apache.log4j.AsyncAppender">
+        <appender-ref ref="TraceLog"/>
+    </appender>
+
+
+    <!-- ==================================================================== -->
+    <!-- Category別 定義                                                     -->
+    <!-- ==================================================================== -->
+	<category name="phr">
+		<priority value="INFO" />
+	</category>
+	<category name="phr.datadomain.entity">
+		<priority value="WARN" />
+	</category>
+	<category name="phr.config">
+		<priority value="WARN" />
+	</category>
+
+
+    <!-- ==================================================================== -->
+    <!-- Root Logger 定義                                                     -->
+    <!-- ==================================================================== -->
+	<root>
+		<priority value="DEBUG"/>
+		<appender-ref ref="Console" />
+		<appender-ref ref="TraceLog" />
+	</root>
+</log4j:configuration>

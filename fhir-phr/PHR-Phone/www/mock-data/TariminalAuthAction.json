@@ -1,0 +1,19 @@
+{
+  "phrId": "1234567-000000",
+  "familyName": "Mock患者",
+  "givenName": "太郎",
+  "familyKana": "カンジャ",
+  "givenKana": "タロウ",
+  "birthDate": "1974/02/06",
+  "sexCd": "M",
+  "zipCode": "1340088",
+  "prefectureCd": "13",
+  "addressLine": "中央区日本橋蛎殻町1-36",
+  "buildingName": "蛎殻町千葉ビル 7F",
+  "telNo": "03-5652-0890",
+  "otherContactNo": "03-5652-0890",
+  "emailAddress": "d-abe@kis.inc.jp",
+  "insurerNo": "1234567",
+  "diseaseManagement":true,
+  "status": "0"
+}

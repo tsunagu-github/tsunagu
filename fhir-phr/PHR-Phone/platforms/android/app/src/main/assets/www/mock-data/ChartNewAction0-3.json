@@ -1,0 +1,195 @@
+{
+  "targetChartDefinition": {
+    "chartDefinitionId": 0,
+    "viewCount": 0,
+    "commonFlg": 0,
+    "dataInputType": 3,
+    "chartObservationList": [
+      {
+        "chartDefinitionId": 0,
+        "observationDefinitionId": "0000000001",
+        "observationDefinitionName": "身長",
+        "selected": false
+      },
+      {
+        "chartDefinitionId": 0,
+        "observationDefinitionId": "0000000002",
+        "observationDefinitionName": "体重",
+        "selected": false
+      },
+      {
+        "chartDefinitionId": 0,
+        "observationDefinitionId": "1000000001",
+        "observationDefinitionName": "BMI",
+        "selected": false
+      },
+      {
+        "chartDefinitionId": 0,
+        "observationDefinitionId": "0000000026",
+        "observationDefinitionName": "腹囲",
+        "selected": false
+      },
+      {
+        "chartDefinitionId": 0,
+        "observationDefinitionId": "0000000081",
+        "observationDefinitionName": "収縮期血圧（1回目）",
+        "selected": false
+      },
+      {
+        "chartDefinitionId": 0,
+        "observationDefinitionId": "0000000082",
+        "observationDefinitionName": "収縮期血圧（2回目）",
+        "selected": false
+      },
+      {
+        "chartDefinitionId": 0,
+        "observationDefinitionId": "0000000082",
+        "observationDefinitionName": "収縮期血圧（2回目）",
+        "selected": false
+      },
+      {
+        "chartDefinitionId": 0,
+        "observationDefinitionId": "0000000083",
+        "observationDefinitionName": "収縮期血圧（その他）",
+        "selected": false
+      },
+      {
+        "chartDefinitionId": 0,
+        "observationDefinitionId": "0000000083",
+        "observationDefinitionName": "収縮期血圧（その他）",
+        "selected": false
+      },
+      {
+        "chartDefinitionId": 0,
+        "observationDefinitionId": "0000000084",
+        "observationDefinitionName": "拡張期血圧（1回目)",
+        "selected": false
+      },
+      {
+        "chartDefinitionId": 0,
+        "observationDefinitionId": "0000000084",
+        "observationDefinitionName": "拡張期血圧（1回目)",
+        "selected": false
+      },
+      {
+        "chartDefinitionId": 0,
+        "observationDefinitionId": "0000000085",
+        "observationDefinitionName": "拡張期血圧（2回目)",
+        "selected": false
+      },
+      {
+        "chartDefinitionId": 0,
+        "observationDefinitionId": "0000000085",
+        "observationDefinitionName": "拡張期血圧（2回目)",
+        "selected": false
+      },
+      {
+        "chartDefinitionId": 0,
+        "observationDefinitionId": "0000000086",
+        "observationDefinitionName": "拡張期血圧（その他)",
+        "selected": false
+      },
+      {
+        "chartDefinitionId": 0,
+        "observationDefinitionId": "0000000086",
+        "observationDefinitionName": "拡張期血圧（その他)",
+        "selected": false
+      },
+      {
+        "chartDefinitionId": 0,
+        "observationDefinitionId": "0000000087",
+        "observationDefinitionName": "採血時間",
+        "selected": false
+      },
+      {
+        "chartDefinitionId": 0,
+        "observationDefinitionId": "0000000006",
+        "observationDefinitionName": "HDLコレステロール",
+        "selected": false
+      },
+      {
+        "chartDefinitionId": 0,
+        "observationDefinitionId": "0000000018",
+        "observationDefinitionName": "中性脂肪",
+        "selected": false
+      },
+      {
+        "chartDefinitionId": 0,
+        "observationDefinitionId": "0000000044",
+        "observationDefinitionName": "空腹時血糖",
+        "selected": false
+      },
+      {
+        "chartDefinitionId": 0,
+        "observationDefinitionId": "0000000012",
+        "observationDefinitionName": "HbA1c",
+        "selected": false
+      },
+      {
+        "chartDefinitionId": 0,
+        "observationDefinitionId": "0000000013",
+        "observationDefinitionName": "ALT",
+        "selected": false
+      },
+      {
+        "chartDefinitionId": 0,
+        "observationDefinitionId": "0000000025",
+        "observationDefinitionName": "AST",
+        "selected": false
+      },
+      {
+        "chartDefinitionId": 0,
+        "observationDefinitionId": "0000000028",
+        "observationDefinitionName": "γ GTP",
+        "selected": false
+      },
+      {
+        "chartDefinitionId": 0,
+        "observationDefinitionId": "0000000039",
+        "observationDefinitionName": "Hb",
+        "selected": false
+      },
+      {
+        "chartDefinitionId": 0,
+        "observationDefinitionId": "0000000045",
+        "observationDefinitionName": "ヘマトクリット",
+        "selected": false
+      },
+      {
+        "chartDefinitionId": 0,
+        "observationDefinitionId": "0000000046",
+        "observationDefinitionName": "赤血球数",
+        "selected": false
+      }
+    ]
+  },
+  "colorList": [
+    {
+      "cd": "red",
+      "val": "赤"
+    },
+    {
+      "cd": "blue",
+      "val": "青"
+    },
+    {
+      "cd": "green",
+      "val": "緑"
+    },
+    {
+      "cd": "yellow",
+      "val": "黄"
+    },
+    {
+      "cd": "purple",
+      "val": "紫"
+    },
+    {
+      "cd": "gray",
+      "val": "灰"
+    }
+  ],
+  "status": "0",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36",
+  "browserType": "Windows"
+}

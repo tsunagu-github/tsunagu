@@ -1,0 +1,12 @@
+<ons-page style="background-color: white" ng-controller="manuCtrl">
+    <ons-sliding-menu var="app.slidingMenu" menu-page="templates/side-menu.html" main-page="main.html" side="right" type="overlay" max-slide-distance="250px">
+    </ons-sliding-menu>
+    <ons-modal id="modal" animation="fade" style="background-color:#ff">
+        <ons-progress-circular indeterminate></ons-progress-circular><br>
+        データ通信をしています
+    </ons-modal>
+    <ons-template id="main.html">
+        <ons-navigator var="myNavigator" page="templates/menu-list.html">
+        </ons-navigator>
+    </ons-template>
+</ons-page>

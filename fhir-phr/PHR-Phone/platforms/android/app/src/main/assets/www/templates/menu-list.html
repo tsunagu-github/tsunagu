@@ -1,0 +1,67 @@
+<ons-page ng-controller="menuListCtrl" ng-init="initPage();">
+    <ons-toolbar style="background: #69BB7B">
+        <div class="center" style="color: #fff">{{patient.familyName}} {{patient.givenName}} 様</div>
+        <div class="right">
+            <ons-toolbar-button ng-click="app.slidingMenu.toggleMenu()"><ons-icon icon="bars" style="color: #fff"></ons-icon></ons-toolbar-button>
+        </div>
+    </ons-toolbar>
+
+        <table width="100%">
+        <tr>
+        	<td align="center"><div class="center" ng-click="myNavigator.pushPage('templates/selfcheck-list.html');"><img src="./imgs/menu_selfcheck.png"></div></td>
+            <!--
+        	<td align="center"><div class="center" ng-click="myNavigator.pushPage('templates/onetimepassword-entry.html');"><img src="./imgs/menu_onetimepassword.png"></div></td>
+            -->
+            <td align="center"><div class="center" ng-click="myNavigator.pushPage('templates/chart-menu.html');"><img src="./imgs/menu_chart2.png"></div></td>
+        </tr>
+        </table>
+        <table width="100%">
+        <tr>
+            <!--
+            <td align="center"><div class="center" ng-click="myNavigator.pushPage('templates/frail-summary.html');"><img height="75" src="./imgs/menu_frail-summary.png"></div></td>
+            -->
+            <td align="center"><div class="center" ng-click="myNavigator.pushPage('templates/medicine-menu.html');"><img height="75" src="./imgs/menu_medicine.png"></div></td>
+            <td align="center"><div class="center" ng-click="myNavigator.pushPage('templates/clinical-test-result.html');"><img height="75" src="./imgs/menu_self-management-set.png"></div></td>
+            <td align="center"><div class="center" ng-click="myNavigator.pushPage('templates/measurement-result.html');"><img height="75" src="./imgs/menu_measurement-result.png"></div></td>
+            <td align="center"><div class="center" ng-click="myNavigator.pushPage('templates/checkup-results.html');"><img height="75" src="./imgs/menu_checkup.png"></div></td>
+        </tr>
+        </table>
+        
+        <table width="100%" cellspacing="0">
+        <tr>
+        	<td class="line" align="center" width="35" ><img height="32" src="./imgs/menu_announcements.png"></td>
+        	<td class="line" align="left"><div class="left" ng-click="myNavigator.pushPage('templates/announcements.html');">おしらせ<span ng-if="getUnReadCount() > 0" class="notification segment-notification" style="margin-top:3px;margin-left:4px;">{{getUnReadCount()}}</span></div></td>
+        </tr>
+        <tr>
+        	<td class="line" align="center" width="35"><img height="32" src="./imgs/menu_parient-info.png"></td>
+        	<td class="line" align="left"><div class="left" ng-click="myNavigator.pushPage('templates/parient-info-edit.html');">利用者情報の確認</div></td>
+        </tr>
+        <tr>
+        	<td class="line" align="center" width="35"><img height="32" src="./imgs/menu_takeover.png"></td>
+        	<td class="line" align="left"><div class="left" ng-click="myNavigator.pushPage('templates/takeover-entry.html');">引継ぎ</div></td>
+        </tr>
+        <tr>
+        	<td class="line" align="center" width="35"><img height="32" src="./imgs/menu_cooperation.png"></td>
+        	<td class="line" align="left"><div class="left" ng-click="myNavigator.pushPage('templates/cooperation-list.html');">医療機関登録</div></td>
+        </tr>
+        <tr>
+        	<td class="line" align="center" width="35"><img height="32" src="./imgs/menu_backuprestore.png"></td>
+        	<td class="line" align="left"><div class="left" ng-click="myNavigator.pushPage('templates/backuprestore.html');">バックアップ</div></td>
+        </tr>
+        <tr ng-show="patient.dynamicConsentFlg">
+            <td class="line" align="center" width="35"><img height="32" src="./imgs/dynamicConsent_in.png"></td>
+            <td class="line" align="left"><div class="left" ng-click="myNavigator.pushPage('templates/dynamicConsent-menu.html');">健康医療情報の利用に関する同意一覧</div></td>
+        </tr>
+        <!--
+        <tr ng-hide="(isDevelopMode < 1)">
+        	<td class="line" align="center" width="35"></td>
+        	<td class="line" align="left"><div class="left" ng-click="mySOSAction()">MySOS起動</div></td>
+        </tr>
+        <tr ng-hide="(isDevelopMode < 1)">
+        	<td class="line" align="center" width="35"></td>
+        	<td class="line" align="left"><div class="left" ng-click="mircaAction()">Mirca起動</div></td>
+        </tr>
+        -->
+        </table>
+
+</ons-page>

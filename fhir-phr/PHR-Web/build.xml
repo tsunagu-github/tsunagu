@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="PHR-Lib" default="create_jar" basedir=".">
+	<property name="root" value="./target/"/>
+	<property name="class_dir" value="${root}PHR-Web-1.0/"/>
+	<property name="assemble" value="${root}assemble/"/>
+	<property name="lib_jar" value="../PHR-Lib/target/PHR-Lib.jar"/>
+
+	<!-- =================================================================-->
+	<!-- ビルドディレクトリ削除                                           -->
+	<!-- =================================================================-->
+	<target name="clean_files">
+		<delete dir="${assemble}"/>
+		<delete dir="${dist}"/>
+	</target>
+
+	<!-- ======================================================= -->
+	<!-- JAR ファイル作成                                    -->
+	<!-- ======================================================= -->
+	<target name="create_jar" depends="clean_files">
+		<echo message="------------------------------------------------------" />
+		<echo message="- Create JAR File" />
+		<echo message="------------------------------------------------------" />
+		
+		<mkdir dir="${assemble}"/>
+		
+		<copy todir="${assemble}">
+			<fileset dir="${class_dir}" includes="**/*" />
+		</copy>
+		<delete file="${assemble}/WEB-INF/lib/PHR-Lib-1.0.jar"/>
+		<copy file="${lib_jar}" tofile="${assemble}/WEB-INF/lib/PHR-Lib.jar"/>
+		<delete file="${assemble}/WEB-INF/classes/log4j.xml"/>
+		<delete file="${assemble}/WEB-INF/classes/log4j.xml-war"/>
+                <delete file="${assemble}/index.html"/>
+		<copy file="${class_dir}WEB-INF/classes/log4j.xml-war" tofile="${assemble}WEB-INF/classes/log4j.xml"/>
+
+		<jar jarfile="${root}PHR-Web.war" basedir="${assemble}" />
+
+	</target>
+</project>

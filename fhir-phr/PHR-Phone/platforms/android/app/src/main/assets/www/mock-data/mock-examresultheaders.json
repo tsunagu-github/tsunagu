@@ -1,0 +1,11 @@
+[{
+      "id": "0", "examMonth" : "2016年6月", "examDate" : "6月22日", "name" : "ABC診療所", "kind" : "img/kensa.jpg"
+  },{
+      "id": "1", "examMonth" : "2016年6月", "examDate" : "6月13日", "name" : "自宅", "kind" : "img/jikosoku.jpg", "offline" : true
+  },{
+      "id": "2", "examMonth" : "2016年5月", "examDate" : "5月29日", "name" : "ABC健診センター", "kind" : "img/kenshin.jpg"
+  },{
+      "id": "3", "examMonth" : "2016年5月", "examDate" : "5月28日", "name" : "ABC診療所", "kind" : "img/kensa.jpg"
+  },{
+      "id": "4", "examMonth" : "2016年5月", "examDate" : "5月13日", "name" : "自宅", "kind" : "img/jikosoku.jpg"
+}]

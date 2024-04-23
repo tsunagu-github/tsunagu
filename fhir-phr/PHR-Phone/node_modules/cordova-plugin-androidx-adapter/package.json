@@ -1,0 +1,45 @@
+{
+  "_from": "git+https://github.com/dpa99c/cordova-plugin-androidx-adapter.git",
+  "_id": "cordova-plugin-androidx-adapter@1.1.3",
+  "_inBundle": false,
+  "_integrity": "",
+  "_location": "/cordova-plugin-androidx-adapter",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "git",
+    "raw": "https://github.com/dpa99c/cordova-plugin-androidx-adapter.git",
+    "rawSpec": "https://github.com/dpa99c/cordova-plugin-androidx-adapter.git",
+    "saveSpec": "git+https://github.com/dpa99c/cordova-plugin-androidx-adapter.git",
+    "fetchSpec": "https://github.com/dpa99c/cordova-plugin-androidx-adapter.git",
+    "gitCommittish": null
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "git+https://github.com/dpa99c/cordova-plugin-androidx-adapter.git#2166b075d271103f84efc0d19b0f0ca1372cad2c",
+  "_spec": "https://github.com/dpa99c/cordova-plugin-androidx-adapter.git",
+  "_where": "C:\\Users\\kis.o-note-022\\phr_phone",
+  "author": {
+    "name": "Dave Alden"
+  },
+  "bugs": {
+    "url": "https://github.com/dpa99c/cordova-plugin-androidx-adapter/issues"
+  },
+  "bundleDependencies": false,
+  "dependencies": {
+    "q": "^1.5.1",
+    "recursive-readdir": "^2.2.2"
+  },
+  "deprecated": false,
+  "description": "Cordova/Phonegap plugin to migrate any code which references the legacy Android Support Library to the new AndroidX mappings in a Cordova Android platform project.",
+  "devDependencies": {},
+  "homepage": "https://github.com/dpa99c/cordova-plugin-androidx-adapter#readme",
+  "license": "MIT",
+  "name": "cordova-plugin-androidx-adapter",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dpa99c/cordova-plugin-androidx-adapter.git"
+  },
+  "version": "1.1.3"
+}

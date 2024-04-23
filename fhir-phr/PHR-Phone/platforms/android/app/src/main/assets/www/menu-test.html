@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en" ng-app="phrApp">
+    <head>
+        <meta charset="utf-8">
+        <link rel="shortcut icon" href="favicon.ico" />
+        <link rel="stylesheet" href="components/loader.css">
+        <link rel="stylesheet" href="lib/onsenui/css/onsenui.css"/>
+        <link rel="stylesheet" href="lib/onsenui/css/onsen-css-components.css"/>
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/medicine.css">
+        <script src="components/loader.js"></script>
+        <script src="lib/onsenui/js/angular/angular.js"></script>
+        <script src="lib/onsenui/js/onsenui.js"></script>
+        <script src="lib/onsenui/js/angular-onsenui.js"></script>
+        <!-- your app's js -->
+        <script src="js/logger.js"></script>
+        <script src="js/phrPhone.js"></script>
+
+        <script language="JavaScript">
+            var app = angular.module('phrApp', ['onsen', 'phr.controllers']);
+            var phrCtrl = angular.module('phr.controllers', []);
+
+            app.controller('appCtrl', function ($scope, $window) { });
+            phrCtrl.controller("errorCtrl", function ($scope, $window) {
+                /**
+                 * スタートページにリダイレクトします
+                 * @returns {undefined}
+                 */
+                $scope.redirectStartPage = function () {
+                    $window.location.href = "index.html";
+                };
+                /**
+                 * ヒストリーばｃｋ
+                 * @returns {undefined}
+                 */
+                $scope.backHistory = function () {
+                    window.history.back();
+                };            
+            })
+        </script>
+        <style>
+         .line {
+         border-top:1px solid #808080;
+         border-bottom:none;
+         border-left: none; 
+         border-right: none;
+         height: 50px;
+         }
+        </style>
+    </head>
+
+    <body ng-controller="appCtrl">
+    <ons-page ng-controller="errorCtrl">
+        <ons-toolbar style="background: #69BB7B">
+            <div class="center" style="color: #fff">メニューのサンプル</div>
+        </ons-toolbar>
+        <table width="100%">
+        <tr>
+        	<td align="center"><img src="./imgs/menu_selfcheck.png"></td>
+        	<td align="center"><img src="./imgs/menu_onetimepassword.png"></td>
+        </tr>
+        </table>
+        <table width="100%">
+        <tr>
+        	<td align="center"><img height="100" src="./imgs/menu_medicine.png"></td>
+        	<td align="center"><img height="100" src="./imgs/menu_clinical-test-result.png"></td>
+        	<td align="center"><img height="100" src="./imgs/menu_checkup.png"></td>
+        </tr>
+        </table>
+        
+        <table width="100%" cellspacing="0">
+        <tr>
+        	<td class="line" align="center" width="35" ><img height="32" src="./imgs/menu_announcements.png"></td>
+        	<td class="line" align="left">おしらせ</td>
+        </tr>
+        <tr>
+        	<td class="line" align="center" width="35"><img height="32" src="./imgs/menu_parient-info.png"></td>
+        	<td class="line" align="left">利用者情報の確認</td>
+        </tr>
+        <tr>
+        	<td class="line" align="center" width="35"><img height="32" src="./imgs/menu_takeover.png"></td>
+        	<td class="line" align="left">引継ぎ</td>
+        </tr>
+        <tr>
+        	<td class="line" align="center" width="35"><img height="32" src="./imgs/menu_cooperation.png"></td>
+        	<td class="line" align="left">医療機関登録</td>
+        </tr>
+        <tr>
+        	<td class="line" align="center" width="35"><img height="32" src="./imgs/menu_backuprestore.png"></td>
+        	<td class="line" align="left">バックアップ</td>
+        </tr>
+        </table>
+        
+        
+    </ons-page>
+</body>
+</html>

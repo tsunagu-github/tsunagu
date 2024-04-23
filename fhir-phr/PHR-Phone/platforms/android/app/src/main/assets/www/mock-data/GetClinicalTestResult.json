@@ -1,0 +1,599 @@
+{
+  "status": "0",
+  "message":"情報の取得に失敗しました",
+  "pastDate":"2016/12/31",
+    "diseaseDefinitionMap": {
+    "1": [
+      "0000000001",
+      "0000000002",
+      "0000000003",
+      "0000000004",
+      "0000000005",
+      "0000000006",
+      "0000000007",
+      "0000000008",
+      "0000000009",
+      "0000000010",
+      "0000000011",
+      "0000000012",
+      "0000000013",
+      "0000000014",
+      "0000000018",
+      "0000000024",
+      "0000000025",
+      "0000000027",
+      "0000000028",
+      "0000000029",
+      "0000000030"
+    ],
+    "2": [
+      "0000000001",
+      "0000000002",
+      "0000000003",
+      "0000000004",
+      "0000000005",
+      "0000000006",
+      "0000000007",
+      "0000000008",
+      "0000000009",
+      "0000000010",
+      "0000000015",
+      "0000000016",
+      "0000000017",
+      "0000000018",
+      "0000000031"
+    ],
+    "3": [
+      "0000000001",
+      "0000000002",
+      "0000000003",
+      "0000000004",
+      "0000000005",
+      "0000000006",
+      "0000000007",
+      "0000000008",
+      "0000000009",
+      "0000000010",
+      "0000000013",
+      "0000000018",
+      "0000000019",
+      "0000000020"
+    ],
+    "4": [
+      "0000000001",
+      "0000000002",
+      "0000000003",
+      "0000000004",
+      "0000000005",
+      "0000000006",
+      "0000000007",
+      "0000000008",
+      "0000000009",
+      "0000000012",
+      "0000000016",
+      "0000000018",
+      "0000000021",
+      "0000000022",
+      "0000000023",
+      "0000000031",
+      "0000000034",
+      "0000000035",
+      "0000000036",
+      "0000000037",
+      "0000000038",
+      "0000000039",
+      "0000000040"
+    ]
+  },
+  "diseaseTypeList": [
+    {
+      "key": 1,
+      "value": "糖尿病",
+      "checked": true
+    },
+    {
+      "key": 2,
+      "value": "高血圧症",
+      "checked": false
+    },
+    {
+      "key": 3,
+      "value": "脂質異常症",
+      "checked": false
+    },
+    {
+      "key": 4,
+      "value": "慢性腎臓病",
+      "checked": false
+    }
+  ],
+  "resultList": [
+    {
+      "id": "0000000001",
+      "displayName": "身長",
+      "value": "175.1",
+      "unitValue": "cm",
+      "examinationDate": "2016/06/12",
+      "valueAlert": "0",
+      "dateAlert": "false"
+    },
+    {
+      "id": "0000000002",
+      "displayName": "体重",
+      "value": "57.2",
+      "unitValue": "kg",
+      "examinationDate": "2016/06/12",
+      "valueAlert": "0",
+      "dateAlert": "true"
+    },
+    {
+      "id": "0000000003",
+      "displayName": "収縮期血圧",
+      "value": "131",
+      "unitValue": "mmHg",
+      "examinationDate": "2016/06/12",
+      "valueAlert": "0",
+      "dateAlert": "false"
+    },
+    {
+      "id": "0000000004",
+      "displayName": "拡張期血圧",
+      "value": "89",
+      "unitValue": "mmHg",
+      "examinationDate": "2016/06/12",
+      "valueAlert": "0",
+      "dateAlert": "false"
+    },
+    {
+      "id": "0000000005",
+      "displayName": "総コレステロール",
+      "value": "100",
+      "unitValue": "mg/dL",
+      "examinationDate": "2016/07/16",
+      "valueAlert": "0",
+      "dateAlert": "false"
+    },
+    {
+      "id": "0000000006",
+      "displayName": "HDLコレステロール",
+      "value": "101",
+      "unitValue": "mg/dL",
+      "examinationDate": "2016/07/16",
+      "valueAlert": "0",
+      "dateAlert": "false"
+    },
+    {
+      "id": "0000000007",
+      "displayName": "喫煙",
+      "value": "過去にあり",
+      "examinationDate": "2016/06/12",
+      "valueAlert": "0",
+      "dateAlert": "false"
+    },
+    {
+      "id": "0000000008",
+      "displayName": "血清クレアチニン",
+      "value": "102",
+      "unitValue": "mg/dL",
+      "examinationDate": "2016/07/16",
+      "valueAlert": "0",
+      "dateAlert": "false"
+    },
+    {
+      "id": "0000000009",
+      "displayName": "尿蛋白",
+      "value": "±",
+      "examinationDate": "2016/07/16",
+      "valueAlert": "0",
+      "dateAlert": "false"
+    },
+    {
+      "id": "0000000010",
+      "displayName": "血糖",
+      "value": "102",
+      "unitValue": "mg/dL",
+      "examinationDate": "2016/07/16",
+      "valueAlert": "0",
+      "dateAlert": "false"
+    },
+    {
+      "id": "0000000011",
+      "displayName": "糖尿病診断年齢",
+      "value": "20歳代",
+      "examinationDate": "2016/06/12",
+      "valueAlert": "0",
+      "dateAlert": "false"
+    },
+    {
+      "id": "0000000012",
+      "displayName": "HbA1c",
+      "value": "3.4",
+      "unitValue": "%",
+      "examinationDate": "2016/07/16",
+      "valueAlert": "0",
+      "dateAlert": "false"
+    },
+    {
+      "id": "0000000013",
+      "displayName": "ALT",
+      "value": "104",
+      "unitValue": "IU/L",
+      "examinationDate": "2016/07/16",
+      "valueAlert": "0",
+      "dateAlert": "false"
+    },
+    {
+      "id": "0000000014",
+      "displayName": "網膜症",
+      "value": "なし",
+      "examinationDate": "2016/07/16",
+      "valueAlert": "0",
+      "dateAlert": "false"
+    },
+    {
+      "id": "0000000015",
+      "displayName": "高血圧診断年齢"
+    },
+    {
+      "id": "0000000016",
+      "displayName": "血清カリウム",
+      "value": "109",
+      "unitValue": "mEq/L",
+      "examinationDate": "2016/07/16",
+      "valueAlert": "0",
+      "dateAlert": "false"
+    },
+    {
+      "id": "0000000017",
+      "displayName": "心電図異常",
+      "value": "不明",
+      "examinationDate": "2016/07/16",
+      "valueAlert": "0",
+      "dateAlert": "false"
+    },
+    {
+      "id": "0000000018",
+      "displayName": "中性脂肪",
+      "value": "109",
+      "unitValue": "mg/dL",
+      "examinationDate": "2016/07/16",
+      "valueAlert": "0",
+      "dateAlert": "false"
+    },
+    {
+      "id": "0000000019",
+      "displayName": "脂質異常症の診断年齢"
+    },
+    {
+      "id": "0000000020",
+      "displayName": "冠動脈疾患の既往"
+    },
+    {
+      "id": "0000000021",
+      "displayName": "CKD診断年齢"
+    },
+    {
+      "id": "0000000022",
+      "displayName": "血清アルブミン",
+      "value": "110",
+      "unitValue": "g/dL",
+      "examinationDate": "2016/07/16",
+      "valueAlert": "0",
+      "dateAlert": "false"
+    },
+    {
+      "id": "0000000023",
+      "displayName": "血尿",
+      "value": "＋",
+      "examinationDate": "2016/07/16",
+      "valueAlert": "0",
+      "dateAlert": "false"
+    },
+    {
+      "id": "0000000024",
+      "displayName": "尿アルブミン/クレアチニン",
+      "value": "112",
+      "unitValue": "mg/gCr",
+      "examinationDate": "2016/07/16",
+      "valueAlert": "0",
+      "dateAlert": "false"
+    },
+    {
+      "id": "0000000025",
+      "displayName": "AST",
+      "value": "113",
+      "unitValue": "IU/L",
+      "examinationDate": "2016/07/16",
+      "valueAlert": "0",
+      "dateAlert": "false"
+    },
+    {
+      "id": "0000000027",
+      "displayName": "尿糖",
+      "value": "－",
+      "examinationDate": "2016/07/16",
+      "valueAlert": "0",
+      "dateAlert": "false"
+    },
+    {
+      "id": "0000000028",
+      "displayName": "γ GTP",
+      "value": "116",
+      "unitValue": "IU/L",
+      "examinationDate": "2016/07/16",
+      "valueAlert": "0",
+      "dateAlert": "false"
+    },
+    {
+      "id": "0000000029",
+      "displayName": "神経障害",
+      "value": "なし",
+      "examinationDate": "2016/07/16",
+      "valueAlert": "0",
+      "dateAlert": "false"
+    },
+    {
+      "id": "0000000030",
+      "displayName": "歯科定期受診 （※2）",
+      "value": "あり",
+      "examinationDate": "2016/07/16",
+      "valueAlert": "0",
+      "dateAlert": "false"
+    },
+    {
+      "id": "0000000031",
+      "displayName": "尿酸",
+      "value": "119",
+      "unitValue": "mg/dL",
+      "examinationDate": "2016/07/16",
+      "valueAlert": "0",
+      "dateAlert": "false"
+    },
+    {
+      "id": "0000000034",
+      "displayName": "腎不全家族歴 （※3）",
+      "value": "なし",
+      "examinationDate": "2016/07/16",
+      "valueAlert": "0",
+      "dateAlert": "false"
+    },
+    {
+      "id": "0000000035",
+      "displayName": "尿蛋白/クレアチニン比",
+      "value": "121",
+      "unitValue": "g/gCr",
+      "examinationDate": "2016/07/16",
+      "valueAlert": "0",
+      "dateAlert": "false"
+    },
+    {
+      "id": "0000000036",
+      "displayName": "尿蛋白（1日量）",
+      "value": "122",
+      "unitValue": "g/日",
+      "examinationDate": "2016/07/16",
+      "valueAlert": "0",
+      "dateAlert": "false"
+    },
+    {
+      "id": "0000000037",
+      "displayName": "血清総蛋白",
+      "value": "123",
+      "unitValue": "g/dL",
+      "examinationDate": "2016/07/16",
+      "valueAlert": "0",
+      "dateAlert": "false"
+    },
+    {
+      "id": "0000000038",
+      "displayName": "尿素窒素",
+      "value": "124",
+      "unitValue": "mg/dL",
+      "examinationDate": "2016/07/16",
+      "valueAlert": "0",
+      "dateAlert": "false"
+    },
+    {
+      "id": "0000000039",
+      "displayName": "ヘモグロビン",
+      "value": "125",
+      "unitValue": "g/dL",
+      "examinationDate": "2016/07/16",
+      "valueAlert": "0",
+      "dateAlert": "false"
+    },
+    {
+      "id": "0000000040",
+      "displayName": "シスタチンC",
+      "value": "126",
+      "unitValue": "mg/L",
+      "examinationDate": "2016/07/16",
+      "valueAlert": "0",
+      "dateAlert": "false"
+    }
+  ],
+  "viewList": [
+    {
+      "id": "0000000001",
+      "displayName": "身長",
+      "value": "175.1",
+      "unitValue": "cm",
+      "examinationDate": "2016/06/12",
+      "valueAlert": "0",
+      "dateAlert": "false"
+    },
+    {
+      "id": "0000000002",
+      "displayName": "体重",
+      "value": "57.2",
+      "unitValue": "kg",
+      "examinationDate": "2016/06/12",
+      "valueAlert": "0",
+      "dateAlert": "true"
+    },
+    {
+      "id": "0000000003",
+      "displayName": "収縮期血圧",
+      "value": "131",
+      "unitValue": "mmHg",
+      "examinationDate": "2016/06/12",
+      "valueAlert": "0",
+      "dateAlert": "false"
+    },
+    {
+      "id": "0000000004",
+      "displayName": "拡張期血圧",
+      "value": "89",
+      "unitValue": "mmHg",
+      "examinationDate": "2016/06/12",
+      "valueAlert": "0",
+      "dateAlert": "false"
+    },
+    {
+      "id": "0000000005",
+      "displayName": "総コレステロール",
+      "value": "100",
+      "unitValue": "mg/dL",
+      "examinationDate": "2016/07/16",
+      "valueAlert": "0",
+      "dateAlert": "false"
+    },
+    {
+      "id": "0000000006",
+      "displayName": "HDLコレステロール",
+      "value": "101",
+      "unitValue": "mg/dL",
+      "examinationDate": "2016/07/16",
+      "valueAlert": "0",
+      "dateAlert": "false"
+    },
+    {
+      "id": "0000000007",
+      "displayName": "喫煙",
+      "value": "過去にあり",
+      "examinationDate": "2016/06/12",
+      "valueAlert": "0",
+      "dateAlert": "false"
+    },
+    {
+      "id": "0000000008",
+      "displayName": "血清クレアチニン",
+      "value": "102",
+      "unitValue": "mg/dL",
+      "examinationDate": "2016/07/16",
+      "valueAlert": "0",
+      "dateAlert": "false"
+    },
+    {
+      "id": "0000000009",
+      "displayName": "尿蛋白",
+      "value": "±",
+      "examinationDate": "2016/07/16",
+      "valueAlert": "0",
+      "dateAlert": "false"
+    },
+    {
+      "id": "0000000010",
+      "displayName": "血糖",
+      "value": "102",
+      "unitValue": "mg/dL",
+      "examinationDate": "2016/07/16",
+      "valueAlert": "0",
+      "dateAlert": "false"
+    },
+    {
+      "id": "0000000011",
+      "displayName": "糖尿病診断年齢",
+      "value": "20歳代",
+      "examinationDate": "2016/06/12",
+      "valueAlert": "0",
+      "dateAlert": "false"
+    },
+    {
+      "id": "0000000012",
+      "displayName": "HbA1c",
+      "value": "3.4",
+      "unitValue": "%",
+      "examinationDate": "2016/07/16",
+      "valueAlert": "0",
+      "dateAlert": "false"
+    },
+    {
+      "id": "0000000013",
+      "displayName": "ALT",
+      "value": "104",
+      "unitValue": "IU/L",
+      "examinationDate": "2016/07/16",
+      "valueAlert": "0",
+      "dateAlert": "false"
+    },
+    {
+      "id": "0000000014",
+      "displayName": "網膜症",
+      "value": "なし",
+      "examinationDate": "2016/07/16",
+      "valueAlert": "0",
+      "dateAlert": "false"
+    },
+    {
+      "id": "0000000018",
+      "displayName": "中性脂肪",
+      "value": "109",
+      "unitValue": "mg/dL",
+      "examinationDate": "2016/07/16",
+      "valueAlert": "0",
+      "dateAlert": "false"
+    },
+    {
+      "id": "0000000024",
+      "displayName": "尿アルブミン/クレアチニン",
+      "value": "112",
+      "unitValue": "mg/gCr",
+      "examinationDate": "2016/07/16",
+      "valueAlert": "0",
+      "dateAlert": "false"
+    },
+    {
+      "id": "0000000025",
+      "displayName": "AST",
+      "value": "113",
+      "unitValue": "IU/L",
+      "examinationDate": "2016/07/16",
+      "valueAlert": "0",
+      "dateAlert": "false"
+    },
+    {
+      "id": "0000000027",
+      "displayName": "尿糖",
+      "value": "－",
+      "examinationDate": "2016/07/16",
+      "valueAlert": "0",
+      "dateAlert": "false"
+    },
+    {
+      "id": "0000000028",
+      "displayName": "γ GTP",
+      "value": "116",
+      "unitValue": "IU/L",
+      "examinationDate": "2016/07/16",
+      "valueAlert": "0",
+      "dateAlert": "false"
+    },
+    {
+      "id": "0000000029",
+      "displayName": "神経障害",
+      "value": "なし",
+      "examinationDate": "2016/07/16",
+      "valueAlert": "0",
+      "dateAlert": "false"
+    },
+    {
+      "id": "0000000030",
+      "displayName": "歯科定期受診 （※2）",
+      "value": "あり",
+      "examinationDate": "2016/07/16",
+      "valueAlert": "0",
+      "dateAlert": "false"
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+
+
+
+
+<ons-page ng-controller="medicineQRReaderCtrl" >
+    <ons-toolbar style="background: #69BB7B">
+        <div class="left" ><ons-back-button style="font-size: smaller;"><div style="font-size: smaller;line-height:11px;margin-top: 12px;">おくすり<br>&nbsp;メニューへ</div></ons-back-button></div>
+        <div class="center" style="color: #fff">おくすり情報</div>
+        <div class="right">
+           <ons-toolbar-button ng-click="app.slidingMenu.toggleMenu()"><ons-icon icon="bars" style="color: #fff"></ons-icon></ons-toolbar-button>
+        </div>
+    </ons-toolbar>
+<!--    <div>
+        <input type="file" id="fileInput" my-file-input data="targetFile">
+        <button ng-click="scan()">SCAN</button>   
+      
+    </div>-->
+
+<div class="scanbutton" ><!--style="text-align: center">-->
+
+  
+        
+    <ons-button ng-disabled="scanOn" id="scan-button" ng-click="scan()" modifier="qrReader">
+        <br/>
+        <ons-icon icon="fa-camera" size="80px" style=""></ons-icon>
+        <br/>
+        <ons-icon icon="fa-hand-pointer-o" size="25px">カメラ起動</ons-icon>
+    </ons-button>
+
+  <ons-list style="position: absolute;margin-top:7em;">
+      <ons-list-item ng-click="refresh()" ng-show="scanOn" style="background-color:#e0ffff;">
+                    <ons-icon
+                      icon="fa-exclamation-circle"
+                      size="25px"
+                      fixed-width="false"
+                      style="color: #ffd700;">
+                    </ons-icon>
+          <div class="center">
+            コードの読み取り中です<br/>
+            キャンセルをするには、ここをタップしてください。              
+          </div>
+       </ons-list-item>
+
+  </ons-list>        
+        
+  
+        
+    </div>
+
+    
+</ons-page>
+

@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en" ng-app="phrApp">
+    <head>
+        <meta charset="utf-8">
+        <link rel="shortcut icon" href="favicon.ico" />
+        <link rel="stylesheet" href="components/loader.css">
+        <link rel="stylesheet" href="lib/onsenui/css/onsenui.css"/>
+        <link rel="stylesheet" href="lib/onsenui/css/onsen-css-components.css"/>
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/medicine.css">
+        <link rel="stylesheet" href="css/clinicalresult.css">
+        
+        <script src="components/loader.js"></script>
+        <script src="lib/onsenui/js/angular/angular.js"></script>
+        <script src="lib/onsenui/js/onsenui.js"></script>
+        <script src="lib/onsenui/js/angular-onsenui.js"></script>
+        <!-- your app's js -->
+        <script src="js/logger.js"></script>
+        <script src="js/phrPhone.js"></script>
+        <script src="js/app.js"></script>
+        <script src="js/controllers.js"></script>
+        <script src="js/httpaction.js"></script>
+        <script src="js/service/TarminalService.js"></script>
+        <script src="js/sha512.js"></script>
+        <script src="js/lookup/LoookupData.js"></script>
+        <script src="js/controller/ErrorController.js"></script>
+         <script src="js/controller/MenuListController.js"></script>
+	<script src="js/file.js"></script>
+
+        <script src="js/service/TakeoverService.js"></script>
+        <script src="js/controller/TakeOverController.js"></script>
+
+        <script src="js/service/OneTimePasswordService.js"></script>
+        <script src="js/controller/OneTimePasswordController.js"></script>
+
+        <script src="js/service/PhrStartService.js"></script>
+        <script src="js/controller/PhrStartController.js"></script>
+        
+        <script src="js/service/CooperationService.js"></script>
+        <script src="js/controller/CooperationController.js"></script>
+
+        <script src="js/service/PatientManagementService.js"></script>
+        <script src="js/controller/PatientManagementController.js"></script>
+
+        <script src="js/service/MedicineService.js"></script>
+        <script src="js/service/CalendarService.js"></script>
+        <script src="js/controller/MedicineMenuController.js"></script>
+
+        <script src="js/service/AnnouncementsService.js"></script>
+        <script src="js/controller/AnnouncementsController.js"></script>
+
+        <script src="js/service/CheckUpResultService.js"></script>
+        <script src="js/controller/CheckUpResultController.js"></script>
+        
+        <script src="js/service/SelfCheckService.js"></script>
+        <script src="js/controller/SelfCheckController.js"></script>
+        
+        
+        <script src="js/controller/ClinicalTestResultController.js"></script>
+        <script src="js/service/ClinicalTestResultService.js"></script>
+		
+        <script src="js/controller/BackupRestoreController.js"></script>
+        <script src="js/service/BackupRestoreService.js"></script>
+        
+         <script src="js/Chart.min.js"></script>
+         <script src="js/hammer.min.js"></script>
+         <script src="js/controller/ChartController.js"></script>
+         <script src="js/service/ChartViewService.js"></script>
+         
+         <script src="js/controller/FrailSummaryController.js"></script>
+          <script src="js/service/FrailSummaryService.js"></script>
+
+        <script src="js/controller/MeasurementResultController.js"></script>
+        <script src="js/service/MeasurementResultService.js"></script>
+
+        <script src="js/controller/DynamicConsentController.js"></script>
+        <script src="js/service/DynamicConsentService.js"></script>
+
+        <script src="js/controller/DynamicConsentDetailController.js"></script>
+        <script src="js/service/DynamicConsentDetailService.js"></script>
+
+        <script src="js/controller/DynamicConsentInquiryController.js"></script>
+        <script src="js/service/DynamicConsentInquiryService.js"></script>
+
+       <style>
+         .line {
+         border-top:1px solid #808080;
+         border-bottom:none;
+         border-left: none; 
+         border-right: none;
+         height: 50px;
+         }
+        </style>
+		
+		
+    </head>
+
+    <body ng-controller="appCtrl">   
+    <ons-navigator title="Navigator" var="indexNavigator" page="templates/main-menu.html">
+    </ons-navigator>
+    </body>
+</html>

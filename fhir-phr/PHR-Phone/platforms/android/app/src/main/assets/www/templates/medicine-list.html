@@ -1,0 +1,26 @@
+<ons-page ng-controller="medicineListCtrl">
+    <ons-toolbar style="background: #69BB7B">
+        <div class="left" ><ons-back-button style="font-size: smaller;"><div style="font-size: smaller;line-height:11px;margin-top: 12px;">おくすり<br>&nbsp;メニューへ</div></ons-back-button></div>
+        <div class="center" style="color: #fff">おくすり一覧</div>
+        <div class="right">
+           <ons-toolbar-button ng-click="app.slidingMenu.toggleMenu()"><ons-icon icon="bars" style="color: #fff"></ons-icon></ons-toolbar-button>
+        </div>
+    </ons-toolbar>
+
+ <div ng-show="isNullmlist" style="margin-top:5em;margin-left:30%;">登録がありません</div>
+
+ <div ng-hide="isNullmlist">  
+  <ons-list>
+      <ons-list-item ng-repeat="dosageMedicine in mlist | orderBy:'-dosageDate'" ng-click="showDetail(dosageMedicine)">
+                    <ons-icon
+                      icon="fa-plus-square"
+                      size="25px"
+                      fixed-width="false"
+                      style="color: #FFA713; padding-right: 10px;">
+                    </ons-icon>
+          <div class="center">{{dosageMedicine.dosageDate | date:'yyyy/MM/dd' }} &nbsp; {{dosageMedicine.pharmacy}}</div>
+       </ons-list-item>
+
+  </ons-list>
+  </div>
+</ons-page>

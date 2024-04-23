@@ -1,0 +1,50 @@
+{
+    "0" : [{
+        "id": "0", "name" : "TG", "valWithUnit" : "160 mg/dL", "abnormalFlg" : "H", "updateDate" : "2016-7-1", "limitDisp" : "30～149"
+      },{
+        "id": "1", "name" : "T-CHO", "valWithUnit" : "164 mg/dL", "abnormalFlg" : "", "updateDate" : "2016-7-1", "limitDisp" : "220未満"
+      },{
+        "id": "2", "name" : "LDL-C", "valWithUnit" : "150 mg/dL", "abnormalFlg" : "H", "updateDate" : "2016-7-1", "limitDisp" : "60～139"
+      },{
+        "id": "3", "name" : "CRE", "valWithUnit" : "0.5 mg/dL", "abnormalFlg" : "", "updateDate" : "2016-7-1", "limitDisp" : "男：0.8～1.2 女：0.6～0.9"
+      },{
+        "id": "4", "name" : "血液像", "valWithUnit" : "", "abnormalFlg" : "", "updateDate" : "2016-7-1", "limitDisp" : ""
+      },{
+        "id": "5", "name" : "　好中球", "valWithUnit" : "38 %", "abnormalFlg" : "L", "updateDate" : "2016-7-1", "limitDisp" : "40～60"
+      }] ,
+    "1" : [{
+        "id": "0", "name" : "身長", "valWithUnit" : "172.3 cm", "abnormalFlg" : "", "updateDate" : "2016-7-1", "limitDisp" : ""
+      },{
+        "id": "1", "name" : "体重", "valWithUnit" : "71.6 kg", "abnormalFlg" : "", "updateDate" : "2016-7-1", "limitDisp" : "空腹時：70～109"
+      },{
+        "id": "2", "name" : "収縮期血圧", "valWithUnit" : "120 mm[Hg]", "abnormalFlg" : "", "updateDate" : "2016-7-1", "limitDisp" : "80～130"
+      },{
+        "id": "3", "name" : "拡張期血圧", "valWithUnit" : "70 mm[Hg]", "abnormalFlg" : "", "updateDate" : "2016-7-1", "limitDisp" : "40～80"
+      },{
+        "id": "4", "name" : "総コレステロール", "valWithUnit" : "200mg/dL", "abnormalFlg" : "", "updateDate" : "2016-5-1", "limitDisp" : "", "abnormalDate" : "true"
+      },{
+        "id": "5", "name" : "HDLコレステロール", "valWithUnit" : "20mg/dL", "abnormalFlg" : "L", "updateDate" : "2016-7-1", "limitDisp" : ""
+      }] ,
+    "2" : [{
+        "id": "0", "name" : "採血時間（食後）", "valWithUnit" : "10時間以上", "abnormalFlg" : "", "updateDate" : "2016-7-1", "limitDisp" : ""
+      },{
+        "id": "1", "name" : "血糖", "valWithUnit" : "102 mg/dL", "abnormalFlg" : "", "updateDate" : "2016-7-1", "limitDisp" : "空腹時：70～109"
+      },{
+        "id": "2", "name" : "収縮期血圧", "valWithUnit" : "120 mm[Hg]", "abnormalFlg" : "", "updateDate" : "2016-7-1", "limitDisp" : "80～130"
+      },{
+        "id": "3", "name" : "拡張期血圧", "valWithUnit" : "70 mm[Hg]", "abnormalFlg" : "", "updateDate" : "2016-7-1", "limitDisp" : "40～80"
+      },{
+        "id": "4", "name" : "体重", "valWithUnit" : "", "abnormalFlg" : "", "updateDate" : "2016-7-1", "limitDisp" : ""
+      }] ,
+    "3" : [{
+        "id": "0", "name" : "採血時間（食後）", "valWithUnit" : "10時間以上", "abnormalFlg" : "", "updateDate" : "2016-7-1", "limitDisp" : ""
+      },{
+        "id": "1", "name" : "血糖", "valWithUnit" : "102 mg/dL", "abnormalFlg" : "", "updateDate" : "2016-7-1", "limitDisp" : "空腹時：70～109"
+      },{
+        "id": "2", "name" : "収縮期血圧", "valWithUnit" : "120 mm[Hg]", "abnormalFlg" : "", "updateDate" : "2016-7-1", "limitDisp" : "80～130"
+      },{
+        "id": "3", "name" : "拡張期血圧", "valWithUnit" : "70 mm[Hg]", "abnormalFlg" : "", "updateDate" : "2016-7-1", "limitDisp" : "40～80"
+      },{
+        "id": "4", "name" : "体重", "valWithUnit" : "", "abnormalFlg" : "", "updateDate" : "2016-7-1", "limitDisp" : ""
+      }]
+    }

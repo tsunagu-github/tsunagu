@@ -1,0 +1,195 @@
+{
+  "targetChartDefinition": {
+    "chartDefinitionId": 0,
+    "viewCount": 0,
+    "commonFlg": 0,
+    "dataInputType": 1,
+    "chartObservationList": [
+      {
+        "chartDefinitionId": 0,
+        "observationDefinitionId": "0000000001",
+        "observationDefinitionName": "身長",
+        "selected": false
+      },
+      {
+        "chartDefinitionId": 0,
+        "observationDefinitionId": "0000000002",
+        "observationDefinitionName": "体重",
+        "selected": false
+      },
+      {
+        "chartDefinitionId": 0,
+        "observationDefinitionId": "1000000001",
+        "observationDefinitionName": "BMI",
+        "selected": false
+      },
+      {
+        "chartDefinitionId": 0,
+        "observationDefinitionId": "0000000026",
+        "observationDefinitionName": "腹囲",
+        "selected": false
+      },
+      {
+        "chartDefinitionId": 0,
+        "observationDefinitionId": "0000000003",
+        "observationDefinitionName": "収縮期血圧",
+        "selected": false
+      },
+      {
+        "chartDefinitionId": 0,
+        "observationDefinitionId": "0000000004",
+        "observationDefinitionName": "拡張期血圧",
+        "selected": false
+      },
+      {
+        "chartDefinitionId": 0,
+        "observationDefinitionId": "0000000005",
+        "observationDefinitionName": "総コレステロール",
+        "selected": false
+      },
+      {
+        "chartDefinitionId": 0,
+        "observationDefinitionId": "0000000006",
+        "observationDefinitionName": "HDLコレステロール",
+        "selected": false
+      },
+      {
+        "chartDefinitionId": 0,
+        "observationDefinitionId": "0000000043",
+        "observationDefinitionName": "LDLコレステロール",
+        "selected": false
+      },
+      {
+        "chartDefinitionId": 0,
+        "observationDefinitionId": "0000000018",
+        "observationDefinitionName": "中性脂肪",
+        "selected": false
+      },
+      {
+        "chartDefinitionId": 0,
+        "observationDefinitionId": "0000000008",
+        "observationDefinitionName": "血清クレアチニン",
+        "selected": false
+      },
+      {
+        "chartDefinitionId": 0,
+        "observationDefinitionId": "0000000016",
+        "observationDefinitionName": "血清カリウム",
+        "selected": false
+      },
+      {
+        "chartDefinitionId": 0,
+        "observationDefinitionId": "0000000022",
+        "observationDefinitionName": "血清アルブミン",
+        "selected": false
+      },
+      {
+        "chartDefinitionId": 0,
+        "observationDefinitionId": "0000000038",
+        "observationDefinitionName": "尿素窒素",
+        "selected": false
+      },
+      {
+        "chartDefinitionId": 0,
+        "observationDefinitionId": "0000000010",
+        "observationDefinitionName": "血糖",
+        "selected": false
+      },
+      {
+        "chartDefinitionId": 0,
+        "observationDefinitionId": "0000000012",
+        "observationDefinitionName": "HbA1c",
+        "selected": false
+      },
+      {
+        "chartDefinitionId": 0,
+        "observationDefinitionId": "0000000013",
+        "observationDefinitionName": "ALT",
+        "selected": false
+      },
+      {
+        "chartDefinitionId": 0,
+        "observationDefinitionId": "0000000025",
+        "observationDefinitionName": "AST",
+        "selected": false
+      },
+      {
+        "chartDefinitionId": 0,
+        "observationDefinitionId": "0000000028",
+        "observationDefinitionName": "γ GTP",
+        "selected": false
+      },
+      {
+        "chartDefinitionId": 0,
+        "observationDefinitionId": "0000000039",
+        "observationDefinitionName": "Hb",
+        "selected": false
+      },
+      {
+        "chartDefinitionId": 0,
+        "observationDefinitionId": "0000000040",
+        "observationDefinitionName": "シスタチンC",
+        "selected": false
+      },
+      {
+        "chartDefinitionId": 0,
+        "observationDefinitionId": "0000000037",
+        "observationDefinitionName": "血清総蛋白",
+        "selected": false
+      },
+      {
+        "chartDefinitionId": 0,
+        "observationDefinitionId": "0000000036",
+        "observationDefinitionName": "尿蛋白（1日量）",
+        "selected": false
+      },
+      {
+        "chartDefinitionId": 0,
+        "observationDefinitionId": "0000000035",
+        "observationDefinitionName": "尿蛋白/クレアチニン比",
+        "selected": false
+      },
+      {
+        "chartDefinitionId": 0,
+        "observationDefinitionId": "0000000024",
+        "observationDefinitionName": "尿アルブミン/クレアチニン",
+        "selected": false
+      },
+      {
+        "chartDefinitionId": 0,
+        "observationDefinitionId": "0000000031",
+        "observationDefinitionName": "尿酸",
+        "selected": false
+      }
+    ]
+  },
+  "colorList": [
+    {
+      "cd": "red",
+      "val": "赤"
+    },
+    {
+      "cd": "blue",
+      "val": "青"
+    },
+    {
+      "cd": "green",
+      "val": "緑"
+    },
+    {
+      "cd": "yellow",
+      "val": "黄"
+    },
+    {
+      "cd": "purple",
+      "val": "紫"
+    },
+    {
+      "cd": "gray",
+      "val": "灰"
+    }
+  ],
+  "status": "0",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36",
+  "browserType": "Windows"
+}

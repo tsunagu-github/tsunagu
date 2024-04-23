@@ -1,0 +1,94 @@
+{
+  "chartData": {
+    "type": "line",
+    "borderWidth": 1,
+    "data": {
+      "labels": [
+        "7/8",
+        "11/29",
+        "7/4",
+        "11/4",
+        "3/2",
+        "5/30"
+      ],
+      "datasets": [
+        {
+          "label": "ALT[IU/L]",
+          "data": [
+            69,
+            24,
+            25,
+            22,
+            23,
+            20
+          ],
+          "lineTension": 0,
+          "spanGaps": true,
+          "borderColor": "rgba(255,0,0,0.3)",
+          "backgroundColor": "rgba(0,0,0,0)"
+        },
+        {
+          "label": "AST[IU/L]",
+          "data": [
+            41,
+            25,
+            23,
+            21,
+            23,
+            19
+          ],
+          "lineTension": 0,
+          "spanGaps": true,
+          "borderColor": "rgba(0,0,255,0.3)",
+          "backgroundColor": "rgba(0,0,0,0)"
+        },
+        {
+          "label": "γ GTP[IU/L]",
+          "data": [
+            48,
+            44,
+            38,
+            43,
+            36,
+            42
+          ],
+          "lineTension": 0,
+          "spanGaps": true,
+          "borderColor": "rgba(30,174,54,0.3)",
+          "backgroundColor": "rgba(0,0,0,0)"
+        }
+      ]
+    },
+    "options": {
+      "title": {
+        "display": true,
+        "text": "肝機能グラフ"
+      },
+      "scales": {
+        "yAxes": [
+          {
+            "ticks": {
+              "suggestedMax": 60,
+              "suggestedMin": 18,
+              "stepSize": 20
+            }
+          }
+        ]
+      },
+      "legend" : {
+          "labels" : {
+              "boxWidth" : 10,
+              "fontSize" : 10
+          }
+      }
+    }
+  },
+  "chartDefinitionId": 1008,
+  "viewCount": 10,
+  "targetDate": "2018/05/30",
+  "maxOffSet": 0,
+  "commonFlg": 0,
+  "status": "0",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36",
+  "browserType": "Windows"
+}

@@ -1,0 +1,31 @@
+<link rel="stylesheet" href="lib/onsenui/css/onsen-css-components-blue-basic-theme.css">
+<ons-page ng-controller="phrStartCtrl">
+    <ons-toolbar style="background: #f00">
+        <div class="left"></div>
+        <div class="center" style="color: #fff">引継ぎ結果確認</div>
+        <div class="right"></div>
+    </ons-toolbar>
+    <form id="TakeOver">
+        <ons-list >
+            <br>
+            <br>
+            <ons-list-item>
+                <ons-col aligh="bottom" style="color: #00f;margin-left: 20px;">
+                    <span>失敗：引継ぎ情報エラーです。</span>
+                </ons-col>
+            </ons-list-item>
+        </ons-list>
+        <hr>
+        <div style="margin-left: 20px;margin-right: 20px">
+        PHR IDがわからない場合は引継ぎできません。引継ぎコード、パスワードの一方、又は双方がわからない場合、引継ぎの有効期間を過ぎた場合には、引継ぎ処理を再度行ってください。
+        </div>
+        <br>
+        <ons-row>
+            <ons-col></ons-col>
+            <ons-col>
+        <ons-button style="text-align: center;width: 230px;" ng-click="backToTakeOverInput()">戻る</ons-button>
+            </ons-col>
+            <ons-col></ons-col>
+        </ons-row>
+    </form>
+</ons-page>

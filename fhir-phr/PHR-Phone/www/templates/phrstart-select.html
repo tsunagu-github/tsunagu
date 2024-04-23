@@ -1,0 +1,36 @@
+<link rel="stylesheet" href="lib/onsenui/css/onsen-css-components-blue-basic-theme.css">
+<ons-page ng-controller="phrStartCtrl">
+    <ons-toolbar style="background: #69BB7B">
+        <div class="left" style="margin-left: 20px;color: #fff">PHR</div>
+        <div class="center" style="color: #fff"></div>
+        <div class="right"></div>
+    </ons-toolbar>
+    <form id="phrStart">
+        <hr>
+        <br><br>
+
+        <ons-row>
+            <div style="float: left; width: 25%"></div>
+            <div style="width: 50%;  justify-content: center">
+                <ons-button style="width:100%; color: #00f;background: #ffa0a7; text-align: center" ng-click="goToRulesView()">新規PHR ID発行</ons-button>
+            </div>
+            <div style="float: right; width: 25%"></div>
+        </ons-row>
+            
+        <br><br><br><br>
+       
+        <ons-row>
+            <div style="float: left; width: 25%"></div>
+            <div style="width: 50%;  justify-content: center">
+            <!--
+            <ons-button style="width: 100%; color: #00f;background: #ffa0a7; text-align: center" ng-click="goToTakeOverInput()">引継ぎコード入力</ons-button>
+            -->
+            <ons-button style="width: 100%; color: #00f;background: #ffa0a7; text-align: center" ng-click="goToRulesViewDynamic()">初期ログインコード入力</ons-button>
+            </div>
+            <div style="float: right; width: 25%"></div>
+        </ons-row>
+        
+        <br><br><br>
+        <hr>
+    </form>
+</ons-page>

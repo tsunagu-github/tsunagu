@@ -1,0 +1,21 @@
+{
+  "chartDefinitionList": [
+    {
+      "chartDefinitionId": 1,
+      "chartDefinitionName": "自己測定グラフ",
+      "viewCount": 30,
+      "commonFlg": 1,
+      "dataInputType": 2
+    },
+    {
+      "chartDefinitionId": 1008,
+      "chartDefinitionName": "肝機能グラフ",
+      "viewCount": 10,
+      "commonFlg": 0,
+      "dataInputType": 1
+    }
+  ],
+  "status": "0",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36",
+  "browserType": "Windows"
+}

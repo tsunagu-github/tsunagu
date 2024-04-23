@@ -1,0 +1,39 @@
+<ons-page ng-controller="dynamicConsentInquiryCtrl">
+    <ons-toolbar style="background: #69BB7B">
+        <div class="left" ><ons-back-button style="font-size: smaller;">一覧へ</ons-back-button></div>
+        <div class="center" style="color: #fff">同意一覧</div>
+        <div class="right">
+           <ons-toolbar-button ng-click="app.slidingMenu.toggleMenu()"><ons-icon icon="bars" style="color: #fff"></ons-icon></ons-toolbar-button>
+        </div>
+    </ons-toolbar>
+
+    <div style="font-size: 25px; font-weight: bold; text-align: center; margin: 10px 0px;">
+        保留時の問い合わせ
+    </div>
+    <div style="font-size: 17px; margin: 0px 0px 0px 20px;">
+        説明内容についてご質問がある場合は、<br>
+        以下の問い合わせフォームに内容を入力し、<br>
+        送信してください。
+    </div>
+    <br>
+    <div style="font-size: 17px; margin: 0px 0px 0px 20px;">
+        <img height="25" src="./imgs/patient_icon.png"> お名前
+    </div>
+    <div style="padding: 0px 0px 0px 20px;">
+        <input type="text" style="border-color: black; border-style:solid; height:25px;" id="patientName" size="38" value="">
+    </div>
+    <br>
+    <div style="font-size: 17px; margin: 0px 0px 0px 20px;">
+        <img height="25" src="./imgs/question_mark_icon.png"> 問い合わせ内容
+    </div>
+    <div style="padding: 0px 0px 0px 20px;">
+        <textarea style="border: 2px solid black;" name="inquiry" rows="15" cols="40"></textarea>
+    </div>
+    <br>
+    <div style="margin: 0px 0px 0px 250px; display: flex;">
+        <a class="button_01 -compact" ng-click="openExpla()">
+            <img height="18" src="./imgs/inquiry_icon.png">　送信
+        </a>
+    </div>
+
+</ons-page>

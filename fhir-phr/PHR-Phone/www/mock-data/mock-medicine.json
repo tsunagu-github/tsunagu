@@ -1,0 +1,114 @@
+{   "status":"0",
+    "message":"",
+    "dosageList":[{
+    "dosageId": "1000000001",
+    "seq":"1",
+    "dosageDate": "2016-07-30",
+    "pharmacy": "ドラッグ薬局",
+    "pharmacistName": "薬剤　まこと",
+    "medicalOrganization": "医療機関会病院",
+    "departmentName":"内科",
+    "doctorName": "医師　ヒロミ",
+    "medicineType":"2",
+    "medicineList": [{
+         "dosageForm":"内服",
+         "usageName":"分3　毎食後",
+         "dosageQuantity":"5",
+         "dosageUnit":"日分",
+         "medicines":[{
+               "medicineName":"メディスン300",
+               "amount":"2",
+               "unitName":"錠"
+         },{
+               "medicineName":"ドリンク液剤",
+               "amount":"10",
+               "unitName":"ml"             
+         },{
+               "medicineName":"カプセル",
+               "amount":"3",
+               "unitName":"C"
+         }]
+    },{
+         "dosageForm":"頓服",
+         "usageName":"発熱時",
+         "dosageQuantity":"3",
+         "dosageUnit":"回分",
+         "medicines":[{
+               "medicineName":"ゲネツチンツウ",
+               "amount":"3",
+               "unitName":"錠"
+         }]
+    },{
+         "dosageForm":"外用",
+         "usageName":"1日2回　患部に塗布",
+         "dosageQuantity":"1",
+         "dosageUnit":"調剤",
+         "medicines":[{
+               "medicineName":"ヌリグスリ軟膏50g",
+               "amount":"10",
+               "unitName":"g"
+         }]        
+    }]
+}, {
+    "dosageId": "1000000002",
+    "dosageDate": "2016-08-02",
+    "pharmacy": "にこにこ薬局",
+    "pharmacistName": "",
+    "medicalOrganization": "",
+    "departmentName":"",
+    "doctorName": "",
+    "medicineType":"1",
+    "medicineList": [{
+         "dosageForm":"",
+         "usageName":"",
+         "dosageQuantity":"",
+         "dosageUnit":"",
+         "medicines":[{
+               "medicineName":"キンカン",
+               "startDate":"2016-08-02",
+               "endDate":""
+         }]
+    }]
+},{
+    "dosageId": "1000000003",
+    "dosageDate": "2016-08-15",
+    "pharmacy": "ドラッグ薬局",
+    "pharmacistName": "",
+    "medicalOrganization": "",
+    "departmentName":"",
+    "doctorName": "",
+    "medicineType":"2",
+    "medicineList": [{
+         "dosageForm":"内服",
+         "usageName":"",
+         "dosageQuantity":"5",
+         "dosageUnit":"日分",
+         "medicines":[{
+               "medicineName":"メディスン300",
+               "amount":"2",
+               "unitName":"錠"
+         }]
+    },{
+         "dosageForm":"内服",
+         "usageName":"",
+         "dosageQuantity":"5",
+         "dosageUnit":"日分",
+         "medicines":[{
+               "medicineName":"ドリンク液剤",
+               "amount":"10",
+               "unitName":"ml"             
+         }]            
+    },{
+         "dosageForm":"内服",
+         "usageName":"",
+         "dosageQuantity":"5",
+         "dosageUnit":"日分",
+         "medicines":[{
+               "medicineName":"カプセル",
+               "amount":"3",
+               "unitName":"C"
+         }]
+    }]
+    
+}]
+}

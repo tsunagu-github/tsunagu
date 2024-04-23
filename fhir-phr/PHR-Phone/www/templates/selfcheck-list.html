@@ -1,0 +1,84 @@
+<ons-page ng-controller="selfCheckListCtrl">
+	<ons-toolbar mdifier="transparent" style="background: #69BB7B">
+		<table cellspacing="0" border="0" cellpadding="0" style="table-layout:fixed;">
+			<tr style="height: 40px;padding-bottom: 0px;">
+				<td rowspan="2" style="background: blue;width:0px;height:0px">
+				</td>
+				<td id="r1c1">
+					<ons-back-button ng-click="backAction()" style="font-size: smaller;height: 57px">
+						メニューへ
+					</ons-back-button>
+				</td>
+				<td id="r1c2" colspan="2" style="padding-left: 20px;color:white;font-size: larger;">
+					自己測定結果
+				</td>
+				<td id="r1c3" style="text-align: right;display: table-cell; vertical-align: middle;">
+					<ons-toolbar-button ng-click="app.slidingMenu.toggleMenu()" style="padding-top: 16px">
+						<ons-icon icon="bars" style="color: #fff">
+						</ons-icon>
+					</ons-toolbar-button>
+				</td>
+			</tr>
+			<tr style="margin-top: -20px" >
+				<td id="r2c1" style="background:gold;text-align: center" ng-hide="isNullmlist">
+					　測定日時
+				</td>
+				<td id="r2c2" style="background:gold;text-align: center" ng-hide="isNullmlist">
+					　血圧
+				</td>
+				<td id="r2c3" style="background:gold;text-align: center" ng-hide="isNullmlist">
+					体重
+				</td>
+				<td id="r2c4" style="background:gold;" ng-hide="isNullmlist">
+					血糖
+				</td>
+			</tr>
+		</table>
+	</ons-toolbar>
+	<div id="noList" ng-show="isNullmlist" style="margin-top:5em;text-align: center;">処理中</div>
+	<div id="existList" ng-hide="isNullmlist">	 
+		<ons-list style="margin-left:-15px;padding-bottom: 20px;" id="valueList">
+			<ons-list-item ng-repeat="oneCheckData in selfCheckList | orderBy:'-observationEventId' | orderBy:'-checkDateView'" ng-click="goToShowDetail(oneCheckData)">
+				<ons-row>
+					<ons-col width="24%" align="center" style="color:blue">
+						{{oneCheckData.checkDateView}}
+					</ons-col>
+					<ons-col width="24%" align="center" style="text-align: right;color:blue">
+						{{oneCheckData.systolicBPView}}<br/>
+						{{oneCheckData.diastolicBPView}}
+					</ons-col>
+					<ons-col width="21%" align="center" style="text-align: right;color:blue">
+						{{oneCheckData.weightView}}
+					</ons-col>
+					<ons-col width="23%" align="center" style="text-align: right;color:blue">
+						{{oneCheckData.bloodGlucoseView}}
+					</ons-col>
+					<ons-col width="3%" align="center" style="text-align: right;color:blue">
+					</ons-col>
+					<ons-col width="5%" align="center" >
+						<ons-icon
+							icon="chevron-right"
+							size="13px"
+							fixed-width="false"
+							style="color: #f3b927; padding-right: 10px;">
+						</ons-icon>
+					</ons-col>
+				</ons-row>
+			</ons-list-item>
+		</ons-list>
+	</div>
+	<ons-bottom-toolbar style="height: 3.4rem;">
+	  <div style="float: right; width: 50%">
+		<ons-toolbar-button ng-click="goToEntryDetail()" style="color: darkslategrey; display: flex; flex: 1 1 0; flex-direction: column; justify-content: center; position: relative; text-align: center; text-overflow: ellipsis; white-space: nowrap;height: 2.8rem; line-height: 2.6rem;">
+		  <ons-icon icon="ion-compose" size="30px" style="align-self: center; max-width: 100%;"></ons-icon>
+		  <span style="align-self: center; max-width: 100%;min-width: 35px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap; font-size: 16px; line-height: 16px">新規作成</span>
+		</ons-toolbar-button>
+	  </div>
+	  <div style="float: right; width: 50%">
+		<ons-toolbar-button ng-click="getAllSelfCheckList()" style="color: darkslategrey; display: flex; flex: 1 1 0; flex-direction: column; justify-content: center; position: relative; text-align: center; text-overflow: ellipsis; white-space: nowrap;height: 2.8rem; line-height: 2.6rem;">
+		  <ons-icon icon="fa-repeat" size="30px" style="align-self: center; max-width: 100%;"></ons-icon>
+		  <span style="align-self: center; max-width: 100%;min-width: 35px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap; font-size: 16px; line-height: 16px">全部</span>
+		</ons-toolbar-button>
+	  </div>
+	</ons-bottom-toolbar>
+</ons-page>

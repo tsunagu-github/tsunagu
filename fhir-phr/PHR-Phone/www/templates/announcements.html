@@ -1,0 +1,90 @@
+<ons-page ng-controller="announcementsCtrl" ng-infinite-scroll="onInfiniteScroll">
+    <ons-toolbar style="background: #69BB7B">
+        <div class="left"><ons-back-button style="font-size: 14px;">メニューへ</ons-back-button></div>
+        <div class="center" style="color: #fff;font-size: 14px;">おしらせ／メッセージ
+          <div class="navigation-bar" style="position:absolute; left:0; right:0; height: 34px; line-height: 34px;">
+            <div class="navigation-bar__center" style="text-align: center; margin-left: 0; height: 34px; line-height: 34px;">
+              <div class="button-bar" style="width:100%;margin:5px 0;">
+
+                <div class="button-bar__item" style="margin:0">
+                  <input type="radio" name="segment" ng-model="segment" value="all">
+                  <div class="button-bar__button">すべて</div>
+                  <span ng-if="service.getAllUnreadCount()>0" class="notification segment-notification">{{service.getAllUnreadCount()}}</span>
+                </div>
+
+                <div class="button-bar__item" ng-click="loadMoreIfSegmentBlank()">
+                  <input type="radio" name="segment" ng-model="segment" value="message">
+                  <div class="button-bar__button">メッセージ</div>
+                  <span ng-if="service.getMsgUnreadCount()>0" class="notification segment-notification">{{service.getMsgUnreadCount()}}</span>
+                </div>
+
+                <div class="button-bar__item" ng-click="loadMoreIfSegmentBlank()"> 
+                  <input type="radio" name="segment" ng-model="segment" value="announce">
+                  <div class="button-bar__button">おしらせ</div>
+                  <span ng-if="service.getInfoUnreadCount()>0" class="notification segment-notification">{{service.getInfoUnreadCount()}}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="right">
+           <ons-toolbar-button ng-click="app.slidingMenu.toggleMenu()"><ons-icon icon="bars" style="color: #fff"></ons-icon></ons-toolbar-button>
+        </div>
+    </ons-toolbar>
+    
+    <div style="background-color: #f9f9f9;margin-top:35px">
+      <hr style="margin-top: 0">
+        <ons-list-item tappable style="padding-left:2%" ng-repeat="announce in announcements" ng-click="showDetail(announce)" ng-hide="(announce.type===2 && segment === 'announce') || (announce.type!==2 && segment === 'message')">
+          <div class="left">
+            <img ng-if="announce.type===2 && !announce.self" class="list__item__thumbnail" ng-src="mock-data/img/imgcheckups.bmp"/>
+            <img ng-if="announce.type!==2 && !announce.self" class="list__item__thumbnail" ng-src="mock-data/img/Xsds_off.jpg"/>
+            <span ng-if="!announce.readFlg && !announce.self" class="notification unread-notification">未 読</span>
+            <ons-icon ng-if="announce.self"
+              icon="ion-android-person"
+              size="37px"
+              fixed-width="false"
+              style="color: rgb(255, 166, 84); padding-right: 10px; width: 40px">
+            </ons-icon>
+          </div>
+          <div class="center" style="overflow: hidden; text-overflow: ellipsis; text-align:left;">
+            <div style="width: 100%; padding-top: 1px">
+              <span style="font-size:10px;color:#708090;float:left">{{announce.date}}</span>
+              <span ng-if="announce.self" style="font-size:10px;color:#739eca;float:right">送信済み</span>
+            </div>
+            <span class="list__item__title">{{announce.senderName}}</span>
+            <p class="list__item__subtitle" style="text-overflow: ellipsis; overflow: hidden; margin-top: 6px; line-height: normal; white-space: nowrap;">{{announce.subject}}</p>
+          </div>
+          <div class="right">
+            <ons-icon
+              icon="ion-chevron-right"
+              size="13px"
+              fixed-width="false"
+              style="color: #808080; padding-right: 10px;">
+            </ons-icon>
+          </div>
+        </ons-list-item>
+        <ons-list-item ng-show="isLoading">
+          <div class="loader-container">
+            <ons-icon icon="spinner" size="40px" spin="true"></ons-icon>
+          </div>
+        </ons-list-item>
+        <div style="height: 3.4rem;" ng-show="reachEnd">
+          <div class="center"><ons-toolbar-button style="color: cornflowerblue; font-size: 16px;">この先に表示できるデータがありません</ons-toolbar-button></div>
+        </div>
+    </div>
+    <ons-bottom-toolbar style="height: 3.4rem;">
+      <div style="float: left; width: 50%">
+        <ons-toolbar-button ng-disabled="segment!=='all'" ng-click="refresh()" style="color: darkslategrey; display: flex; flex: 1 1 0; flex-direction: column; justify-content: center; position: relative; text-align: center; text-overflow: ellipsis; white-space: nowrap;height: 2.8rem; line-height: 2.6rem;">
+          <ons-icon icon="ion-ios-refresh-empty" size="30px" style="align-self: center; max-width: 100%;"></ons-icon>
+          <span style="align-self: center; max-width: 100%;min-width: 35px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap; font-size: 16px; line-height: 16px">
+              再読み込み</span>
+        </ons-toolbar-button>
+      </div>
+      <div style="float: right; width: 50%">
+        <ons-toolbar-button ng-click="createMessage()" style="color: darkslategrey; display: flex; flex: 1 1 0; flex-direction: column; justify-content: center; position: relative; text-align: center; text-overflow: ellipsis; white-space: nowrap;height: 2.8rem; line-height: 2.6rem;">
+          <ons-icon icon="ion-compose" size="30px" style="align-self: center; max-width: 100%;"></ons-icon>
+          <span style="align-self: center; max-width: 100%;min-width: 35px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap; font-size: 16px; line-height: 16px">新規作成</span>
+        </ons-toolbar-button>
+      </div>
+    </ons-bottom-toolbar>
+</ons-page>

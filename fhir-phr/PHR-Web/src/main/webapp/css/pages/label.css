@@ -1,0 +1,79 @@
+@charset "utf-8";
+
+/* Setting
+----------------------------------------------------------- */
+/* label */
+.label_40 {
+	width:40px;
+	font-weight:normal;
+	font-size:100%;
+	float:left;
+	margin-top:0.1em;
+}
+.label_50 {
+	width:50px;
+	font-weight:normal;
+	font-size:100%;
+	float:left;
+	margin-top:0.1em;
+}
+.label_60 {
+	width:60px;
+	font-weight:normal;
+	font-size:100%;
+	float:left;
+	margin-top:0.1em;
+}
+.label_70 {
+	width:70px;
+	font-weight:normal;
+	font-size:100%;
+	float:left;
+	margin-top:0.1em;
+}
+.label_90 {
+	width:90px;
+	font-weight:normal;
+	font-size:100%;
+	float:left;
+	margin-top:0.1em;
+}
+.label_170 {
+	width:170px;
+	font-weight:normal;
+	font-size:100%;
+	float:left;
+	margin-top:0.1em;
+}
+.label_190 {
+	width:190px;
+	font-weight:normal;
+	font-size:100%;
+	float:left;
+	margin-top:0.1em;
+}
+.label_100_ma {
+	width:100px;
+	font-weight:normal;
+	font-size:100%;
+	float:left;
+	margin:0.2em 0 0.3em 0.2em;
+}
+.label_210_ma {
+	width:210px;
+	font-weight:normal;
+	font-size:100%;
+	float:left;
+	margin:0.2em 0 0.3em 0.2em;
+}
+.label_300_ma {
+	width:300px;
+	font-weight:normal;
+	font-size:100%;
+	float:left;
+	margin:0.2em 0 0.3em 0.2em;
+}
+
+.disabled_gray:disabled {
+    background: #ccc;
+}

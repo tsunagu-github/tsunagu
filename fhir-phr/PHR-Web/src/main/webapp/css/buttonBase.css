@@ -1,0 +1,1141 @@
+@charset "utf-8";
+.button{
+    margin-bottom: 10px;
+    margin-top: 0px;
+    margin-left: 10px;
+    margin-right: 10px;
+    text-decoration: none;
+    font: normal 0.7em 'Trebuchet MS',Arial, Helvetica; /*Change the em value to scale the button*/
+    display: inline-block;
+    text-align: center;
+    color: #fff;
+ 
+    border: 1px solid #9c9c9c; /* Fallback style */
+    border: 1px solid rgba(0, 0, 0, 0.3);           
+ 
+    text-shadow: 0 1px 0 rgba(0,0,0,0.4);
+ 
+    box-shadow: 0 0 .05em rgba(0,0,0,0.4);
+    -moz-box-shadow: 0 0 .05em rgba(0,0,0,0.4);
+    -webkit-box-shadow: 0 0 .05em rgba(0,0,0,0.4);
+ 
+}
+ 
+.button, .button span{
+    -moz-border-radius: .3em;
+    border-radius: .3em;
+}
+ 
+.button span{
+    border-top: 1px solid #fff; /* Fallback style */
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    display: block;
+    padding: 0.5em 2.5em;
+    color: #fff;
+ 
+/* The background pattern */
+ 
+    background-image: -webkit-gradient(linear, 0 0, 100% 100%, color-stop(.25, rgba(0, 0, 0, 0.05)), color-stop(.25, transparent), to(transparent)),
+                      -webkit-gradient(linear, 0 100%, 100% 0, color-stop(.25, rgba(0, 0, 0, 0.05)), color-stop(.25, transparent), to(transparent)),
+                      -webkit-gradient(linear, 0 0, 100% 100%, color-stop(.75, transparent), color-stop(.75, rgba(0, 0, 0, 0.05))),
+                      -webkit-gradient(linear, 0 100%, 100% 0, color-stop(.75, transparent), color-stop(.75, rgba(0, 0, 0, 0.05)));
+    background-image: -moz-linear-gradient(45deg, rgba(0, 0, 0, 0.05) 25%, transparent 25%, transparent),
+                      -moz-linear-gradient(-45deg, rgba(0, 0, 0, 0.05) 25%, transparent 25%, transparent),
+                      -moz-linear-gradient(45deg, transparent 75%, rgba(0, 0, 0, 0.05) 75%),
+                      -moz-linear-gradient(-45deg, transparent 75%, rgba(0, 0, 0, 0.05) 75%);
+ 
+/* Pattern settings */
+ 
+    -moz-background-size: 3px 3px;
+    -webkit-background-size: 3px 3px;
+}
+ 
+.button:hover{
+    box-shadow: 0 0 .1em rgba(0,0,0,0.4);
+    -moz-box-shadow: 0 0 .1em rgba(0,0,0,0.4);
+    -webkit-box-shadow: 0 0 .1em rgba(0,0,0,0.4);
+}
+ 
+.button:active{
+    /* When pressed, move it down 1px */
+    position: relative;
+    top: 1px;
+}
+
+.button2{
+    margin: 10px;
+    text-decoration: none;
+    font: normal 0.7em 'Trebuchet MS',Arial, Helvetica; /*Change the em value to scale the button*/
+    display: inline-block;
+    text-align: center;
+    color: #46769D;
+ 
+    border: 1px solid #9c9c9c; /* Fallback style */
+    border: 1px solid rgba(0, 0, 0, 0.3);           
+ 
+    text-shadow: 0 1px 0 rgba(0,0,0,0.4);
+ 
+    box-shadow: 0 0 .05em rgba(0,0,0,0.4);
+    -moz-box-shadow: 0 0 .05em rgba(0,0,0,0.4);
+    -webkit-box-shadow: 0 0 .05em rgba(0,0,0,0.4);
+ 
+}
+ 
+.button2, .button2 span{
+    -moz-border-radius: .3em;
+    border-radius: .3em;
+}
+ 
+.button2 span{
+    border-top: 1px solid #fff; /* Fallback style */
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    display: block;
+    padding: 0.5em 2.5em;
+    color: #46769D;
+ 
+/* The background pattern */
+ 
+    background-image: -webkit-gradient(linear, 0 0, 100% 100%, color-stop(.25, rgba(0, 0, 0, 0.05)), color-stop(.25, transparent), to(transparent)),
+                      -webkit-gradient(linear, 0 100%, 100% 0, color-stop(.25, rgba(0, 0, 0, 0.05)), color-stop(.25, transparent), to(transparent)),
+                      -webkit-gradient(linear, 0 0, 100% 100%, color-stop(.75, transparent), color-stop(.75, rgba(0, 0, 0, 0.05))),
+                      -webkit-gradient(linear, 0 100%, 100% 0, color-stop(.75, transparent), color-stop(.75, rgba(0, 0, 0, 0.05)));
+    background-image: -moz-linear-gradient(45deg, rgba(0, 0, 0, 0.05) 25%, transparent 25%, transparent),
+                      -moz-linear-gradient(-45deg, rgba(0, 0, 0, 0.05) 25%, transparent 25%, transparent),
+                      -moz-linear-gradient(45deg, transparent 75%, rgba(0, 0, 0, 0.05) 75%),
+                      -moz-linear-gradient(-45deg, transparent 75%, rgba(0, 0, 0, 0.05) 75%);
+ 
+/* Pattern settings */
+ 
+    -moz-background-size: 3px 3px;
+    -webkit-background-size: 3px 3px;
+}
+ 
+.button2:hover{
+    box-shadow: 0 0 .1em rgba(0,0,0,0.4);
+    -moz-box-shadow: 0 0 .1em rgba(0,0,0,0.4);
+    -webkit-box-shadow: 0 0 .1em rgba(0,0,0,0.4);
+}
+ 
+.button2:active{
+    /* When pressed, move it down 1px */
+    position: relative;
+    top: 1px;
+}
+
+.button-blue{
+    background: #4477a1;
+    background: -webkit-gradient(linear, left top, left bottom, from(#81a8cb), to(#4477a1) );
+    background: -moz-linear-gradient(-90deg, #81a8cb, #4477a1);
+    filter:  progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#81a8cb', endColorstr='#4477a1');
+}
+ 
+.button-blue:hover{
+    background: #81a8cb;
+    background: -webkit-gradient(linear, left top, left bottom, from(#4477a1), to(#81a8cb) );
+    background: -moz-linear-gradient(-90deg, #4477a1, #81a8cb);
+    filter:  progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#4477a1', endColorstr='#81a8cb');
+}
+ 
+.button-blue:active{
+    background: #4477a1;
+}
+
+.button-grey{
+    background: #a9a9a9;
+    background: -webkit-gradient(linear, left top, left bottom, from(#d3d3d3), to(#a9a9a9) );
+    background: -moz-linear-gradient(-90deg, #d3d3d3, #a9a9a9);
+    filter:  progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#d3d3d3', endColorstr='#a9a9a9');
+}
+ 
+.button-grey:hover{
+    background: #d3d3d3;
+    background: -webkit-gradient(linear, left top, left bottom, from(#a9a9a9), to(#d3d3d3) );
+    background: -moz-linear-gradient(-90deg, #a9a9a9, #d3d3d3);
+    filter:  progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#a9a9a9', endColorstr='#d3d3d3');
+}
+ 
+.button-grey:active{
+    background: #a9a9a9;
+}
+
+.button-grey-disabled{
+    background: #a9a9a9;
+    background: -webkit-gradient(linear, left top, left bottom, from(#d3d3d3), to(#a9a9a9) );
+    background: -moz-linear-gradient(-90deg, #d3d3d3, #a9a9a9);
+    filter:  progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#d3d3d3', endColorstr='#a9a9a9');
+    cursor: default;
+}
+
+.button-grey-disabled:active{
+    position: relative;
+    top: 0px;
+}
+
+.button-green{
+    background: #32cd32;
+    background: -webkit-gradient(linear, left top, left bottom, from(#00fa9a), to(#32cd32) );
+    background: -moz-linear-gradient(-90deg, #00fa9a, #32cd32);
+    filter:  progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#00fa9a', endColorstr='#32cd32');
+}
+ 
+.button-green:hover{
+    background: #00fa9a;
+    background: -webkit-gradient(linear, left top, left bottom, from(#32cd32), to(#00fa9a) );
+    background: -moz-linear-gradient(-90deg, #32cd32, #00fa9a);
+    filter:  progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#32cd32', endColorstr='#00fa9a');
+}
+ 
+.button-green:active{
+    background: #32cd32;
+}
+
+
+.button-menu{
+    background: #000080;
+    background: -webkit-gradient(linear, left top, left bottom, from(#4169e1), to(#000080) );
+    background: -moz-linear-gradient(-90deg, #4169e1, #000080);
+    filter:  progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#4169e1', endColorstr='#000080');
+}
+ 
+.button-menu:hover{
+    background: #4169e1;
+    background: -webkit-gradient(linear, left top, left bottom, from(#000080), to(#4169e1) );
+    background: -moz-linear-gradient(-90deg, #000080, #4169e1);
+    filter:  progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#000080', endColorstr='#4169e1');
+}
+ 
+.button-menu:active{
+    background: #000080;
+}
+
+.button-menu2{
+    background: #008080;
+    background: -webkit-gradient(linear, left top, left bottom, from(#41E1C7), to(#008080) );
+    background: -moz-linear-gradient(-90deg, #41E1C7, #008080);
+    filter:  progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#41E1C7', endColorstr='#008080');
+}
+ 
+.button-menu2:hover{
+    background: #41E1C7;
+    background: -webkit-gradient(linear, left top, left bottom, from(#008080), to(#41E1C7) );
+    background: -moz-linear-gradient(-90deg, #008080, #41E1C7);
+    filter:  progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#008080', endColorstr='#41E1C7');
+}
+ 
+.button-menu2:active{
+    background: #008080;
+}
+
+/*----------------------------------------------------------- */
+/* menuButton
+------------------------------------------------------------- */
+.blue_81_20
+{
+
+	display:block;
+	width:81px;
+	height:20px;
+	background-image: url(../img/button/blue/81_20_off.jpg);
+	text-align:center;
+}
+.blue_81_20:hover
+{
+
+	display:block;
+	width:81px;
+	height:20px;
+	background-image: url(../img/button/blue/81_20_on.jpg);
+}
+.blue_81_20 span
+{
+	font-size:midium;
+    position:relative;
+    font-weight:bolder;
+    color: #FFFFFF;
+}
+/*--------------------------*/
+.blue_81_27
+{
+
+	display:block;
+	width:81px;
+	height:27px;
+	background-image: url(../img/button/blue/81_27_off.jpg);
+	text-align:center;
+}
+.blue_81_27:hover
+{
+
+	display:block;
+	width:81px;
+	height:27px;
+	background-image: url(../img/button/blue/81_27_on.jpg);
+}
+.blue_81_27 span
+{
+	font-size:midium;
+    position:relative;
+    font-weight:bolder;
+    color: #FFFFFF;
+}
+/*--------------------------*/
+.blue_81_40
+{
+	display:block;
+	width:81px;
+	height:40px;
+	background-image: url(../img/button/blue/81_40_off.jpg);
+	text-align:center;
+}
+.blue_81_40:hover
+{
+	display:block;
+	width:81px;
+	height:40px;
+	background-image: url(../img/button/blue/81_40_on.jpg);
+}
+.blue_81_40 span
+{
+	line-height:40px;	
+	font-size:midium;
+    position:relative;
+    font-weight:bolder;
+    color: #FFFFFF;
+}
+/*--------------------------*/
+.blue_324_40
+{
+	display:block;
+	width:324px;
+	height:40px;
+	background-image: url(../img/button/blue/324_40_off.jpg);
+	text-align:center;
+}
+.blue_324_40:hover
+{
+	display:block;
+	width:324px;
+	height:40px;
+	background-image: url(../img/button/blue/324_40_on.jpg);
+}
+.blue_324_40 span
+{
+	line-height:40px;	
+	font-size:midium;
+    position:relative;
+    font-weight:bolder;
+    color: #FFFFFF;
+}
+/*--------------------------*/
+.blue_120_40
+{
+	display:block;
+	width:120px;
+	height:40px;
+	background-image: url(../img/button/blue/120_40_off.jpg);
+	text-align:center;
+}
+.blue_120_40:hover
+{
+	display:block;
+	width:120px;
+	height:40px;
+	background-image: url(../img/button/blue/120_40_on.jpg);
+}
+.blue_120_40 span
+{
+	line-height:40px;	
+	font-size:midium;
+    position:relative;
+    font-weight:bolder;
+    color: #FFFFFF;
+}
+/*--------------------------*/
+.blue_220_40
+{
+	display:block;
+	width:220px;
+	height:40px;
+	background-image: url(../img/button/blue/220_40_off.jpg);
+	text-align:center;
+}
+.blue_220_40:hover
+{
+	display:block;
+	width:220px;
+	height:40px;
+	background-image: url(../img/button/blue/220_40_on.jpg);
+}
+.blue_220_40 span
+{
+	line-height:40px;	
+	font-size:midium;
+    position:relative;
+    font-weight:bolder;
+    color: #FFFFFF;
+}
+/*--------------------------*/
+.blue_81_81
+{
+
+	display:block;
+	width:81px;
+	height:81px;
+	background-image: url(../img/button/blue/81_81_off.jpg);
+	text-align:center;
+}
+.blue_81_81:hover
+{
+
+	display:block;
+	width:81px;
+	height:81px;
+	background-image: url(../img/button/blue/81_81_on.jpg);
+}
+.blue_81_81 span
+{
+	font-size:midium;
+    position:relative;
+    font-weight:bolder;
+    color: #FFFFFF;
+}
+
+/*--------------------------*/
+.blue_sankaku
+{
+
+	display:block;
+	width:94px;
+	height:19px;
+	background-image: url(../img/button/blue/sankaku_off.jpg);
+	text-align:center;
+}
+.blue_sankaku:hover
+{
+
+	display:block;
+	width:94px;
+	height:19px;
+	background-image: url(../img/button/blue/sankaku_on.jpg);
+}
+.blue_sankaku span
+{
+	font-size:midium;
+    position:relative;
+    font-weight:bolder;
+    color: #FFFFFF;
+}
+
+/*--------------------------*/
+.blue_left
+{
+
+	display:block;
+	width:101px;
+	height:20px;
+	background-image: url(../img/button/blue/yajirushi_off_left.gif);
+	text-align:center;
+}
+.blue_left:hover
+{
+
+	display:block;
+	width:101px;
+	height:20px;
+	background-image: url(../img/button/blue/yajirushi_on_left.gif);
+}
+.blue_left span
+{
+	font-size:midium;
+    position:relative;
+    font-weight:bolder;
+    color: #FFFFFF;
+}
+
+/*--------------------------*/
+.blue_right
+{
+
+	display:block;
+	width:101px;
+	height:20px;
+	background-image: url(../img/button/blue/yajirushi_off_right.gif);
+	text-align:center;
+}
+.blue_left:hover
+{
+
+	display:block;
+	width:101px;
+	height:20px;
+	background-image: url(../img/button/blue/yajirushi_on_right.gif);
+}
+.blue_right span
+{
+	font-size:midium;
+    position:relative;
+    font-weight:bolder;
+    color: #FFFFFF;
+}
+/*--------------------------*/
+.blue_sankaku_right
+{
+
+	display:block;
+	width:17px;
+	height:20px;
+	background-image: url(../img/button/blue/sankaku_off_right.gif);
+	text-align:center;
+}
+.blue_sankaku_right:hover
+{
+
+	display:block;
+	width:17px;
+	height:20px;
+	background-image: url(../img/button/blue/sankaku_on_right.gif);
+}
+/*--------------------------*/
+.blue_sankaku_left
+{
+
+	display:block;
+	width:17px;
+	height:20px;
+	background-image: url(../img/button/blue/sankaku_off_left.gif);
+	text-align:center;
+}
+.blue_sankaku_left:hover
+{
+
+	display:block;
+	width:17px;
+	height:20px;
+	background-image: url(../img/button/blue/sankaku_on_left.gif);
+}
+
+/*--------------------------*/
+
+.gray_81_20
+{
+
+	display:block;
+	width:81px;
+	height:20px;
+	background-image: url(../img/button/gray/81_20_off.jpg);
+	text-align:center;
+}
+.gray_81_20:hover
+{
+
+	display:block;
+	width:81px;
+	height:20px;
+	background-image: url(../img/button/gray/81_20_on.jpg);
+}
+.gray_81_20 span
+{
+	font-size:midium;
+    position:relative;
+    font-weight:bolder;
+    color: #FFFFFF;
+}
+/*--------------------------*/
+.gray_81_27
+{
+
+	display:block;
+	width:81px;
+	height:27px;
+	background-image: url(../img/button/gray/81_27_off.jpg);
+	text-align:center;
+}
+.gray_81_27:hover
+{
+
+	display:block;
+	width:81px;
+	height:27px;
+	background-image: url(../img/button/gray/81_27_on.jpg);
+}
+.gray_81_27 span
+{
+	font-size:midium;
+    position:relative;
+    font-weight:bolder;
+    color: #FFFFFF;
+}
+/*--------------------------*/
+.gray_81_40
+{
+	display:block;
+	width:81px;
+	height:40px;
+	background-image: url(../img/button/gray/81_40_off.jpg);
+	text-align:center;
+}
+.gray_81_40:hover
+{
+
+	display:block;
+	width:81px;
+	height:40px;
+	background-image: url(../img/button/gray/81_40_on.jpg);
+}
+.gray_81_40 span
+{
+	line-height:40px;
+	font-size:midium;
+    position:relative;
+    font-weight:bolder;
+    color: #FFFFFF;
+}
+/*--------------------------*/
+.gray_81_81
+{
+
+	display:block;
+	width:81px;
+	height:81px;
+	background-image: url(../img/button/gray/81_81_off.jpg);
+	text-align:center;
+}
+.gray_81_81:hover
+{
+
+	display:block;
+	width:81px;
+	height:81px;
+	background-image: url(../img/button/gray/81_81_on.jpg);
+}
+.gray_81_81 span
+{
+	font-size:midium;
+    position:relative;
+    font-weight:bolder;
+    color: #FFFFFF;
+}
+
+/*--------------------------*/
+.gray_sankaku
+{
+
+	display:block;
+	width:94px;
+	height:19px;
+	background-image: url(../img/button/gray/sankaku_off.jpg);
+	text-align:center;
+}
+.gray_sankaku:hover
+{
+
+	display:block;
+	width:94px;
+	height:19px;
+	background-image: url(../img/button/gray/sankaku_on.jpg);
+}
+.gray_sankaku span
+{
+	font-size:midium;
+    position:relative;
+    font-weight:bolder;
+    color: #FFFFFF;
+}
+
+/*--------------------------*/
+.gray_left
+{
+
+	display:block;
+	width:67px;
+	height:18px;
+	background-image: url(../img/button/gray/yajirushi_off_left.gif);
+	text-align:center;
+}
+.gray_left:hover
+{
+
+	display:block;
+	width:67px;
+	height:18px;
+	background-image: url(../img/button/gray/yajirushi_on_left.gif);
+}
+.gray_left span
+{
+    position:relative;
+    font-weight:bolder;
+    color: #FFFFFF;
+}
+
+/*--------------------------*/
+.gray_right
+{
+
+	display:block;
+	width:101px;
+	height:20px;
+	background-image: url(../img/button/gray/yajirushi_off_right.gif);
+	text-align:center;
+}
+.gray_right:hover
+{
+
+	display:block;
+	width:101px;
+	height:20px;
+	background-image: url(../img/button/gray/yajirushi_on_right.gif);
+}
+.gray_right span
+{
+	font-size:midium;
+    position:relative;
+    font-weight:bolder;
+    color: #FFFFFF;
+}
+/*--------------------------*/
+.gray_120_40
+{
+	display:block;
+	width:120px;
+	height:40px;
+	background-image: url(../img/button/gray/120_40_on.png);
+	text-align:center;
+}
+.gray_120_40:hover
+{
+	display:block;
+	width:120px;
+	height:40px;
+	background-image: url(../img/button/gray/120_40_on.png);
+}
+.gray_120_40 span
+{
+	line-height:40px;
+	font-size:midium;
+    position:relative;
+    font-weight:bolder;
+    color: #FFFFFF;
+}
+
+/*--------------------------*/
+
+.green_81_20
+{
+
+	display:block;
+	width:81px;
+	height:20px;
+	background-image: url(../img/button/green/81_20_off.jpg);
+	text-align:center;
+}
+.green_81_20:hover
+{
+
+	display:block;
+	width:81px;
+	height:20px;
+	background-image: url(../img/button/green/81_20_on.jpg);
+}
+.green_81_20 span
+{
+	font-size:midium;
+    position:relative;
+    font-weight:bolder;
+    color: #FFFFFF;
+}
+/*--------------------------*/
+.green_81_27
+{
+
+	display:block;
+	width:81px;
+	height:27px;
+	background-image: url(../img/button/green/81_27_off.jpg);
+	text-align:center;
+}
+.green_81_27:hover
+{
+
+	display:block;
+	width:81px;
+	height:27px;
+	background-image: url(../img/button/green/81_27_on.jpg);
+}
+.green_81_27 span
+{
+	font-size:midium;
+    position:relative;
+    font-weight:bolder;
+    color: #FFFFFF;
+}
+/*--------------------------*/
+.green_81_40
+{
+	display:block;
+	width:81px;
+	height:40px;
+	background-image: url(../img/button/green/81_40_off.jpg);
+	text-align:center;
+}
+.green_81_40:hover
+{
+	display:block;
+	width:81px;
+	height:40px;
+	background-image: url(../img/button/green/81_40_on.jpg);
+}
+.green_81_40 span
+{
+	line-height:40px;
+	font-size:midium;
+    position:relative;
+    font-weight:bolder;
+    color: #FFFFFF;
+}
+/*--------------------------*/
+.green_81_81
+{
+
+	display:block;
+	width:81px;
+	height:81px;
+	background-image: url(../img/button/green/81_81_off.jpg);
+	text-align:center;
+}
+.green_81_81:hover
+{
+
+	display:block;
+	width:81px;
+	height:81px;
+	background-image: url(../img/button/green/81_81_on.jpg);
+}
+.green_81_81 span
+{
+	font-size:midium;
+    position:relative;
+    font-weight:bolder;
+    color: #FFFFFF;
+}
+/*--------------------------*/
+.green_120_40
+{
+	display:block;
+	width:120px;
+	height:40px;
+	background-image: url(../img/button/green/120_40_off.jpg);
+	text-align:center;
+}
+.green_120_40:hover
+{
+	display:block;
+	width:120px;
+	height:40px;
+	background-image: url(../img/button/green/120_40_on.jpg);
+}
+.green_120_40 span
+{
+	line-height:40px;
+	font-size:midium;
+    position:relative;
+    font-weight:bolder;
+    color: #FFFFFF;
+}
+
+/*--------------------------*/
+.green_sankaku
+{
+
+	display:block;
+	width:94px;
+	height:19px;
+	background-image: url(../img/button/green/sankaku_off.jpg);
+	text-align:center;
+}
+.green_sankaku:hover
+{
+
+	display:block;
+	width:94px;
+	height:19px;
+	background-image: url(../img/button/green/sankaku_on.jpg);
+}
+.green_sankaku span
+{
+	font-size:midium;
+    position:relative;
+    font-weight:bolder;
+    color: #FFFFFF;
+}
+
+/*--------------------------*/
+.green_left
+{
+
+	display:block;
+	width:101px;
+	height:20px;
+	background-image: url(../img/button/green/yajirushi_off_left.gif);
+	text-align:center;
+}
+.green_left:hover
+{
+
+	display:block;
+	width:101px;
+	height:20px;
+	background-image: url(../img/button/green/yajirushi_on_left.gif);
+}
+.green_left span
+{
+	font-size:midium;
+    position:relative;
+    font-weight:bolder;
+    color: #FFFFFF;
+}
+
+/*--------------------------*/
+.green_right
+{
+
+	display:block;
+	width:101px;
+	height:20px;
+	background-image: url(../img/button/green/yajirushi_off_right.gif);
+	text-align:center;
+}
+.green_left:hover
+{
+
+	display:block;
+	width:101px;
+	height:20px;
+	background-image: url(../img/button/green/yajirushi_on_right.gif);
+}
+.green_right span
+{
+	font-size:midium;
+    position:relative;
+    font-weight:bolder;
+    color: #FFFFFF;
+}
+
+.red_81_20
+{
+
+	display:block;
+	width:81px;
+	height:20px;
+	background-image: url(../img/button/red/81_20_off.jpg);
+	text-align:center;
+}
+.red_81_20:hover
+{
+
+	display:block;
+	width:81px;
+	height:20px;
+	background-image: url(../img/button/red/81_20_on.jpg);
+}
+.red_81_20 span
+{
+	font-size:midium;
+    position:relative;
+    font-weight:bolder;
+    color: #FFFFFF;
+}
+/*--------------------------*/
+.red_81_27
+{
+
+	display:block;
+	width:81px;
+	height:27px;
+	background-image: url(../img/button/red/81_27_off.jpg);
+	text-align:center;
+}
+.red_81_27:hover
+{
+
+	display:block;
+	width:81px;
+	height:27px;
+	background-image: url(../img/button/red/81_27_on.jpg);
+}
+.red_81_27 span
+{
+	font-size:midium;
+    position:relative;
+    font-weight:bolder;
+    color: #FFFFFF;
+}
+/*--------------------------*/
+.red_81_40
+{
+	display:block;
+	width:81px;
+	height:40px;
+	background-image: url(../img/button/red/81_40_off.jpg);
+	text-align:center;
+}
+.red_81_40:hover
+{
+	display:block;
+	width:81px;
+	height:40px;
+	background-image: url(../img/button/red/81_40_on.jpg);
+}
+.red_81_40 span
+{
+	line-height:40px;
+	font-size:midium;
+    position:relative;
+    font-weight:bolder;
+    color: #FFFFFF;
+}
+/*--------------------------*/
+.red_120_40
+{
+	display:block;
+	width:120px;
+	height:40px;
+	background-image: url(../img/button/red/120_40_off.jpg);
+	text-align:center;
+}
+.red_120_40:hover
+{
+	display:block;
+	width:120px;
+	height:40px;
+	background-image: url(../img/button/red/120_40_on.jpg);
+}
+.red_120_40 span
+{
+	line-height:40px;
+	font-size:midium;
+    position:relative;
+    font-weight:bolder;
+    color: #FFFFFF;
+}
+/*--------------------------*/
+.red_81_81
+{
+
+	display:block;
+	width:81px;
+	height:81px;
+	background-image: url(../img/button/red/81_81_off.jpg);
+	text-align:center;
+}
+.red_81_81:hover
+{
+
+	display:block;
+	width:81px;
+	height:81px;
+	background-image: url(../img/button/red/81_81_on.jpg);
+}
+.red_81_81 span
+{
+	font-size:midium;
+    position:relative;
+    font-weight:bolder;
+    color: #FFFFFF;
+}
+
+/*--------------------------*/
+.red_sankaku
+{
+
+	display:block;
+	width:94px;
+	height:19px;
+	background-image: url(../img/button/red/sankaku_off.jpg);
+	text-align:center;
+}
+.red_sankaku:hover
+{
+
+	display:block;
+	width:94px;
+	height:19px;
+	background-image: url(../img/button/red/sankaku_on.jpg);
+}
+.red_sankaku span
+{
+	font-size:midium;
+    position:relative;
+    font-weight:bolder;
+    color: #FFFFFF;
+}
+
+/*--------------------------*/
+.red_left
+{
+
+	display:block;
+	width:101px;
+	height:20px;
+	background-image: url(../img/button/red/yajirushi_off_left.gif);
+	text-align:center;
+}
+.red_left:hover
+{
+
+	display:block;
+	width:101px;
+	height:20px;
+	background-image: url(../img/button/red/yajirushi_on_left.gif);
+}
+.red_left span
+{
+	font-size:midium;
+    position:relative;
+    font-weight:bolder;
+    color: #FFFFFF;
+}
+
+/*--------------------------*/
+.red_right
+{
+
+	display:block;
+	width:101px;
+	height:20px;
+	background-image: url(../img/button/red/yajirushi_off_right.gif);
+	text-align:center;
+}
+.red_left:hover
+{
+
+	display:block;
+	width:101px;
+	height:20px;
+	background-image: url(../img/button/red/yajirushi_on_right.gif);
+}
+.red_right span
+{
+	font-size:midium;
+    position:relative;
+    font-weight:bolder;
+    color: #FFFFFF;
+}
+
+/*--------------------------*/
+.button-orange{
+    background: #ff8c00;
+    background: -webkit-gradient(linear, left top, left bottom, from(#ffa500), to(#ff8c00) );
+    background: -moz-linear-gradient(-90deg, #ffa500,#ff8c00);
+    filter:  progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#ffa500', endColorstr='#ff8c00');
+}
+ 
+.button-orange:hover{
+    background: #ffa500;
+    background: -webkit-gradient(linear, left top, left bottom, from(#ff8c00), to(#ffa500) );
+    background: -moz-linear-gradient(-90deg, #ff8c00, #ffa500);
+    filter:  progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#ff8c00', endColorstr='#ffa500');
+}
+ 
+.button-orange:active{
+    background: #ff8c00;
+}

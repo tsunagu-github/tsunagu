@@ -1,0 +1,60 @@
+<!--<ons-page style="background-color: white" ng-controller="SideMenuCtrl">-->
+<ons-page ng-controller="menuListCtrl" ng-init="initPage();">
+    <table width="100%" cellspacing="0">
+    <tr>
+    	<td class="line" align="right" width="30" ><img height="24" src="./imgs/list_selfcheck.png"></td>
+    	<td class="line" align="left"><div class="left" ng-click="setPage('templates/selfcheck-list.html');">自己測定</div></td>
+    </tr>
+    <!--
+    <tr>
+    	<td class="line" align="right" width="30" ><img height="24" src="./imgs/list_onetimepassword.png"></td>
+    	<td class="line" align="left"><div class="left" ng-click="setPage('templates/onetimepassword-entry.html');">参照用パスワード発行</div></td>
+    </tr>
+    -->
+    <tr>
+    	<td class="line" align="right" width="30" ><img height="24" src="./imgs/list_chart.png"></td>
+    	<td class="line" align="left"><div class="left" ng-click="setPage('templates/chart-menu.html');">グラフ管理</div></td>
+    </tr>
+    <tr>
+    	<td class="line" align="right" width="30" ><img height="24" src="./imgs/list_medicine.png"></td>
+    	<td class="line" align="left"><div class="left" ng-click="setPage('templates/medicine-menu.html');">おくすり情報</div></td>
+    </tr>
+    <tr>
+    	<td class="line" align="right" width="30" ><img height="24" src="./imgs/list_menu_self-management-set.png"></td>
+    	<td class="line" align="left"><div class="left" ng-click="setPage('templates/clinical-test-result.html');">自己管理セット</div></td>
+    </tr>
+    <tr>
+        <td class="line" align="right" width="30" ><img height="24" src="./imgs/list_clinical-test-result.png"></td>
+        <td class="line" align="left"><div class="left" ng-click="setPage('templates/measurement-result.html');">測定・全検査結果</div></td>
+    </tr>
+    <tr>
+    	<td class="line" align="right" width="30" ><img height="24" src="./imgs/list_checkup.png"></td>
+    	<td class="line" align="left"><div class="left" ng-click="setPage('templates/checkup-results.html');">健診結果</div></td>
+    </tr>
+    <tr>
+    	<td class="line" align="right" width="30" ><img height="24" src="./imgs/list_announcements.png"></td>
+    	<td class="line" align="left"><div class="left" ng-click="setPage('templates/announcements.html');">おしらせ</div></td>
+    </tr>
+    <tr>
+    	<td class="line" align="right" width="30"><img height="24" src="./imgs/list_parient-info.png"></td>
+    	<td class="line" align="left"><div class="left" ng-click="setPage('templates/parient-info-edit.html');">利用者情報の確認</div></td>
+    </tr>
+    <tr>
+    	<td class="line" align="right" width="30"><img height="24" src="./imgs/list_takeover.png"></td>
+    	<td class="line" align="left"><div class="left" ng-click="setPage('templates/takeover-entry.html');">引継ぎ</div></td>
+    </tr>
+    <tr>
+    	<td class="line" align="right" width="30"><img height="24" src="./imgs/list_cooperation.png"></td>
+    	<td class="line" align="left"><div class="left" ng-click="setPage('templates/cooperation-list.html');">医療機関登録</div></td>
+    </tr>
+    <tr>
+    	<td class="line" align="right" width="30"><img height="24" src="./imgs/list_backuprestore.png"></td>
+    	<td class="line" align="left"><div class="left" ng-click="setPage('templates/backuprestore.html');">バックアップ</div></td>
+    </tr>
+    <tr ng-show="patient.dynamicConsentFlg">
+       <td class="line" align="right" width="30"><img height="24" src="./imgs/dynamicConsent_gray.png"></td>
+       <td class="line" align="left"><div class="left" ng-click="setPage('templates/dynamicConsent-menu.html');">健康医療情報の利用に関する同意一覧</div></td>
+    </tr>
+    </table>
+
+</ons-page>

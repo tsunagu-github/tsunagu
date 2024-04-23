@@ -1,0 +1,133 @@
+<!--<link rel="stylesheet" href="css/medicine.css">-->
+<ons-page ng-controller="medicineEditCtrl"><!--ng-controller="medicineEntryCtrl">-->     
+       <form name="prescForm" novalidate>
+        <div class="medcineMetaEntry">
+       <table class="medEntryForm">
+        <tr>
+            <td class="itemname"><span style="color:red;">*</span>調剤実施日</td>
+            <td class="itemmain"><ons-input name="prescDay" type="date" ng-model="editMedicine.dosageDate" ng-required="true" max="{{today|date:'yyyy-MM-dd'}}" style="border-bottom: 1px solid #ccc;"></ons-input>
+                <span ng-show="prescForm.prescDay.$error.required" style="color:red;font-size:smaller;"><br/>調剤実施日は必須です。</span>
+                <span ng-show="prescForm.prescDay.$error.max" style="color:red;font-size:smaller;"><br/>調剤実施日が未来日になっています。</span>
+                <span ng-show="prescForm.prescDay.$error.date" style="color:red;font-size:smaller;"><br/>調剤実施日が存在しない日付になっています。</span>
+            </td>
+        </tr>
+        <tr>
+            <td><span style="color:red;">*</span>薬局名</td>
+            <td><ons-input name="pharmacyName" type="text" ng-model="editMedicine.pharmacy" ng-required="true" style="border-bottom: 1px solid #ccc;"></ons-input>
+                <span ng-show="prescForm.pharmacyName.$error.required" style="color:red;font-size:smaller;"><br/>薬局名は必須です。</span>
+            </td>
+        </tr>
+        </table>
+        <table class="medEntryForm" ng-show="checked">
+        <tr>
+            <td class="itemname">薬剤師名</td>
+            <td class="itemmain"><ons-input type="text" ng-model="editMedicine.pharmacistName" style="border-bottom: 1px solid #ccc;"></ons-input></td>
+        </tr>
+        <tr>
+            <td>処方病院名</td>
+            <td><ons-input type="text" ng-model="editMedicine.medicalOrganization" style="border-bottom: 1px solid #ccc;"></ons-input></td>
+        </tr>
+        <tr>
+            <td>診療科名</td>
+            <td><ons-input type="text" ng-model="editMedicine.departmentName" style="border-bottom: 1px solid #ccc;"></ons-input></td>
+        </tr>
+        <tr>
+            <td>処方医師名</td>
+            <td><ons-input type="text" ng-model="editMedicine.doctorName" style="border-bottom: 1px solid #ccc;"></ons-input></td>
+        </tr>
+        <tr>
+            <td>備考</td>
+            <td><ons-input type="text" ng-model="editMedicine.dosageRemark" style="border-bottom: 1px solid #ccc;"></ons-input></td>
+        </tr>
+        </table>
+        <div style="text-align: right;"><input type="checkbox" ng-model="checked"/>詳しく入力する</div>
+       </div>
+       
+       <div class="medicineEntry" ng-repeat="childmedicine in editMedicine.medicines" ng-hide="childmedicine.isdelete">
+           <div style="text-align: right;"><ons-button modifier="medDelete" ng-click="deleteConfirm($index,'presc')">削除</ons-button></div>
+           <ng-form name="innerForm">
+            <table  class="medEntryForm" id="dosagemedicines">
+                <tr>
+                    <td class="itemname"><span style="color:red;">*</span>お薬名</td>
+                    <td class="itemmain"><ons-input name="prescName" type="text" ng-model="childmedicine.medicineName" ng-required="true" style="border-bottom: 1px solid #ccc;"></ons-input>
+                        <span ng-show="innerForm.prescName.$error.required" style="color:red;font-size:smaller;"><br/>お薬名は必須です。</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>剤型</td>
+                    <td>
+                        <select ng-change="selectItem($index)" ng-options="dF.cd as dF.name for dF in dosageFormCDList" ng-model="childmedicine.dosageForm">
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>用法</td>
+                    <td><ons-input type="text" ng-model="childmedicine.usageName" ng-click="selectUsageName($index)"style="border-bottom: 1px solid #ccc;"></ons-input></td>
+                </tr>  
+                <tr ng-show="childmedicine.dosageForm_v">
+                    <td><span style="color:red;">*</span>{{childmedicine.quantityTitle}}</td>
+                    <td><ons-input name="prescQuant" type="number" ng-model="childmedicine.dosageQuantity" ng-required="true" min=1 max=999 style="border-bottom: 1px solid #ccc;"></ons-input>
+                        <span ng-show="innerForm.prescQuant.$error.required" style="color:red;font-size:smaller;"><br/>{{childmedicine.quantityTitle}}は必須です。</span>
+                        <span ng-show="innerForm.prescQuant.$error.min" style="color:red;font-size:smaller;"><br/>1以上の数字を入力してください。</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td><span style="color:red;">*</span>{{childmedicine.amountTitle}}</td>
+                    <td><ons-input name="prescAmount" type="number" ng-model="childmedicine.amount" ng-required="true" min=1 style="border-bottom: 1px solid #ccc;"></ons-input>
+                        <span ng-show="innerForm.prescAmount.$error.required" style="color:red;font-size:smaller;"><br/>{{childmedicine.amountTitle}}は必須です。</span>                    
+                        <span ng-show="innerForm.prescAmount.$error.min" style="color:red;font-size:smaller;"><br/>1以上の数字を入力してください。</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td><span style="color:red;">*</span>単位</td>
+                    <td>
+                        <select name="prescUnit" ng-model="childmedicine.unitName" ng-options="mU.cd as mU.name for mU in mUnitCDList" ng-required="true">
+                        </select>
+                        <span ng-show="innerForm.prescUnit.$error.required" style="color:red;font-size:smaller;"><br/>単位は必須です。</span>                    
+                    </td>
+                </tr>
+                <tr>
+                    <td>補足</td>
+                    <td><ons-input type="text" ng-model="childmedicine.additional" style="border-bottom: 1px solid #ccc;"></ons-input></td>
+                </tr>
+        </table>
+        </ng-form>
+        <table class="medEntryForm">
+                <tr>
+                    <td colspan="2" align="center"><div style="width: 80%;"><ons-button ng-click="addMedicine('presc')" modifier="large">おくすり入力枠 追加</ons-button></div></td>
+                </tr>
+        </table>
+       </div>
+        <div class="medEntrybutton">
+            <span ng-show="prescForm.$invalid" style="color:red;font-size:smaller;"><br/>[*]マークの項目は必須です。</br>必須項目がすべて入力されると確認ボタンが有効になります。</span>
+            <!--<ons-button  ng-disabled="prescForm.$invalid" ng-click="confirmMedicine('presc',editMedicine)" modifier="large medEntry">確認</ons-button>-->
+        </div>
+       </form>
+    
+    
+    <ons-bottom-toolbar>
+    <table style="width:100%;">
+    <tr><td style="text-align: center;width:50%;"></td>
+        <td style="text-align: center;width:50%;">
+            <ons-toolbar-button ng-disabled="prescForm.$invalid" ng-click="confirmMedicine('presc',editMedicine)"
+                style="color: royalblue;
+                       flex: 1 1 0; 
+                       flex-direction: column; 
+                       justify-content: center; 
+                       position: relative; 
+                       text-align: center; 
+                       text-overflow: ellipsis; 
+                       white-space: nowrap;
+                       height: 2.8rem; 
+                       line-height: 2.6rem;">
+                    <ons-icon
+                      icon="angle-right"
+                      size="18px">
+                        <br/>確認
+                      </ons-icon>                    
+            </ons-toolbar-button>
+        </td>
+    </tr>
+    </table>
+    </ons-bottom-toolbar> 
+</ons-page>

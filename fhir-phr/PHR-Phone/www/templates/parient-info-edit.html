@@ -1,0 +1,294 @@
+
+<ons-page ng-controller="parientCtrl">
+    <ons-toolbar style="background: #69BB7B">
+        <div class="left"><ons-back-button ng-click="backAction()" style="font-size: smaller;">メニューへ</ons-back-button></div>
+        <div class="center" style="color: #fff">基本情報修正</div>
+        <div class="right">
+            <ons-toolbar-button ng-click="app.slidingMenu.toggleMenu()"><ons-icon icon="bars" style="color: #fff"></ons-icon></ons-toolbar-button>
+        </div>
+    </ons-toolbar>
+    <form name="phrForm" novalidate>
+        <ons-list>
+            <ons-list-item>
+                <ons-row>
+                    <ons-col width="120px" align="left">PHR ID</ons-col>
+                    <ons-col align="left">{{patient.phrId}}</ons-col>
+                </ons-row>
+            </ons-list-item>
+            <ons-list-item>
+                <ons-row>
+                    <ons-col width="120px" align="left">管理番号<br></ons-col>
+                    <ons-col align="left">{{patient.insurerNo}}</ons-col>
+                </ons-row>
+            </ons-list-item>
+            <ons-list-item>
+                <ons-row>
+                    <ons-col width="120px" align="left"><span style="color:red;">*</span>氏名（姓）</ons-col>
+                    <ons-col align="left">
+                        <ons-input type="text" name="FamilyName" float style="border-bottom: 1px solid #ccc;" placeholder="氏名_姓" ng-model="patient.familyName" ng-maxlength="20" ng-required="true"></ons-input>
+                        <span ng-show="phrForm.FamilyName.$error.maxlength" style="color:red;font-size:smaller;"><br>20文字以内で入力してください</span>
+                        <span ng-show="phrForm.FamilyName.$error.required" style="color:red;font-size:smaller;"><br>入力してください</span>
+                    </ons-col>
+                </ons-row>
+            </ons-list-item>
+            <ons-list-item>
+                <ons-row>
+                    <ons-col width="120px" align="left"><span style="color:red;">*</span>氏名（名）</ons-col>
+                    <ons-col align="left">
+                        <ons-input type="text" name="givenName" float style="border-bottom: 1px solid #ccc;" placeholder="氏名_名" ng-model="patient.givenName" ng-maxlength="20" ng-required="true"></ons-input>
+                        <span ng-show="phrForm.givenName.$error.maxlength" style="color:red;font-size:smaller;"><br>20文字以内で入力してください</span>
+                        <span ng-show="phrForm.givenName.$error.required" style="color:red;font-size:smaller;"><br>入力してください</span>
+                    </ons-col>
+                </ons-row>
+            </ons-list-item>
+            <ons-list-item>
+                <ons-row>
+                    <ons-col width="120px" align="left"><span style="color:red;">*</span>カナ氏名（姓）</ons-col>
+                    <ons-col align="left">
+                        <ons-input type="text" name="familyKana" float style="border-bottom: 1px solid #ccc;" placeholder="カナ氏名_姓" ng-model="patient.familyKana" ng-maxlength="20" ng-required="true"></ons-input>
+                        <span ng-show="phrForm.familyKana.$error.maxlength" style="color:red;font-size:smaller;"><br>20文字以内で入力してください</span>
+                        <span ng-show="phrForm.familyKana.$error.required" style="color:red;font-size:smaller;"><br>入力してください</span>
+                    </ons-col>
+                </ons-row>
+            </ons-list-item>
+            <ons-list-item>
+                <ons-row>
+                    <ons-col width="120px" align="left"><span style="color:red;">*</span>カナ氏名（名）</ons-col>
+                    <ons-col align="left">
+                        <ons-input type="text" name="givenKana" float style="border-bottom: 1px solid #ccc;" placeholder="カナ氏名_名" ng-model="patient.givenKana" ng-maxlength="20" ng-required="true"></ons-input>
+                        <span ng-show="phrForm.givenKana.$error.maxlength" style="color:red;font-size:smaller;"><br>20文字以内で入力してください</span>
+                        <span ng-show="phrForm.givenKana.$error.required" style="color:red;font-size:smaller;"><br>入力してください</span>
+                    </ons-col>
+                </ons-row>
+            </ons-list-item>
+            <ons-list-item>
+                <ons-row>
+                    <ons-col width="120px" align="left"><span style="color:red;">*</span>性別</ons-col>
+                    <ons-col align="left">
+                        <ons-input type="radio" name="sexCd" placeholder="" float ng-checked="patient.sexCd == 'M'" ng-model="patient.sexCd" value="M" ng-required="true">男</ons-input>
+                        &nbsp;&nbsp;
+                        <ons-input type="radio" name="sexCd" placeholder="" float ng-checked="patient.sexCd == 'F'" ng-model="patient.sexCd" value="F" ng-required="true">女</ons-input>
+                        <span ng-show="phrForm.sexCd.$error.required" style="color:red;font-size:smaller;"><br>入力してください</span>
+                    </ons-col>
+                </ons-row>          
+            </ons-list-item>
+            <ons-list-item>
+                <ons-row>
+                    <ons-col width="120px" align="left"><span style="color:red;">*</span>生年月日</ons-col>
+                    <ons-col align="left">
+                        <ons-input type="date" name="birthDate" float style="border-bottom: 1px solid #ccc;" ng-model="patient.viewBirthDate" max="{{today|date:'yyyy/MM/dd'}}" ng-required="true"></ons-input>
+                        <span ng-show="phrForm.birthDate.$error.required" style="color:red;font-size:smaller;"><br>入力してください</span>
+                        <span ng-show="phrForm.birthDate.$error.max" style="color:red;font-size:smaller;"><br/>未来日は入力できません</span>
+                        <span ng-show="phrForm.birthDate.$error.date" style="color:red;font-size:smaller;"><br/>日付が不正です</span>
+                    </ons-col>
+                </ons-row>
+            </ons-list-item>
+
+            <ons-list-item>
+                <ons-row>
+                    <ons-col width="120px" align="left"><span style="color:red;">*</span>郵便番号</ons-col>
+                    <ons-col align="left">
+                        <ons-input style="border-bottom: 1px solid #ccc;width:30px;" input-id="ZipCode1" placeholder="3桁" float ng-model="patient.zipCode1"></ons-input>
+                        －
+                        <ons-input style="border-bottom: 1px solid #ccc;width:50px;" input-id="ZipCode2" placeholder="4桁" float ng-model="patient.zipCode2"></ons-input>
+                    </ons-col>
+                </ons-row>
+            </ons-list-item>
+            <ons-list-item>
+               <ons-row>
+                    <ons-col width="120px" align="left"><span style="color:red;">*</span>都道府県</ons-col>
+                    <ons-col align="left">
+                        <select style="border-bottom: 1px solid #ccc;" ng-model="patient.prefectureCd" ng-options="c.cd as c.name for c in prefectureList">
+                            <option value="">選択してください</option>
+                        </select>
+                    </ons-col>
+                </ons-row>
+            </ons-list-item>
+            <ons-list-item>
+                <ons-row>
+                    <ons-col width="120px" align="left">住所</ons-col>
+                    <ons-col align="left">
+                        <ons-input type="text" name="addressLine" float style="border-bottom: 1px solid #ccc;width:200px;" placeholder="住所" ng-model="patient.addressLine" ng-maxlength="40"></ons-input>
+                        <span ng-show="phrForm.addressLine.$error.maxlength" style="color:red;font-size:smaller;"><br>40文字以内で入力してください</span>
+                    </ons-col>
+                </ons-row>
+            </ons-list-item>
+            <ons-list-item>
+                <ons-row>
+                    <ons-col width="120px" align="left">建物名等</ons-col>
+                    <ons-col align="left">
+                        <ons-input type="text" name="buildingName" float style="border-bottom: 1px solid #ccc;width:200px;" placeholder="建物名等" ng-model="patient.buildingName" ng-maxlength="40"></ons-input>
+                        <span ng-show="phrForm.buildingName.$error.maxlength" style="color:red;font-size:smaller;"><br>40文字以内で入力してください</span>
+                    </ons-col>
+                </ons-row>
+            </ons-list-item>
+            <ons-list-item>
+                <ons-row>
+                    <ons-col width="120px" align="left"><span style="color:red;">*</span>主たる連絡先</ons-col>
+                    <ons-col align="left">
+                        <ons-input type="text" name="telNo" float style="border-bottom: 1px solid #ccc;width:200px;" placeholder="主たる連絡先" ng-model="patient.telNo" ng-maxlength="15" ng-required="true"></ons-input>
+                        <span ng-show="phrForm.telNo.$error.maxlength" style="color:red;font-size:smaller;"><br>15文字以内で入力してください</span>
+                        <span ng-show="phrForm.telNo.$error.required" style="color:red;font-size:smaller;"><br>入力してください</span>
+                    </ons-col>
+                </ons-row>
+            </ons-list-item>
+            <ons-list-item>
+                <ons-row>
+                    <ons-col width="120px" align="left">その他連絡先</ons-col>
+                    <ons-col align="left">
+                        <ons-input type="text" name="otherContactNo" float style="border-bottom: 1px solid #ccc;width:200px;" placeholder="その他連絡先" ng-model="patient.otherContactNo" ng-maxlength="15"></ons-input>
+                        <span ng-show="phrForm.otherContactNo.$error.maxlength" style="color:red;font-size:smaller;"><br>15文字以内で入力してください</span>
+                    </ons-col>
+                </ons-row>
+            </ons-list-item>
+            <ons-list-item>
+                <ons-row>
+                    <ons-col width="120px" align="left"><span style="color:red;">*</span>メールアドレス</ons-col>
+                    <ons-col align="left">
+                        <ons-input type="text" name="emailAddress" float style="border-bottom: 1px solid #ccc;width:200px;" placeholder="メールアドレス" ng-model="patient.emailAddress" ng-maxlength="120" ng-required="true"></ons-input>
+                        <span ng-show="phrForm.emailAddress.$error.maxlength" style="color:red;font-size:smaller;"><br>120文字以内で入力してください</span>
+                        <span ng-show="phrForm.emailAddress.$error.required" style="color:red;font-size:smaller;"><br>入力してください</span>
+                    </ons-col>
+                </ons-row>
+            </ons-list-item>
+            <ons-list-item>
+                <ons-row>
+                    <ons-col width="200px" align="left"><span style="color:red;">*</span>疾病管理（アラート・リマインダ）</ons-col>
+                    <ons-col align="left">
+                        <div align="left">
+                            <label class="switch_label">
+                                <input type="checkbox" id="check" class="switch_input" ng-model="patient.diseaseManagement" onclick="clickButton();" />
+                                <span class="switch_content"></span>
+                                <span class="switch_circle"></span>
+                            </label>
+                            <p id="text" style="display:inline; display:none">　する</p>
+                            <p id="text2" style="display:inline">　しない</p>
+                        </div>
+                        <style>
+                            .switch_label {
+                                width: 37px;
+                                position: relative;
+                                display: inline-block;
+                                padding-top: 3px;
+                            }
+                            .switch_content {
+                                display: block;
+                                cursor: pointer;
+                                position: relative;
+                                border-radius: 7px;
+                                height: 14px;
+                                background-color: rgba(34,31,31,.26);
+                                -webkit-transition: all .1s .4s;
+                                   -moz-transition: all .1s .4s;
+                                    -ms-transition: all .1s .4s;
+                                     -o-transition: all .1s .4s;
+                                        transition: all .1s .4s;
+                                overflow: hidden;
+                            }
+                            .switch_content:after {
+                                content: "";
+                                display: block;
+                                position: absolute;
+
+                                width: 0;
+                                height: 100%;
+                                top: 0;
+                                left: 0;
+                                border-radius: 7px;
+                                -webkit-transition: all .5s;
+                                   -moz-transition: all .5s;
+                                    -ms-transition: all .5s;
+                                     -o-transition: all .5s;
+                                        transition: all .5s;
+                            }
+                            .switch_input {
+                                display: none;
+                            }
+                            .switch_circle {
+                                display: block;
+                                top: 0px;
+                                left: 0px;
+                                position: absolute;
+                                width: 20px;
+                                height: 20px;
+                                -webkit-border-radius: 10px;
+                                        border-radius: 10px;
+                                background-color: #F1F1F1;
+                                -webkit-transition: all .5s;
+                                   -moz-transition: all .5s;
+                                    -ms-transition: all .5s;
+                                     -o-transition: all .5s;
+                                        transition: all .5s;
+                                -webkit-box-shadow: 0 2px 2px #ccc;
+                                        box-shadow: 0 2px 2px #ccc;
+                            }
+                            .switch_input:checked ~ .switch_circle {
+                                left: 18px;
+                                background-color: #00c4cc;
+                            }
+                            .switch_input:checked ~ .switch_content {
+                                border-color: transparent;
+                                -webkit-transition: all 0s;
+                                   -moz-transition: all 0s;
+                                    -ms-transition: all 0s;
+                                     -o-transition: all 0s;
+                                        transition: all 0s;
+                            }
+                            .switch_input:checked ~ .switch_content:after {
+                                background-color: rgba(55 190 176 / 25%);
+                                width: 100%;
+                            }
+                        </style>
+                        <!--
+                        <ons-input type="radio" name="diseaseManagement" placeholder="" float ng-checked="patient.diseaseManagement == true" ng-model="patient.diseaseManagement" value="true" ng-required="true">する</ons-input>
+                        <ons-input type="radio" name="diseaseManagement" placeholder="" float ng-checked="patient.diseaseManagement == false" ng-model="patient.diseaseManagement" value="false" ng-required="true">しない</ons-input>
+                        <span ng-show="phrForm.diseaseManagement.$error.required" style="color:red;font-size:smaller;"><br>入力してください</span>
+                        -->
+                    </ons-col>
+                </ons-row>          
+            </ons-list-item>
+
+        </ons-list>
+        <br>
+    </form>
+    <!--
+    <ons-bottom-toolbar style="height: 3.4rem;">
+    <table style="width:100%;">
+    <tr><td style="text-align: center;width:50%;"></td>
+        <td style="text-align: center;width:50%;">
+            <ons-toolbar-button ng-click="confirmAction()" ng-disabled="phrForm.$invalid" style="color: darkslategrey; display: flex; flex: 1 1 0; flex-direction: column; justify-content: center; position: relative; text-align: center; text-overflow: ellipsis; white-space: nowrap;height: 2.8rem; line-height: 2.6rem;">
+                    <ons-icon icon="angle-right" size="30px" style="align-self: center; max-width: 100%;">
+                        <span style="align-self: center; max-width: 100%;min-width: 35px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap; font-size: 16px; line-height: 16px">確認</span>
+                    </ons-icon>                    
+            </ons-toolbar-button>
+        </td>
+    </tr>
+    </table>
+    </ons-bottom-toolbar>
+    -->
+    <ons-bottom-toolbar style="height: 3.4rem;">
+      <!--
+      <div style="float: left; width: 50%">
+        <ons-toolbar-button ng-click="backMenuAction()" style="color: darkslategrey; display: flex; flex: 1 1 0; flex-direction: column; justify-content: center; position: relative; text-align: center; text-overflow: ellipsis; white-space: nowrap;height: 2.8rem; line-height: 2.6rem;">
+          <ons-icon icon="angle-left" size="30px" style="align-self: center; max-width: 100%;"></ons-icon>
+          <span style="align-self: center; max-width: 100%;min-width: 35px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap; font-size: 16px; line-height: 16px">メニューへ
+          </span>
+        </ons-toolbar-button>
+      </div>
+      -->
+      <div style="float: left; width: 50%">
+          <ons-toolbar-button ng-click="withDraw(patient)" style="color: darkslategrey; display: flex; flex: 1 1 0; flex-direction: column; justify-content: center; position: relative; text-align: center; text-overflow: ellipsis; white-space: nowrap;height: 2.8rem; line-height: 2.6rem;">
+              <ons-icon icon="angle-left" size="30px" style="align-self: center; max-width: 100%;"></ons-icon>
+              <span style="align-self: center; max-width: 100%;min-width: 35px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap; font-size: 10px; font: bold; line-height: 16px; color: red;">ダイナミックコンセント利用停止</span>
+          </ons-toolbar-button>
+      </div>
+      <div style="float: right; width: 50%">
+        <ons-toolbar-button ng-click="confirmAction()" ng-disabled="phrForm.$invalid" style="color: darkslategrey; display: flex; flex: 1 1 0; flex-direction: column; justify-content: center; position: relative; text-align: center; text-overflow: ellipsis; white-space: nowrap;height: 2.8rem; line-height: 2.6rem;">
+          <ons-icon icon="angle-right" size="30px" style="align-self: center; max-width: 100%;"></ons-icon>
+          <span style="align-self: center; max-width: 100%;min-width: 35px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap; font-size: 16px; line-height: 16px">確 認</span>
+        </ons-toolbar-button>
+      </div>
+    </ons-bottom-toolbar>
+</ons-page>
+
+

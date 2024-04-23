@@ -1,0 +1,33 @@
+<!--  グラフ管理メインメニュー　ここから各機能へ遷移する　-->
+
+<ons-page ng-controller="chartMenu" ng-init="startChartList();">       
+    <ons-toolbar style="background: #69BB7B">
+        <div class="left"><ons-back-button style="font-size: smaller;" ng-click="comService.countAnnouncement()">メニューへ</ons-back-button></div>
+        <div class="center" style="color: #fff">グラフ管理</div>
+        <div class="right">
+            <ons-toolbar-button ng-click="app.slidingMenu.toggleMenu()"><ons-icon icon="bars" style="color: #fff"></ons-icon></ons-toolbar-button>
+        </div>
+    </ons-toolbar>
+
+    <ons-list>
+        <ons-list-header style="background: #F5F5F5"></ons-list-header>
+
+        <ons-list-item ng-repeat="def in charDef.chartDefinitionList">
+            <div class="center" ng-click="viewChart(def.chartDefinitionId, def.viewCount, 0);" style="color:{{def.color}}">{{def.chartDefinitionName}}</div>
+        </ons-list-item>          
+    </ons-list>
+    <ons-bottom-toolbar style="height: 3.4rem;">
+        <div style="float: left; width: 50%">
+        </div>
+        <div style="float: right; width: 50%">
+            <ons-toolbar-button ng-click="createDefinition(0, 9, true)" style="color: darkslategrey; display: flex; flex: 1 1 0; flex-direction: column; justify-content: center; position: relative; text-align: center; text-overflow: ellipsis; white-space: nowrap;height: 2.8rem; line-height: 2.6rem;">
+            <!--
+            <ons-toolbar-button ng-click="createDefinition(0, 2, true)" style="color: darkslategrey; display: flex; flex: 1 1 0; flex-direction: column; justify-content: center; position: relative; text-align: center; text-overflow: ellipsis; white-space: nowrap;height: 2.8rem; line-height: 2.6rem;">
+            -->
+                <ons-icon icon="ion-compose" size="30px" style="align-self: center; max-width: 100%;"></ons-icon>
+                <span style="align-self: center; max-width: 100%;min-width: 35px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap; font-size: 16px; line-height: 16px">定義作成</span>
+            </ons-toolbar-button>
+        </div>
+    </ons-bottom-toolbar>
+
+</ons-page>

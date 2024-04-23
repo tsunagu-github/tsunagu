@@ -1,0 +1,118 @@
+<ons-page ng-controller="announceEntryCtrl">
+    <ons-toolbar style="background: #69BB7B;">
+        <div class="left"><ons-toolbar-button ng-click="service.goToListAction('fade')" style="background: transparent; padding: 0 0 0 8px; font-size: 17px">
+                <span class="back-button__icon"></span>
+                <span class="back-button__label" style="margin-left: 4px">一覧へ</span>
+            </ons-toolbar-button></div>
+        <div class="center" style="color: #fff">メッセージ登録</div>
+    </ons-toolbar>
+    
+  <form name="messageForm" novalidate>
+  <div style="background-color: #f9f9f9;">
+    <ul class="list">
+      <li class="list__item">
+        <div class="list__item__left">
+            <div class="list__item__label" style="font-weight: 500;color: #708090">宛先</div>
+            <div class="list__item__label" style="font-weight: 500;color: #708090">：</div>
+        </div>
+        <div ng-if="isReply" class="list__item__center" style="border-bottom: none;">
+            <div class="list__item__title" style="font-weight: 500;color: #000">{{message.received.senderName}}</div>
+        </div>
+          <div ng-if="!isReply" ng-click="modal.show()" class="list__item__center" style="border-bottom: none;">
+            <ons-input ng-hide="true" name="addressName" ng-model="message.address.name" ng-required="true"></ons-input>
+            <ons-input ng-hide="true" name="addressType" ng-model="message.address.type"></ons-input>
+            <div class="list__item__title" style="font-weight: 500;color: #000">{{message.address.name}}</div>
+        </div>
+        <div class="list__item__right" style="border-bottom: none;">
+            <ons-icon ng-if="!isReply"
+              ng-click="modal.show()"
+              icon="ion-chevron-right"
+              size="13px"
+              fixed-width="false"
+              style="color: #808080; padding-right: 10px;">
+            </ons-icon>
+        </div>
+      </li>
+
+      <hr style="margin-top: 0">
+      <li class="list__item" style="border-bottom:1px lightgray solid;">
+        <div class="list__item__left">
+            <div class="list__item__label" style="font-weight: 500;color: #708090">タイトル</div>
+        </div>
+        <div class="list__item__center" style="border-bottom: none;">
+            <p style="width: 100%">
+               <ons-input style="width: 90%" name="messageTitle" float ng-model="message.send.subject" ng-maxlength="100" ng-required="true"></ons-input>
+            </p>
+        </div>
+      </li>
+      
+      <li class="list__item">
+        <div class="list__item__left" style="clear:both">
+            <div class="list__item__label" style="font-size: 20px;font-weight: 500;color: #708090">本文</div>
+        </div>
+      </li>
+      <li class="list__item" style="border-bottom:1px #708090 solid; padding: 0 15px 15px 15px">
+        <div style="width:100%; border-bottom: none;">
+            <section class="scroll">
+                <div class="contents" >
+                    <textarea class="textarea" name="messageText" rows="10" ng-model="message.send.text" ng-maxlength="2000" ng-required="true"></textarea>
+                </div>
+            </section>
+        </div>
+      </li>
+    </ul>
+        <div role="alert">
+            <span style="margin-left: 10px; color: red" ng-show="messageForm.messageText.$error.maxlength">
+                本文は2000文字以内で入力してください。<br/></span>
+            <span style="margin-left: 10px; color: red" ng-show="submitted && messageForm.messageText.$error.required">
+                本文が入力されていません。<br/></span>
+            <span style="margin-left: 10px; color: red" ng-show="messageForm.messageTitle.$error.maxlength">
+                タイトルは100文字以内で入力してください。<br/></span>
+            <span style="margin-left: 10px; color: red" ng-show="submitted && messageForm.messageTitle.$error.required">
+                タイトルが入力されていません。<br/></span>
+            <span style="margin-left: 10px; color: red" ng-show="submitted && messageForm.addressName.$error.required">
+                宛先が入力されていません。<br/></span>
+        </div>
+    </div>
+  </form>
+
+  <ons-modal ng-click="modal.hide()" var="modal">
+    <div style="background-color: #f9f9f9; overflow: auto; height: 60%;">
+    <ons-list align="left">
+        <ons-list-item tappable style="padding-left:2%" ng-repeat="address in addresslist" ng-click="selectAddress(address)">
+          <div class="left">
+            <img class="list__item__thumbnail" ng-src="{{address.insurerNo ? 'mock-data/img/table_off.jpg' : 'mock-data/img/imgcheckups.bmp'}}"/>
+          </div>
+          <div class="center" style="overflow: hidden; text-overflow: ellipsis;">
+            <span class="list__item__title">{{address.name}}</span>
+          </div>
+          <div class="right">
+            <ons-icon
+              icon="ion-chevron-right"
+              size="13px"
+              fixed-width="false"
+              style="color: #808080; padding-right: 10px;">
+            </ons-icon>
+          </div>
+        </ons-list-item>
+    </ons-list>
+    </div>
+  </ons-modal> 
+    
+    <ons-bottom-toolbar style="height: 3.4rem;">
+      <div ng-if="isReply" style="float: left; width: 50%">
+        <ons-toolbar-button ng-click="myNavigator.popPage()" style="color: darkslategrey; display: flex; flex: 1 1 0; flex-direction: column; justify-content: center; position: relative; text-align: center; text-overflow: ellipsis; white-space: nowrap;height: 2.8rem; line-height: 2.6rem;">
+          <ons-icon icon="ion-ios-arrow-left" size="30px" style="align-self: center; max-width: 100%;"></ons-icon>
+          <span style="align-self: center; max-width: 100%;min-width: 35px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap; font-size: 16px; line-height: 16px">
+              戻 る</span>
+        </ons-toolbar-button>
+      </div>
+      <div style="float: right; width: 50%">
+        <ons-toolbar-button ng-click="submitted=true;showConfirm()" style="color: darkslategrey; display: flex; flex: 1 1 0; flex-direction: column; justify-content: center; position: relative; text-align: center; text-overflow: ellipsis; white-space: nowrap;height: 2.8rem; line-height: 2.6rem;">
+          <ons-icon icon="ion-ios-arrow-right" size="30px" style="align-self: center; max-width: 100%;"></ons-icon>
+          <span style="align-self: center; max-width: 100%;min-width: 35px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap; font-size: 16px; line-height: 16px">
+              確 認</span>
+        </ons-toolbar-button>
+      </div>
+    </ons-bottom-toolbar>
+</ons-page>
